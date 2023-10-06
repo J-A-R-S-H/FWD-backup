@@ -1,0 +1,128 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic (CALLED IN NORMALIZE.CSS)
+# Base
+# Components
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
+body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #282828;
+	background-color: #888888;
+	/* background-image: url(../images/cat-drawing.png);
+	background-size: 10rem; */
+	/* background-image: url(../images/cat-drawing.png), url(../images//company-logo.png);
+	background-repeat: no-repeat;
+	background-position: left top, right bottom; */
+	background-image: url(../images/cat-drawing.png), url(../images/vancouver-skyline.jpg);
+	background-repeat: no-repeat, no-repeat;
+	background-position: 1%, 50%;
+	background-size: 200px, cover;
+	background-attachment: scroll, fixed;
+	backdrop-filter: blur(10px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Georgia, Times, "Times New Roman", serif;
+	margin: .5em 0;
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.75rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+p {
+	margin: 0 0 1.5em;
+}
+
+
+/* Elements
+--------------------------------------------- */
+header,
+footer {
+	padding: 1rem;
+	background-color: #eeeeee;
+	text-align: center;
+}
+
+section,
+aside {
+	padding: 0 1rem;
+}
+
+q::before,
+q::after {
+	content: '';
+}
+
+
+/* Links
+--------------------------------------------- */
+a,
+a:visited {
+	color: #008000;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+	text-decoration: underline;
+}
+
+a:focus {
+	outline: 1px dotted;
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+.site-wrapper {
+	max-width: 62.5rem;
+	margin: 0 auto;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	padding: 1rem;
+	background-color: #ffffff;
+	flex-grow: 1;
+}
+
+.team {
+	display: flex;
+	align-items: flex-end;
+}
+
+.team-member-1 {
+	filter: sepia(1);
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.team-member-2 {
+	filter: grayscale(0.7);
+	clip-path: polygon(0 0, 100% 29%, 50% 56%, 18% 100%);
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Traversal</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body class="pg-js-events">
+    <div class="wrapper">
+        <header>
+            <h1>DOM Traversal</h1>
+        </header>
+        <main>
+            <article>
+                <h1>Traversing the DOM with JavaScript</h1>
+                <p>Be able to move from one place in the HTML document (the DOM - Document Object Model) to another is a key skill to have when working with JavaScript that is part of a web page or web application.</p>
+                <p>We can traverse down the DOM, which means go in to nested child elements from your current location or whe can traverse up the DOM, which means selecting parent or ancestor elements from our current location. We can also traverse on the same level by move through an elements siblings.</p>
+                <h2>Moving Up the DOM</h2>
+                <p>We can move up the DOM using the using the parentNode property for direct parents or the closet() method for find ancestors (parents, grandparents, etc...).</p>
+                <h3>Select the Parent Node</h3>
+                <p>Select the child box's parent when the child box is clicked on.</p>
+                <div class="parent-node-demo-container ">
+                    <div class="parent-box parent-box-01" id="parent-box-01">
+                        <div class="child-box child-box-01" id="child-box-01"></div>
+                    </div>
+                </div>
+                <h3>closest()</h3>
+                <p>Select the child box's first Ancestor that matches a selector using closest().</p>
+                <div class="closest-node-demo-container">
+                    <div class="grandparent-box grandparent-box-02">
+                        <div class="parent-box parent-box-02" id="parent-box-02">
+                            <div class="child-box child-box-02" id="child-box-02"></div>
+                        </div>
+                    </div>
+                </div>
+                <h2>Moving Down the DOM</h2>
+                <p>We can select all the direct children, the first-child or the last-child of a parent element</p>
+                <h3>Select All, first & Last Children Elements</h3>
+                <div class="parent-node-demo-container">
+                    <div class="parent-box parent-box-03" id="parent-box-03">
+                        <div class="child-box child-box-03 child-box-03-a" id="child-box-03-a"></div>
+                        <div class="child-box child-box-03 child-box-03-b" id="child-box-03-b"></div>
+                        <div class="child-box child-box-03 child-box-03-c" id="child-box-03-c"></div>
+                    </div>
+                    <div class="app-controls">
+                        <button id="btn-all-children">All Children</button>
+                        <button id="btn-first-child">First-Child</button>
+                        <button id="btn-last-child">Last-Child</button>
+                    </div>
+                </div>
+                <h2>Moving Laterally in the DOM</h2>
+                <h3>Next Sibling</h3>
+                <div class="parent-node-demo-container">
+                    <div class="parent-box parent-box-04" id="parent-box-04">
+                        <div class="child-box child-box-04 child-box-03-a" id="child-box-04-a"></div>
+                        <div class="child-box child-box-04 child-box-03-b" id="child-box-04-b"></div>
+                        <div class="child-box child-box-04 child-box-03-c" id="child-box-04-c"></div>
+                        <div class="child-box child-box-04 child-box-03-d" id="child-box-04-d"></div>
+                        <div class="child-box child-box-04 child-box-03-e" id="child-box-04-e"></div>
+                    </div>
+                </div>
+                <h3>Prev Sibling</h3>
+                <div class="parent-node-demo-container">
+                    <div class="parent-box parent-box-05" id="parent-box-05">
+                        <div class="child-box child-box-05 child-box-05-a" id="child-box-05-a"></div>
+                        <div class="child-box child-box-05 child-box-05-b" id="child-box-05-b"></div>
+                        <div class="child-box child-box-05 child-box-05-c" id="child-box-05-c"></div>
+                        <div class="child-box child-box-05 child-box-05-d" id="child-box-05-d"></div>
+                        <div class="child-box child-box-05 child-box-05-e" id="child-box-05-e"></div>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <footer>
+            <p>&copy; 2019 Michael Whyte</p>
+        </footer>
+    </div>
+<script src="scripts/dom-traversal.js"></script>
+</body>
+</html>

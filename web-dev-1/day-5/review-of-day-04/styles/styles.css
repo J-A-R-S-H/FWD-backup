@@ -1,0 +1,200 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic (CALLED IN NORMALIZE.CSS)
+	- Normalize
+	- Box sizing
+	- Media width
+# Base
+	- Typography
+	- Elements
+	- Links
+# Components
+	- Header
+	- Main
+	- Footer
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
+body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #282828;
+	background-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Georgia, Times, "Times New Roman", serif;
+	margin: .5em 0;
+}
+
+h1 {
+	font-size: 2.25rem;
+}
+
+h2 {
+	font-size: 1.75rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+}
+
+p {
+	margin: 0 0 1.5em;
+}
+
+
+/* Elements
+--------------------------------------------- */
+main {
+	padding: 0 1rem;
+}
+
+section {
+	margin: 2rem 0;
+}
+
+
+/* Links
+--------------------------------------------- */
+a,
+a:visited { 
+	color: darkblue;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+	text-decoration: underline;
+}
+
+a:focus {
+	outline: 1px dotted;
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/* Header
+--------------------------------------------- */
+.site-title {
+	font-family: Georgia, Times, "Times New Roman", serif;
+	font-size: 2rem;
+	text-align: center;
+	margin: 0;
+}
+
+.site-navigation ul {
+	list-style-type: none;
+	padding: 0;
+	/* Flexbox tasks:
+	   - Put the links in a row but allow them to go to multiple rows if needed. 
+	   - Give the links 1rem of space between them and on the top and bottom if they go to multiple rows.
+	   - Space the links so that all sides of them have equal space
+	*/
+	
+	
+}
+
+
+/* Main
+--------------------------------------------- */
+
+/* Section -- Center Me */
+.center-me {
+	background-color: pink;
+	width: 100%;
+	height: 20rem;
+
+	/* Add flex styles here */
+	
+}
+
+.center-me h2 {
+	width: fit-content;
+	margin: 0;
+	padding: .5rem;
+	border: .125rem solid black;
+}
+
+
+/* Vegetables Section */
+.vegetables ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 1rem 0;
+	/* Comment in the width below if you want to make a pixel perfect match of the image */
+	/* width: 20rem; */
+
+	/* Add flexbox styles here */
+
+}
+
+.vegetables li {
+	/* Add flexbox styles here */
+
+}
+
+.vegetables li a {
+	display: block;
+	border: .125rem solid darkblue;
+	border-radius: 1rem;
+	padding: .5rem;
+	text-decoration: none;
+	text-align: center;
+}
+
+.vegetables li a:hover,
+.vegetables li a:focus,
+.vegetables li a:active {
+	background-color: darkblue;
+	color: white;
+}
+
+
+/* Section -- Boxes */
+.boxes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.boxes h2 {
+	width: 100%;
+}
+
+.boxes p {
+	background-color: orange;
+	border: .125rem solid black;
+	padding: 1rem;
+	flex: 0 1 48%;
+}
+
+/* Media Query task:
+	- The styles above have been written for a larger screen
+	- Create a media query at a break point of 600px (convert that to em units)
+	- Move the styles relevant to the flex layout into the media query
+	- Keep the general styles out of the media query
+*/
+
+
+/* Footer
+--------------------------------------------- */
+.site-footer {
+	text-align: center;
+}

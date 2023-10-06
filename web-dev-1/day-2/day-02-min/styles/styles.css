@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
+    color: rgb(40, 40, 40);
+}
+
+h2 {
+    color: darkred;
+}
+
+.warning {
+    color: red;
+}
+
+.bg-gray {
+    background-color: gray;
+}
+
+section.morning {
+    background-color: yellow;
+}
+
+
+.table-custom {
+    color: aqua;
+}
+
+table {
+    color: orange;
+}
+
+table {
+    color: green;
+}

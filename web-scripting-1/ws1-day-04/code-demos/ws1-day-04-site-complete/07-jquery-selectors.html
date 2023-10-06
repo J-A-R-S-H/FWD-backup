@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Selectors</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>jQuery Selectors</h1>
+        </header>
+        <main>
+            <article>
+                <h1>jQuery Selectors</h1>
+                <p>Almost any CSS selector, plus a few jQuery custom selectors can by passed into jQuery ( $() ). If you know how to select something with CSS, you select it with jQuery.</p>
+                
+                <h2>Using jQuery Selectors</h2>
+                <p>Select the first element that matches the CSS selector "tr" and select the 2nd "td" of each row using jQuery.</p>
+                <table class="demo-table" id="demo-table">
+                    <tr>
+                        <td>Stuff</td>
+                        <td>Stuff</td>
+                        <td>Stuff</td>
+                        <td>Stuff</td>
+                    </tr>
+                    <tr>
+                        <td>Stuff</td>
+                        <td>Stuff</td>
+                        <td>Stuff</td>
+                        <td>Stuff</td>
+                    </tr>
+                    <tr>
+                        <td>Stuff</td>
+                        <td>Stuff</td>
+                        <td>Stuff</td>
+                        <td>Stuff</td>
+                    </tr>
+                    <tr>
+                        <td>Stuff</td>
+                        <td>Stuff</td>
+                        <td>Stuff</td>
+                        <td>Stuff</td>
+                    </tr>
+                </table>
+                <div class="button-container button-row">
+                    <button class="select-tr" id="select-tr">Select Row</button>
+                    <button classs="select-td" id="select-td">Select 2nd TD of Each Row</button>
+                    <button class="add-row" id="add-row">Add Row</button>
+                    <button class="change-text" id="change-text">Change Text</button>
+                </div>
+                <h2>Using querySelectorAll</h2>
+                <p>Select All the Boxes using jQuery and give them a pink background.</p>
+                <div class="box-row" id="box-row-01">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </div>
+                <div class="button-container button-row">
+                    <button class="select-boxes" id="select-boxes">Select Boxes</button>
+                    <button class="add-box" id="add-box">Add Box</button>
+                </div>
+            </article>
+        </main>
+        <footer>
+            <p>&copy; 2019 Michael Whyte</p>
+        </footer>
+    </div>
+<script src="scripts/jquery-3.4.1.min.js"></script>
+<script src="scripts/jquery-selectors.js"></script>
+</body>
+</html>

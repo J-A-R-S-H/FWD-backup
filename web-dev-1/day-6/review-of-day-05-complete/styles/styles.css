@@ -1,0 +1,144 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic (CALLED IN NORMALIZE.CSS)
+# Base
+	- Typography
+	- Elements
+	- Links
+# Components
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.125rem;
+	font-weight: 400;
+	line-height: 1.6;
+	color: #4a4a4a;
+	background-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'PT Serif', serif;
+	margin: .5em 0;
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: clamp(2rem, 3.5vw, 3rem);
+	text-align: center;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+p {
+	margin: 1.5em 0;
+}
+
+code {
+	font-family: 'Anonymous Pro', monospace;
+}
+
+
+/* Elements
+--------------------------------------------- */
+main {
+	max-width: 120rem;
+	margin: 0 auto;
+}
+
+section {
+	max-width: 50rem;
+	margin: 4rem auto;
+	padding: 0 1rem;
+}
+
+figure {
+	margin: 1rem 0;
+}
+
+
+/* Links
+--------------------------------------------- */
+a,
+a:visited { 
+	color: #000000;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #00000050;
+}
+
+a:focus {
+	outline: 1px dotted;
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+.banner {
+	position: relative;
+}
+
+.banner img {
+	display: block;
+	object-fit: cover;
+	height: 25rem;
+	width: 100%;
+}
+
+.banner figcaption {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	transform: translateY(-50%);
+	margin: 0;
+	font-size: 3rem;
+	color: #4a4a4a;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+@media (min-width: 50em) {
+
+	.banner figcaption {
+		font-size: 5rem;
+	}
+	
+}
+
+.button-links {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.button-links a {
+	display: block;
+	border: 1px solid #888888;
+	padding: 2rem;
+	margin: 1rem;
+	background-color: #eeeeee;
+}

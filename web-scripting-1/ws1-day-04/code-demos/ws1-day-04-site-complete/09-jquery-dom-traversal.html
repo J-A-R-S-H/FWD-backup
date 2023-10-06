@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Traversal</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body class="pg-js-events">
+    <div class="wrapper">
+        <header>
+            <h1 class="long-main-heading">jQuery DOM Traversal</h1>
+        </header>
+        <main>
+            <article>
+                <h1>Traversing the DOM with jQuery</h1>
+                <p>jQuery was built for traversing the DOM. Compared to native JavaScript, traversing the DOM with jQuery is a breeze.</p>
+                <p>With jQuery we can very easily navigate to the next element, the previous element, the parent, all the parents, the closest ancesstor, any child element and any descendant element.</p>
+                <p>View the <a href="https://api.jquery.com/category/traversing/">jQuery docs for DOM Traversing</a>.</p>
+                <h3>parent()</h3>
+                <p>Select the child box's parent when the child box is clicked on.</p>
+                <div class="parent-node-demo-container ">
+                    <div class="parent-box parent-box-01" id="parent-box-01">
+                        <div class="child-box child-box-01" id="child-box-01"></div>
+                    </div>
+                </div>
+                <h3>closest()</h3>
+                <p>Select the child box's first Ancestor that matches a selector using closest().</p>
+                <div class="closest-node-demo-container">
+                    <div class="grandparent-box grandparent-box-02">
+                        <div class="parent-box parent-box-02" id="parent-box-02">
+                            <div class="child-box child-box-02" id="child-box-02"></div>
+                        </div>
+                    </div>
+                </div>
+                <h3>parents()</h3>
+                <p>Select all the child box's ancestor that matches a selector using parents().</p>
+                <div class="find-parents-node-demo-container">
+                    <div class="great-grandparent-box great-grandparent-box-03 ancestor-box">
+                        <div class="grandparent-box grandparent-box-03 ancestor-box">
+                            <div class="parent-box parent-box-03 ancestor-box" id="parent-box-03">
+                                <div class="child-box child-box-03" id="child-box-03"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2>Moving Down the DOM</h2>
+                <p>We can select all the direct children, the first-child or the last-child of a parent element</p>
+                <h3>Select All, first & Last Children Elements</h3>
+                <div class="parent-node-demo-container">
+                    <div class="parent-box parent-box-04" id="parent-box-04">
+                        <div class="child-box child-box-04 child-box-04-a" id="child-box-04-a"></div>
+                        <div class="child-box child-box-04 child-box-04-b" id="child-box-04-b"></div>
+                        <div class="child-box child-box-04 child-box-04-c" id="child-box-04-c"></div>
+                    </div>
+                    <div class="app-controls">
+                        <button id="btn-all-children">All Children</button>
+                        <button id="btn-first-child">First-Child</button>
+                        <button id="btn-last-child">Last-Child</button>
+                    </div>
+                </div>
+                <h2>Moving Laterally in the DOM</h2>
+                <h3>Next Sibling</h3>
+                <div class="parent-node-demo-container">
+                    <div class="parent-box parent-box-05" id="parent-box-05">
+                        <div class="child-box child-box-05 child-box-05-a" id="child-box-05-a"></div>
+                        <div class="child-box child-box-05 child-box-05-b" id="child-box-05-b"></div>
+                        <div class="child-box child-box-05 child-box-05-c" id="child-box-05-c"></div>
+                        <div class="child-box child-box-05 child-box-05-d" id="child-box-05-d"></div>
+                        <div class="child-box child-box-05 child-box-05-e" id="child-box-05-e"></div>
+                    </div>
+                </div>
+                <h3>Prev Sibling</h3>
+                <div class="parent-node-demo-container">
+                    <div class="parent-box parent-box-06" id="parent-box-06">
+                        <div class="child-box child-box-06 child-box-06-a" id="child-box-06-a"></div>
+                        <div class="child-box child-box-06 child-box-06-b" id="child-box-06-b"></div>
+                        <div class="child-box child-box-06 child-box-06-c" id="child-box-06-c"></div>
+                        <div class="child-box child-box-06 child-box-06-d" id="child-box-06-d"></div>
+                        <div class="child-box child-box-06 child-box-06-e" id="child-box-06-e"></div>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <footer>
+            <p>&copy; 2019 Michael Whyte</p>
+        </footer>
+    </div>
+<script src="scripts/jquery-3.4.1.min.js"></script>
+<script src="scripts/jquery-dom-traversal.js"></script>
+</body>
+</html>

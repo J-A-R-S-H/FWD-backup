@@ -1,0 +1,165 @@
+/* * {
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  background-color: #191d32;
+  color: #e2e8f0;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  line-height: 1.2;
+} */
+/* 
+header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  font-size: max(1.4vw, 1rem);
+} */
+
+header a {
+  width: 15%;
+}
+
+
+nav li {
+  background-color: transparent;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+}
+
+header h2 {
+  margin-bottom: 1rem;
+  margin-top: 0.4rem;
+}
+
+/* li {
+  list-style: none;
+  padding: 0.4rem;
+  background-color: #282f44;
+  border-radius: 15px;
+  font-size: 0.9rem;
+} */
+
+.name-header {
+  font-size: 2.3rem;
+  margin: 3rem 0 1rem 0;
+  font-weight: 600;
+  color: white;
+}
+
+/* 
+h2 { */
+/* I have never used the max method in CSS for font size, pretty cool what it does. I think Jonathon mentioned the clamp method in CSS its pretty cool too, I have yet to use it for my projects */
+/* font-size: max(3vw, 1.2rem);
+}
+
+h3 {
+  margin-top: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #94a3b8;
+  margin-top: 0.5rem;
+}
+
+section {
+  margin-top: 2rem;
+} */
+
+
+.about-title {
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+}
+
+.tech-stack,
+.tech-stack-project {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  margin-top: 0.5rem;
+}
+
+.techStack-section h2 {
+  margin-bottom: 1rem;
+}
+
+.techStack-section {
+  margin-top: 3rem;
+}
+
+.project-archive {
+  margin-top: 2rem;
+  color: white;
+  text-decoration: none;
+}
+
+/* Put this tag at the top of the document to keep the general styles at the top (here being a general style for all the sections) and then as we go down the documents we see more specific styles.
+
+Also for readibility, make sure to include a comment to say whether the styles applied below are General styles or About me section styles, ect...  This makes it easier to read for other developer and also for you to find what you are looking for better. I think Jonathon is gonna be looking at the organization*/
+
+@media (min-width: 50em) {
+  body {
+    margin-top: 7rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+}
+
+@media (min-width: 81.25em) {
+
+  .example-project-1 p,
+  .example-project-1 img {
+    width: 50%;
+  }
+
+  .example-project-2 p,
+  .example-project-2 img {
+    width: 50%;
+  }
+
+  .desktop-view-projects {
+    display: flex;
+  }
+
+  .tech-stack-project {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.2rem;
+  }
+}
+
+
+footer {
+  margin-top: 10rem;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-contact,
+.footer-msg {
+  margin-top: 1rem;
+
+}
+
+.footer-btn {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  color: white;
+  background-color: transparent;
+  border: 3px solid #6883BA;
+  padding: 0.5rem 1.25rem;
+}

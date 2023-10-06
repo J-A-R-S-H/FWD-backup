@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Variables</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>JavaScript Variables</h1>
+        </header>
+        <main>
+            <article>
+                <h1>About JavaScript Variables</h1>
+                <p>JavaScript variables can be set with with either the "var", "let" or "const" variables.</p>
+                <h2>When to use var, let and const</h2>
+                <ul>
+                    <li>
+                        <strong>var: </strong>Use <code>var</code> if you anticipate that your script will be running in pre-2015 browsers. This is mainly IE10,9 and 8.
+                    </li>
+                    <li>
+                        <strong>let: </strong>Use <code>let</code> if the value of the variable will change while the script is running.
+                    </li>
+                    <li>
+                        <strong>const: </strong>Use <code>const</code> if the value of the variable will not change while the script is running.
+                    </li>
+                </ul>
+
+                <h2>My Personal Method</h2>
+                <p>I default to always using <code>const</code> first, and only use <code>let</code> if the variable value might change during the running of the script.</p>
+
+                <h2>Output Some Variables</h2>
+
+                <p id="p-01">...Output variables here...</p>
+                <p id="p-02">...Output variables here...</p>
+                <p id="p-03">...Output variables here...</p>
+
+            </article>
+        </main>
+        <footer>
+            <p>&copy; 2019 Michael Whyte</p>
+        </footer>
+    </div>
+<script src="scripts/javascript-variables.js"></script>
+</body>
+</html>

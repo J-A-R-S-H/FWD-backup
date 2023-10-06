@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Events</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body class="pg-js-events">
+    <div class="wrapper">
+        <header>
+            <h1>jQuery Events</h1>
+        </header>
+        <main>
+            <article>
+                <h1>jQuery Events</h1>
+                <p>jQuery is JavaScript so all the browser events are available with jQuery.</p>
+                <p>You can write your most of your event handlers with shorthand syntax such which looks like this <code>$('.element.).click()</code>...</p>
+                <p>...Or you can write your handlers with the <code>on()</code> method. Using <code>on()</code> gives you access to some additional event features and allows you to attach multiple events to an element with one statement.</p>
+                <p>The a modified version of the event object is available to jQuery event handlers. jQuery normalizes some event object properties to help with cross browser compatibility.</p>
+                <h2>Mouse Events</h2>
+                <p>Track mouse movements in the box and have the background image move with your mouse movements over the box.</p>
+                <div class="mouse-event-demo">
+                    <div class="box-container-01" id="box-container-01">
+                        <div class="smiley-face" id="smiley-face">
+                            <img src="images/smiley-face.png" alt="Smiley face">
+                        </div>
+                    </div>
+                </div>
+                <h2>Preventing Default Behaviours</h2>
+                <p>The browser runs various default behaviours on certain events. For example, when a user "clicks" a link the browser loads a new page, you fortunately do not have to write the JavaScript code to do that it is builtin to the browser.</p>
+                <p>Sometimes we want to "prevent" the browsers default behaviour. We can do this by using the builtin<code>preventDefault()</code> method that comes with the event object.</p>
+                <h3>Use preventDefault() to Create a Product Gallery</h3>
+                <p>Use preventDefault() to prevent the thumbnail links from opening a new page</p>
+                <div class="gallery gallery">
+                    <div class="main-slide">
+                        <img src="images/kittens-01.jpg" alt="Kitten" id="slide">
+                    </div>
+                    <div class="thumbs" id="thumbs">
+                        <a href="images/kittens-01.jpg">
+                            <img src="images/kittens-01.jpg" alt="Kitten">
+                        </a>
+                        <a href="images/kittens-02.jpg">
+                            <img src="images/kittens-02.jpg" alt="Kitten">
+                        </a>
+                        <a href="images/kittens-05.jpg">
+                            <img src="images/kittens-05.jpg" alt="Kitten">
+                        </a>
+                    </div>
+                </div>
+                <h2>Event Filtering</h2>
+                <p>Attaching events to several elements on a page can be a performance hit.</p>
+                <p>To help with event performance, consider attaching an event to a parent element and then filter the event handler for a certain target or several target elements.</p>
+                <p>Modify the kitten gallery JavaScript code to attach a single event handler to the "thumbs" container and then filter for only clicks on the "a" elements.</p>
+                <h3>Tip</h3>
+                <p>To get the gallery to work set the CSS property of "pointer-events" to "none" on the thumb images so that the clicks on the thumb images are ignored and the clicks on the "a" are registered instead.</p>
+                <p>I have already added the needed CSS for this demo.</p>
+
+            </article>
+        </main>
+        <footer>
+            <p>&copy; 2019 Michael Whyte</p>
+        </footer>
+    </div>
+<script src="scripts/jquery-3.4.1.min.js"></script>
+<script src="scripts/jquery-events.js"></script>
+</body>
+</html>

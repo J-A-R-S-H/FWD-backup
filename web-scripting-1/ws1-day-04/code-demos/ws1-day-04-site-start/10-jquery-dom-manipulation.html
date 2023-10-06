@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery DOM Manipulation</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div class="wrapper">
+        <header>
+            <h1 class="long-main-heading">jQuery DOM Manipulation</h1>
+        </header>
+        <main>
+            <article>
+                <h1>Manipulating the DOM with JQuery</h1>
+                <p>Changing the DOM dynamically with jQuery is quite simple with many intuitive methods built into the jQuery Library.</p>
+                <h2>A Few jQuery DOM Manipulation Methods</h2>
+                <ul>
+                    <li>Clone - clone()</li>
+                    <li>Remove - remove()</li>
+                    <li>Append - append()</li>
+                    <li>Prepend - prepend()</li>
+                    <li>Wrap - wrap()</li>
+                    <li>Set HTML - html()</li>
+                    <li>Set Text - text()</li>
+                </ul>
+                <h2>html() vs text()</h2>
+                <h3>Output the value of the below elements</h3>
+                <div class="innerhtml-vs-text-content-demo-container">
+                    <div class="input">
+                        <h4>Input</h4>
+                        <div class="input-content input-content-01" id="input-content-01">
+                            <ul>
+                                <li>Foo</li>
+                                <li>Bar</li>
+                                <li>Baz</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="output">
+                        <div class="innerhtml-output-contaner">
+                            <h4>html()</h4>
+                            <div id="innerhtml-output"></div>
+                        </div>
+                        <div class="textcontent-output-contaner">
+                            <h4>text()</h4>
+                            <div id="textcontent-output"></div>
+                        </div>
+                    </div>
+                    <div class="app-controls">
+                        <button id="btn-innerhtml">HTML</button>
+                        <button id="btn-textcontent">Text</button>
+                        <button id="btn-innerhtml-js-text">JS Content - HTML</button>
+                        <button id="btn-text-conent-js-text">JS Content - text</button>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <footer>
+            <p>&copy; 2019 Michael Whyte</p>
+        </footer>
+    </div>
+<script src="scripts/jquery-3.4.1.min.js"></script>
+<script src="scripts/jquery-dom-manipulation.js"></script>
+</body>
+</html>

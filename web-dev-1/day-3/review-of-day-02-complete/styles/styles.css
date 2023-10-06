@@ -1,0 +1,40 @@
+/* 
+
+Changes made...
+ - color on body (darkened)
+ - line-height on body (increased)
+ - font-size on body (increased and change to rems)
+ - font-family on all headings
+ - font-size on headings (lowered and changed to rems)
+ - border on tables (less ridiculous!)
+
+*/
+
+body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: rgb(51, 51, 51);
+	background-color: rgb(255, 184, 184);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Georgia,Times, "Times New Roman", serif;
+}
+
+h1 {
+	font-size: 3rem;
+	margin-bottom: 0;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+table,
+td,
+th {
+	border: 1px solid rgb(0, 0, 0);
+	border-collapse: collapse;
+}

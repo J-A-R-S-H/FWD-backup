@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery - CDN</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>jQuery - CDN</h1>
+        </header>
+        <main>
+            <article>
+                <h1>Including jQuery via a CDN</h1>
+                <p>A CDN is a way of hosting a file in multiple places around the world to improve the download performance of files.</p>
+                <p>jQuery is a popular library and it is hosted in many places. The most common place to get jQuery is from <a href="https://code.jquery.com/">jQuery's own CDN</a>.</p> 
+                <p>Usually you will want to choose the latest minified production version of jQuery.</p>
+                <p>Don't use a CDN if you think you will be developing offline.</p>
+                <h2>jQuery Include Test</h2>
+                <p>Include jQuery via jQuery's CDN.</p>
+                <p>The sad faces will turn to happy faces when jQuery is included.</p>
+                <p class="jq-off">jQuery has not been added to this web Page</p>
+            </article>
+        </main>
+        <footer>
+            <p>&copy; 2019 Michael Whyte</p>
+        </footer>
+    </div>
+<!-- jQuery Library goes first - before any other scripts that reqire jQuery -->
+<script
+  src="http://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="scripts/jquery-status.js"></script>
+</body>
+</html>

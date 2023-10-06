@@ -1,0 +1,19 @@
+main>div {
+    background-color: aliceblue;
+}
+
+main>div>div {
+    background-color: pink;
+}
+
+main>div>div {
+    background-color: aqua;
+}
+
+.group1+div {
+    font-size: 48px;
+}
+
+.group1+div+div {
+    background-color: yellowgreen;
+}

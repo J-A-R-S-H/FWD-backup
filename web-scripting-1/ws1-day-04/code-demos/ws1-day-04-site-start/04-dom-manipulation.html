@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Manipulation</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div class="wrapper">
+        <header>
+            <h1>DOM Manipulation</h1>
+        </header>
+        <main>
+            <article>
+                <h1>Manipulating the DOM with JavaScript</h1>
+                <p>Changing the DOM with newly aquired data or due to events is a common requirement for many scripts.</p>
+                <p>JavaScript provides many methods for cloning, deleting, appending, prepending, inserting before and after elements and changing the text content or HTML of an element.</p>
+                <h2>innerHTML vs TextContent</h2>
+                <p>textContent returns on the "text" of an element and strips out the HTML and innerHTML returns all content including the HTML tags. In some contexts, textContent can be safer as it can prevent XSS attacks</p>
+                <h3>Output the value of the below elements</h3>
+                <div class="innerhtml-vs-text-content-demo-container">
+                    <div class="input">
+                        <h4>Input</h4>
+                        <div class="input-content input-content-01" id="input-content-01">
+                            <ul>
+                                <li>Foo</li>
+                                <li>Bar</li>
+                                <li>Baz</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="output">
+                        <div class="innerhtml-output-contaner">
+                            <h4>innerHTML</h4>
+                            <div id="innerhtml-output"></div>
+                        </div>
+                        <div class="textcontent-output-contaner">
+                            <h4>textContent</h4>
+                            <div id="textcontent-output"></div>
+                        </div>
+                    </div>
+                    <div class="app-controls">
+                        <button id="btn-innerhtml">innerHTML</button>
+                        <button id="btn-textcontent">textContent</button>
+                        <button id="btn-innerhtml-js-text">JS Content - innerHTML</button>
+                        <button id="btn-text-conent-js-text">JS Content - textContent</button>
+                    </div>
+                </div>
+                <h2>Other DOM Manipulation</h2>
+                <ul>
+                    <li>Clone Element - cloneNode()</li>
+                    <li>Remove - remove()</li>
+                    <li>Append - append() or appendChild()</li>
+                    <li>Prepend - prepend()</li>
+                    <li>Insert Before - insertBefore()</li>
+                    <li>Insert Adjacent - insertAdjacentElement()</li>
+                    <li>Replace - replaceWith()</li>
+                </ul>
+            </article>
+        </main>
+        <footer>
+            <p>&copy; 2019 Michael Whyte</p>
+        </footer>
+    </div>
+<script src="scripts/dom-manipulation.js"></script>
+</body>
+</html>

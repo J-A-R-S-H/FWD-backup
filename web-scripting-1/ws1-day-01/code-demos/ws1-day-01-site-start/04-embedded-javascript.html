@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Embedded JavaScript</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Embedded JavaScript</h1>
+        </header>
+        <main>
+            <section>
+                <h1>About Embedded JavaScript Scripts</h1>
+                <p>A JavaScript script has been embedded into this HTML document.</p>
+                <button id="btn-say-hello">Click Me</button>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2019 Michael Whyte</p>
+        </footer>
+    </div>
+<script>
+// Grab the button
+const btn = document.getElementById('btn-say-hello');
+// Attach a click event listener to the button
+btn.addEventListener('click', function(){
+    // This code will run when the button is
+    // clicked on
+    alert('Hello from JavaScript!');
+});
+</script>
+</body>
+</html>

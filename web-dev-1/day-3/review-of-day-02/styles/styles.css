@@ -1,0 +1,59 @@
+/* 
+
+Update the CSS to improve accessibility
+
+Consider the following...
+ - Color contrast
+ - Font sizes
+ - Text alignment
+ - Readability
+*/
+
+body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 200;
+	font-size: 16px;
+	line-height: 1;
+	color: white;
+	background-color: #016FB9;
+	text-align: left;
+}
+
+h1 {
+	font-family: "Arial";
+	font-size: 2rem;
+}
+
+h2 {
+	font-family: Georgia, Times, "Times New Roman", serif;
+	font-size: 1.5rem;
+}
+
+span.important {
+	font-weight: bold;
+}
+
+table,
+td,
+th {
+	border: 5px solid white;
+	border-collapse: collapse;
+}
+
+ul {
+	list-style-type: none;
+	color: white;
+	background: #cce5ff;
+	text-align: center;
+}
+
+ul li {
+	margin: 0px;
+}
+
+li a {
+	text-decoration: none;
+	color: darkblue;
+	font-weight: 700;
+	font-size: 1.35rem;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Live Selectors</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Live Selectors</h1>
+        </header>
+        <main>
+            <article>
+                <h1>Live DOM Selectors</h1>
+                <p>The following selectors are live, which means they are automatically updated if the DOM is updated.</p>
+                <h2>Live JavaScript DOM Selection Methods</h2>
+                <ul>
+                    <li><code>document.getElementsByTagName()</code></li>
+                    <li><code>document.getElementsByClassName()</code></li>
+                </ul>
+                <h2>Using getElementByTagName</h2>
+                <p>Select all the table rows using getElementByTagName and give them a pink background.</p>
+                <table class="demo-table" id="demo-table">
+                    <tr>
+                        <td>Stuff</td>
+                        <td>Stuff</td>
+                    </tr>
+                    <tr>
+                        <td>Stuff</td>
+                        <td>Stuff</td>
+                    </tr>
+                </table>
+                <div class="button-container button-row">
+                    <button class="select-tr" id="select-tr">Select Rows</button>
+                    <button class="add-tr" id="add-tr">Add Row</button>
+                </div>
+                <h2>Using getElementByClassName</h2>
+                <p>Select All the Boxes using getElementByClassName and give them a pink background.</p>
+                <div class="box-row" id="box-row-01">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </div>
+                <div class="button-container button-row">
+                    <button class="select-boxes" id="select-boxes">Select Boxes</button>
+                    <button class="add-box" id="add-box">Add Box</button>
+                </div>
+            </article>
+        </main>
+        <footer>
+            <p>&copy; 2019 Michael Whyte</p>
+        </footer>
+    </div>
+<script src="scripts/live-selectors.js"></script>
+</body>
+</html>
