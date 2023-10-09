@@ -1,0 +1,103 @@
+body {
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: rgb(37, 36, 36);
+    line-height: 1.3rem;
+}
+
+
+header {
+    background-image: url(../media/imgs/Northern-Lights.jpeg);
+    min-height: 60vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 3.3rem;
+    margin-top: 0;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 1.4rem;
+}
+
+li {
+    list-style-type: none;
+    color: white;
+}
+
+nav {
+    background-color: rgba(175, 27, 63, 0.78);
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.cities-grid {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.cities-grid img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    border-radius: 5px;
+}
+
+
+@media (min-width: 56.25em) {
+    .cities-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .cities-grid img:nth-child(3),
+    .cities-grid img:nth-child(4),
+    .cities-grid img:nth-child(5) {
+        grid-column: span 2;
+    }
+
+    .cities-grid img:nth-child(6) {
+        grid-column: span 4;
+    }
+
+    footer {
+        margin-top: 4rem;
+    }
+
+}
+
+
+footer {
+    background-color: rgba(175, 27, 63, 0.68);
+    padding-top: 1rem;
+}
+
+footer p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 0;
+    padding-bottom: 1rem;
+}

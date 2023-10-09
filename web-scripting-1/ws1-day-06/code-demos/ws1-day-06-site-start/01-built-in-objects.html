@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>setTimeout</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div class="wrapper">
+        <header>
+            <h1>Built-In Objects</h1>
+        </header>
+        <main>
+            <article>
+                <h1>Almost Everything is an Object in JavaScript</h1>
+                <p>Almost everything in JavaScript is an object. The only entities that are not considered objects in JavaScript are primitive values. Primitives include strings, numbers, booleans, null and undefined.</p>
+                <h2>Built-In Objects</h2>
+                <p>The JavaScript that runs in the browsers creates a couple of handy built in objects.</p>
+                <ul>
+                    <li>window</li>
+                    <li>document</li>
+                </ul>
+                <p>These objects provide the developer with useful properties about the browser such as window.innerHeigh and window.innerWidth which output the size of the content area of the viewport. The document object provides many useful methods for selecting elements on the page such as the <code>document.getElementById()</code> which selects and returns an HTML element with an id passed into the method call.</p>
+                <h2>Output Some Window Properties</h2>
+                <div class="demo-box">
+                    <p>These window properties will output here on the resize event of the window.</p>
+                    <p><b>innerHeight:</b> <span id="ih-out">&nbsp;</span></p>
+                    <p><b>innerWidth:</b> <span id="iw-out">&nbsp;</span></p>
+                </div>
+                <h2>Document Methods</h2>
+                <p>The <code>document.getElementById()</code> method returns an HTML element which itself is an object created by JavaScript. The returned HTML element has a property called <code>offsetTop</code> that returns the number pixels the elements is from the top of the page or the nearest positioned ancestor.</p>
+                <div class="demo-box" id="demo-box-02">
+                    <p>Output the offsetTop property of the element with an id of "demo-box-02" when the button is clicked.</p>
+                    <p><b>offsetTop of demo-box-02:</b> <span id="ost-db-02">&nbsp;</span></p>
+                    <button id="btn">Click Me</button>
+                </div>
+            </article>
+        </main>
+        <footer>
+            <p>&copy; 2019 Michael Whyte</p>
+        </footer>
+    </div>
+<script src="scripts/built-in-objects.js"></script>
+</body>
+</html>

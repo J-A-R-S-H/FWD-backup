@@ -25,6 +25,10 @@ header {
     background-repeat: no-repeat;
 }
 
+header p {
+    margin-top: 16rem;
+}
+
 ul {
     display: flex;
     justify-content: space-between;
@@ -86,6 +90,8 @@ h1 {
 h2 {
     display: flex;
     justify-content: center;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 p {
