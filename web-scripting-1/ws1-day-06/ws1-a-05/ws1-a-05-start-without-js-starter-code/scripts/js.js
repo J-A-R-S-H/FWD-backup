@@ -40,6 +40,14 @@ submitCatName.addEventListener("submit", (e) => {
     gameBoard.style.display = "block"
 })
 
+const theCat = {
+    hunger: 10,
+    thirst: 10,
+    love: 10,
+}
+
+
+
 
 console.log(catNameInput)
 
