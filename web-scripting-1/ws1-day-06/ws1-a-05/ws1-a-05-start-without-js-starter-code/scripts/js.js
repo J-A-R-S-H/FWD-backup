@@ -5,7 +5,7 @@ const mainCatSlide = document.querySelector(".game-image-output")
 const submitCatName = document.querySelector("form")
 const catNameInput = document.querySelector("#cat-name")
 const gameBoard = document.querySelector(".gameboard-container")
-
+let counter = 0
 
 let selectedCat = '';
 
@@ -40,12 +40,28 @@ submitCatName.addEventListener("submit", (e) => {
     gameBoard.style.display = "block"
 })
 
+
+const btnFoodPlus = document.querySelector("#btn-food-plus")
+const btnFoodMinus = document.querySelector("#btn-food-minus")
+const btnWaterPlus = document.querySelector("#btn-water-plus")
+const btnWaterMinus = document.querySelector("#btn-water-minus")
+const btnPetPlus = document.querySelector("#btn-pet-plus")
+const btnPetMinus = document.querySelector("#btn-pet-minus")
+
+
 const theCat = {
     hunger: 10,
     thirst: 10,
     love: 10,
 }
 
+btnFoodPlus.addEventListener("click", () => {
+    theCat.hunger = 9
+})
+
+
+
+//hunger --
 
 
 
