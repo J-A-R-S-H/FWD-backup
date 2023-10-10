@@ -65,29 +65,3 @@ footer p {
     margin: 0;
     padding-bottom: 1rem;
 }
-
-.sweden-info-history {
-    margin-right: 1rem;
-    margin-left: 1rem;
-}
-
-article {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
-}
-
-@media(min-width: 64em) {
-    article {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    article img {
-        grid-column: span 2;
-    }
-
-    .sweden-info-history {
-        margin-left: 2rem;
-        margin-right: 2rem;
-    }
-}
