@@ -68,7 +68,7 @@ class Cat {
     // methods...
 
     feed(food) {
-        
+
         // The above "food" parameter
         // is optional. Feel free to
         // remove it...
@@ -111,8 +111,8 @@ class Cat {
 // Game Event Handlers
 catImages.forEach(catImage => catImage.addEventListener('click', selectCat));
 
-function selectCat(){
-    
+function selectCat() {
+
     // This function will probably need
     // additional code...
 
@@ -123,7 +123,7 @@ function selectCat(){
 
 catNameForm.addEventListener('submit', startGame);
 
-function startGame(e){
+function startGame(e) {
 
     e.preventDefault();
 
@@ -138,16 +138,16 @@ function startGame(e){
 
 }
 
-btnControls.forEach(function(btn){
+btnControls.forEach(function (btn) {
 
-    btn.addEventListener('click', function(){
+    btn.addEventListener('click', function () {
         // Control buttons event handler code
         // goes here...
     });
 
 });
 
-btnPlayAgain.addEventListener('click', function(){
+btnPlayAgain.addEventListener('click', function () {
     // Play Again button event handler code
     // goes here...
 });

@@ -111,4 +111,4 @@ function handleChangeColor(currentColor) {
 
 
 
-// console.log(checkboxColor)
+console.log(checkboxColor)
