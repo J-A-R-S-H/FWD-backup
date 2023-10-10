@@ -15,9 +15,10 @@ header {
     background-repeat: no-repeat;
 }
 
-p {
+header p {
     display: flex;
     justify-content: center;
+    margin-top: 16rem;
 }
 
 h1 {
@@ -50,6 +51,7 @@ a {
 }
 
 .cities-grid {
+    margin-top: 1.5rem;
     margin-left: 1rem;
     margin-right: 1rem;
 }
