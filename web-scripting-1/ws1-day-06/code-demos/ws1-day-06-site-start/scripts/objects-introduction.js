@@ -11,13 +11,40 @@ const bnt02 = document.getElementById('btn-02');
 
 
 
+const deck = {
+
+    image: "images/playing-card-back.png",
+    type: "French",
+    cards: ["Ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King"],
+}
+
+
+shuffle: function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
+
+
+
+
+
+
+
+
+
 // Event Listeners for outputting the playing cards object data
-btn01.addEventListener('click', function(){
+btn01.addEventListener('click', function () {
 
 });
 
-bnt02.addEventListener('click', function(){
-    
+bnt02.addEventListener('click', function () {
+
 });
 
 

@@ -9,13 +9,8 @@ const grimReaperAppearance = document.querySelector(".grim-reaper-image-output")
 const allButtons = document.querySelectorAll("button")
 let counter = 0
 
-
 let selectedCat = '';
 
-// catElement.forEach((el) => {
-//     const imgEl = document.querySelector("img")
-
-// });
 
 catElement.addEventListener("click", (e) => {
 
@@ -27,7 +22,6 @@ catElement.addEventListener("click", (e) => {
     getCatImage(selectedCat)
 })
 
-// submitCatNameBtn.addEventListener("click")
 
 
 function getCatImage(src) {
@@ -67,8 +61,6 @@ const theCat = {
     thirst: 10,
     love: 10,
 }
-
-
 
 
 btnFoodPlus.addEventListener("click", () => {
