@@ -6,7 +6,6 @@ const addtoCartBtn = document.querySelector("#btn-add-to-cart")
 const changeTextColor = document.querySelector("#selected-color-out")
 
 
-
 function changeMainShirtColors(currentColor) {
     allTshirts.forEach((el) => {
         const anchorEl = el.querySelector("a");
