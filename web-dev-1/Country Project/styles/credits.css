@@ -24,7 +24,7 @@ header {
     background-image: url(../media/imgs/hourglass.jpeg);
     min-height: 60vh;
     background-size: cover;
-    background-position: center center;
+    background-position: center right;
     background-repeat: no-repeat;
 }
 
@@ -64,4 +64,36 @@ footer p {
     color: white;
     margin: 0;
     padding-bottom: 1rem;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+}
+
+td,
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 10px 20px;
+}
+
+th {
+    background-color: rgba(175, 27, 63, 0.68);
+}
+
+td {
+    text-align: center;
+}
+
+@media (min-width:32em) {
+    section {
+        margin: 2rem;
+    }
 }
