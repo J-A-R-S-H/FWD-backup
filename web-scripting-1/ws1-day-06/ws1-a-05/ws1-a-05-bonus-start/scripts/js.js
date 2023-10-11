@@ -117,16 +117,29 @@ btnFoodPlus.addEventListener("click", () => {
 
 
 btnWaterPlus.addEventListener("click", () => {
-    theCat.thirst += 1
+    if (theCat.thirst <= 9) {
+        theCat.thirst += 1
+    }
+
+
+    if (theCat.thirst === 10) {
+        messageThirst.textContent = "I'm full!"
+    }
+    else if (theCat.thirst <= 9) {
+        messageThirst.textContent = "Ah refreshing! Thanks you!"
+    }
     statThirst.textContent = theCat.thirst
-    UpdateDisplayThirst()
+
 })
 
 
 btnPetPlus.addEventListener("click", () => {
     theCat.love += 1
-    statLove.textContent = theCat.love
-    UpdateDisplayLove()
+
+
+    messageLove.textContent = "I love you!!! Prrrr!"
+    statThirst.textContent = theCat.love
+
 })
 
 

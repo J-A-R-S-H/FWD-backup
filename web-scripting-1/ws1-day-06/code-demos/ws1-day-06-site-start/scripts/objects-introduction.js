@@ -16,22 +16,32 @@ const deck = {
     image: "images/playing-card-back.png",
     type: "French",
     cards: ["Ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King"],
-}
 
 
-shuffle: function shuffle(a) {
-    var j, x, i;
-    for (i = a.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        x = a[i];
-        a[i] = a[j];
-        a[j] = x;
+
+    shuffle: function shuffle(a) {
+        var j, x, i;
+        for (i = a.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = a[i];
+            a[i] = a[j];
+            a[j] = x;
+        }
+        return a;
+    },
+
+    dealCard: function () {
+        const theCard = this.cards.shift();
+        if (theCard === undefined) {
+            return "No more Cards"
+        } else {
+            return theCard
+        }
+
+        return theCard === undefined ? "No more Cards" : theCard;
     }
-    return a;
+
 }
-
-
-
 
 
 

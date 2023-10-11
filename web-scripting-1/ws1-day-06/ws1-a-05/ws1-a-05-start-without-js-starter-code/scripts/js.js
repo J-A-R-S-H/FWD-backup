@@ -55,13 +55,13 @@ const statHunger = document.querySelector("#hunger-out")
 const statThirst = document.querySelector("#thirst-out")
 const statLove = document.querySelector("#love-out")
 
-
-const theCat = {
-    hunger: 10,
-    thirst: 10,
-    love: 10,
+class Cat {
+    constructor() {
+        hunger: 10;
+        thirst: 10;
+        love: 10
+    }
 }
-
 
 btnFoodPlus.addEventListener("click", () => {
     theCat.hunger += 1
