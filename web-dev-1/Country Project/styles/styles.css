@@ -1,9 +1,9 @@
 body {
     font-size: 1rem;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: rgb(37, 36, 36);
+    line-height: 1.3rem;
 }
 
 video {
@@ -37,9 +37,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 12rem;
     background-color: rgba(175, 27, 63, 0.68);
-
 }
 
 
@@ -52,8 +50,10 @@ nav {
 
 
 h1 {
-    font-size: 2rem;
+    font-size: 3.3rem;
     color: white;
+    display: flex;
+    justify-content: center;
 }
 
 a {
@@ -61,7 +61,7 @@ a {
     color: white;
 }
 
-footer {
+.footer-home {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -69,13 +69,225 @@ footer {
     background-color: rgba(175, 27, 63, 0.68);
 }
 
+
+footer {
+    background-color: rgba(175, 27, 63, 0.68);
+    padding-top: 1rem;
+}
+
+
 footer p {
     display: flex;
     justify-content: center;
+    align-items: center;
     color: white;
+    margin: 0;
+    padding-bottom: 1rem;
 }
 
+
+header {
+    min-height: 60vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+
+/* History Page */
+
+
+header p {
+    margin-top: 16rem;
+    display: flex;
+    justify-content: center;
+}
+
+.header-history {
+    background-image: url(../media/imgs/Sweden-early-middle-ages.jpeg);
+}
+
+.header-home {
+    min-height: 37vh;
+}
+
+
+.header-cities {
+    background-image: url(../media/imgs/Northern-Lights.jpeg);
+}
+
+.header-food {
+    background-image: url(../media/imgs/AdobeStock_516915346.jpeg);
+}
+
+
+
+.sweden-info-history {
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.article-history {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+@media(min-width: 64em) {
+    .article-history {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .article-history img {
+        grid-column: span 2;
+    }
+
+    .sweden-info-history {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}
+
+
+
+
+
+
+/* Cities Page */
+.cities-grid {
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.cities-grid img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    border-radius: 5px;
+}
+
+
+@media (min-width: 56.25em) {
+    .cities-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .cities-grid img:nth-child(3),
+    .cities-grid img:nth-child(4),
+    .cities-grid img:nth-child(5) {
+        grid-column: span 2;
+    }
+
+    .cities-grid img:nth-child(6) {
+        grid-column: span 4;
+    }
+
+    footer {
+        margin-top: 4rem;
+    }
+
+}
+
+
 .display-food-items {
-    display: grid;
-    flex-direction: column;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+}
+
+
+
+.article-food {
+    background-color: rgb(50, 50, 51);
+    padding-top: 0.7rem;
+    padding-bottom: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width:64em) {
+
+    .display-food-items {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+
+    .article-food img {
+        width: 50%;
+    }
+
+
+    .food-text-content {
+        width: 50%;
+    }
+
+
+    .article-food {
+        display: flex;
+        padding: 0;
+    }
+
+
+    .article-food:nth-of-type(2) {
+        flex-direction: row-reverse;
+    }
+}
+
+header p {
+    margin-top: 16rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+h2 {
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+article p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+/* Credits Page */
+
+.section-references {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+}
+
+td,
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 10px 20px;
+}
+
+th {
+    background-color: rgba(175, 27, 63, 0.68);
+}
+
+td {
+    text-align: center;
+}
+
+@media (min-width:32em) {
+    section {
+        margin: 2rem;
+    }
 }

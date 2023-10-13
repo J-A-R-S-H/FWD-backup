@@ -1,0 +1,160 @@
+/* Typography
+--------------------------------------------- */
+body {
+	font-family: sans-serif;
+	font-size: 1.125rem;
+	font-weight: 400;
+	line-height: 1.6;
+	color: #4a4a4a;
+	background-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: serif;
+	margin: .5em 0;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+p {
+	margin: 1.5em 0;
+}
+
+
+/* Elements
+--------------------------------------------- */
+main {
+	max-width: 120rem;
+	margin: 0 auto;
+}
+
+figure {
+	margin: 1rem auto;
+	width: 50%;
+	max-width: 40rem;
+}
+
+figcaption {
+	text-align: center;
+	font-size: .75rem;
+	font-style: italic;
+}
+
+ul {
+	padding: 0 0 0 2rem;
+	margin: 0 0 0 1.5rem;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 2rem auto;
+	background-color: #eee;
+}
+
+caption {
+	font-size: 1.25rem;
+}
+
+td,
+th {
+	border: 1px solid #888;
+	padding: .5rem;
+}
+
+/* Links
+--------------------------------------------- */
+a,
+a:visited { 
+	color: #000000;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #00000050;
+}
+
+a:focus {
+	outline: 1px dotted;
+}
+
+/* Components
+--------------------------------------------- */
+section {
+	margin: 0 0 5rem;
+}
+
+section header {
+	position: relative;
+}
+
+section header h2 {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	transform: translateY(-50%);
+	margin: 0;
+	padding: 1rem;
+	font-size: 3rem;
+	color: #ffffff;
+	text-align: center;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+section header h2 span {
+	display: block;
+	font-size: 2rem;
+}
+
+section header img {
+	display: block;
+	width: 100%;
+	height: 37.5rem;
+	object-fit: cover;
+}
+
+section > :not(header) {
+	padding: 0 1rem;
+}
+
+.button-links {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.button-links li {
+	border: 1px solid #888888;
+	margin: 1rem;
+	background-color: #eeeeee;
+}
+
+.button-links a {
+	display: block;
+	padding: 2rem;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+}
+

@@ -1,0 +1,48 @@
+/* 
+CSS Inheritance
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#inheritance
+
+Task #1: Make the font color of every <caption>, <td>, and <th> element red by targetting only one element.
+*/
+
+table {
+    color: red;
+}
+
+/* 
+CSS Cascade
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#the_cascade
+
+Task #2: Increase the font size of all <figcaption> elements.
+*/
+
+figcaption {
+    font-size: 1rem;
+}
+
+/* 
+CSS Specificity
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#specificity
+
+Task #3: Decrease the height of the header image only in the "Beaches" section.
+*/
+
+.section-beaches header img {
+    height: 30rem;
+}
+
+
+/*
+CSS Specificity continued...
+
+Task #4: Make the Gallery in the Beaches section two images by two images and full width.
+*/
+
+figure.gallery {
+    max-width: 100%;
+    width: 100%;
+}
+
+figure.gallery img {
+    width: 50%;
+}

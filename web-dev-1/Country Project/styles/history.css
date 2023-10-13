@@ -20,7 +20,7 @@ a {
     color: white;
 }
 
-header {
+.header-history {
     background-image: url(../media/imgs/Sweden-early-middle-ages.jpeg);
     min-height: 60vh;
     background-size: cover;
@@ -29,7 +29,7 @@ header {
 }
 
 
-header p {
+.header-history p {
     margin-top: 16rem;
     display: flex;
     justify-content: center;
