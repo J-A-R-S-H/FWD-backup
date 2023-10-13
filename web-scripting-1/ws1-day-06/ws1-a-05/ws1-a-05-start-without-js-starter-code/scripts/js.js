@@ -5,7 +5,7 @@ const mainCatSlide = document.querySelector(".game-image-output img")
 const submitCatName = document.querySelector("form")
 const catNameInput = document.querySelector("#cat-name")
 const gameBoard = document.querySelector(".gameboard-container")
-const grimReaperAppearance = document.querySelector(".grim-reaper-image-output")
+const ReaperAppearance = document.querySelector(".grim-reaper-image-output")
 const allButtons = document.querySelectorAll("button")
 let counter = 0
 
@@ -57,11 +57,14 @@ const statLove = document.querySelector("#love-out")
 
 class Cat {
     constructor() {
-        hunger: 10;
-        thirst: 10;
-        love: 10
+        this.hunger = 10;
+        this.thirst = 10;
+        this.love = 10;
     }
 }
+
+const theCat = new Cat(); s
+
 
 btnFoodPlus.addEventListener("click", () => {
     theCat.hunger += 1

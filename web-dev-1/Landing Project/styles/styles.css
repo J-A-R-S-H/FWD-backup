@@ -39,8 +39,11 @@ body {
 	}
 }
 
+h1 {
+	font-size: max(3.2vw, 1.4rem);
+}
+
 h2 {
-	/* I have never used the max method in CSS for font size, pretty cool what it does. I think Jonathon mentioned the clamp method in CSS its pretty cool too, I have yet to use it for my projects */
 	font-size: max(3vw, 1.2rem);
 }
 
@@ -52,7 +55,7 @@ h3 {
 
 p {
 	margin-bottom: 1rem;
-	color: #94a3b8;
+	color: #94A3FF;
 	margin-top: 0.5rem;
 }
 
