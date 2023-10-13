@@ -121,6 +121,11 @@ header p {
     background-image: url(../media/imgs/AdobeStock_516915346.jpeg);
 }
 
+.header-credits {
+    background-image: url(../media/imgs/hourglass.jpeg);
+    background-position: center right;
+}
+
 
 
 .sweden-info-history {
@@ -287,7 +292,7 @@ td {
 }
 
 @media (min-width:32em) {
-    section {
+    .section-references {
         margin: 2rem;
     }
 }
