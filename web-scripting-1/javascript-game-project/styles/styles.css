@@ -1,0 +1,27 @@
+/* styles.css */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    width: 300px;
+    /* Adjust as needed */
+    height: 300px;
+    /* Adjust as needed */
+    border: 1px solid #000;
+}
+
+.cell {
+    border: 1px solid #000;
+    background-color: #BBCCDD;
+    /* Change to desired background color */
+}
+
+.cell.ship {
+    background-color: #333;
+    /* Color for cells with ships */
+}
+
+.cell.miss {
+    background-color: #FF0000;
+    /* Color for missed attack cells */
+}
