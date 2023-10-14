@@ -1,20 +1,68 @@
+/* Credits Page */
+
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic (CALLED IN ANOTHER FILE)
+	- Normalize
+	- Box sizing
+	- Media width
+# Base
+	- Typography
+	- Elements
+	- Links
+# Layouts
+# Components
+	- Header
+	- Main
+	- Footer
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
 body {
     font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     background-color: rgb(37, 36, 36);
-    line-height: 1.3rem;
+    line-height: 1.4rem;
 }
 
-video {
-    object-fit: cover;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -100;
+
+h1 {
+    font-size: 3.3rem;
+    color: white;
+    display: flex;
+    justify-content: center;
 }
+
+h1 span {
+    margin-top: 16rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+h2 {
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
+
+
+/* Elements
+--------------------------------------------- */
+
+
 
 ul {
     display: flex;
@@ -28,63 +76,57 @@ li {
     color: white;
 }
 
-nav {
-    background-color: rgba(175, 27, 63, 0.78);
+
+
+
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-size: 0.8rem;
 }
 
+td,
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 10px 20px;
+}
 
-.center-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+th {
     background-color: rgba(175, 27, 63, 0.68);
 }
 
-
-
-.center-text p {
-    max-width: 50%;
-    color: white;
+td {
+    text-align: center;
 }
 
 
-
-h1 {
-    font-size: 3.3rem;
-    color: white;
-    display: flex;
-    justify-content: center;
-}
+/* Links
+--------------------------------------------- */
 
 a {
     text-decoration: none;
     color: white;
 }
 
-.footer-home {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(175, 27, 63, 0.68);
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/* Header
+--------------------------------------------- */
+
+nav {
+    background-color: rgba(175, 27, 63, 0.78);
 }
-
-
-footer {
-    background-color: rgba(175, 27, 63, 0.68);
-    padding-top: 1rem;
-}
-
-
-footer p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    margin: 0;
-    padding-bottom: 1rem;
-}
-
 
 header {
     min-height: 60vh;
@@ -93,15 +135,26 @@ header {
     background-repeat: no-repeat;
 }
 
+video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
 
-
-/* History Page */
-
-
-header p {
-    margin-top: 16rem;
+.center-text {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(175, 27, 63, 0.68);
+}
+
+.center-text p {
+    max-width: 50%;
+    color: white;
 }
 
 .header-history {
@@ -127,6 +180,14 @@ header p {
 }
 
 
+
+/* Main
+--------------------------------------------- */
+
+article p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
 
 .sweden-info-history {
     margin-right: 1rem;
@@ -159,7 +220,8 @@ header p {
 
 
 
-/* Cities Page */
+
+
 .cities-grid {
     margin-top: 1.5rem;
     margin-left: 1rem;
@@ -198,6 +260,9 @@ header p {
     }
 
 }
+
+
+
 
 
 .display-food-items {
@@ -244,55 +309,43 @@ header p {
     }
 }
 
-header p {
-    margin-top: 16rem;
-    display: flex;
-    justify-content: center;
-}
-
-
-h2 {
-    display: flex;
-    justify-content: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
-article p {
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
-/* Credits Page */
-
 .section-references {
     display: flex;
     justify-content: center;
-}
-
-table {
-    border-collapse: collapse;
-    border: 2px solid rgb(200, 200, 200);
-    letter-spacing: 1px;
-    font-size: 0.8rem;
-}
-
-td,
-th {
-    border: 1px solid rgb(190, 190, 190);
-    padding: 10px 20px;
-}
-
-th {
-    background-color: rgba(175, 27, 63, 0.68);
-}
-
-td {
-    text-align: center;
 }
 
 @media (min-width:32em) {
     .section-references {
         margin: 2rem;
     }
+}
+
+
+
+/* Footer
+--------------------------------------------- */
+
+footer {
+    background-color: rgba(175, 27, 63, 0.68);
+    padding-top: 1rem;
+}
+
+
+footer p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 0;
+    padding-bottom: 1rem;
+}
+
+
+
+.footer-home {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(175, 27, 63, 0.68);
 }

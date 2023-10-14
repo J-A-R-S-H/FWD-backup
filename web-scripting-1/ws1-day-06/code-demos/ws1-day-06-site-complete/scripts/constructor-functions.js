@@ -14,17 +14,17 @@ const bnt02 = document.getElementById('btn-02');
 const deck = {
 
     // Deck Properties
-	image: 'images/playing-card-back.png',
-	
-	type: 'French',
-	
+    image: 'images/playing-card-back.png',
+
+    type: 'French',
+
     cards: ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'],
-    
+
     // Deck Methods
 
     // Based on this stackoverflow Q & A:
     // https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
-    shuffle: function(){
+    shuffle: function () {
         let j, x, i;
         for (i = this.cards.length - 1; i > 0; i--) {
             j = Math.floor(Math.random() * (i + 1));
@@ -35,32 +35,32 @@ const deck = {
         return this.cards;
     },
 
-    dealCard: function(){
+    dealCard: function () {
         const card = this.cards.shift();
         return card === undefined ? 'No more cards' : card;
     }
-	
+
 }
 
 deck.shuffle();
 
 // Create a master Player object
-function Player(num, name){
+function Player(num, name) {
     this.number = num;
     this.name = name;
-    this.hand = [];	
+    this.hand = [];
 }
 
 // Add a method to the constructors prototype
-Player.prototype.getCard = function(){
+Player.prototype.getCard = function () {
     const card = deck.dealCard();
-    if(card === 'No more cards'){
+    if (card === 'No more cards') {
         return this.hand;
-    }else {
-        this.hand.push(card);	
+    } else {
+        this.hand.push(card);
         return this.hand;
-    }	
-}		
+    }
+}
 
 // Create instances of the Player object
 const player01 = new Player(1, 'James');
@@ -68,13 +68,13 @@ const player01 = new Player(1, 'James');
 const player02 = new Player(2, 'Katherine');
 
 // Event Listeners for outputting the playing cards object data
-btn01.addEventListener('click', function(){
+btn01.addEventListener('click', function () {
     p01Number.innerHTML = player01.number;
     p01Name.innerHTML = player01.name;
     p01Hand.innerHTML = player01.getCard();
 });
 
-bnt02.addEventListener('click', function(){
+bnt02.addEventListener('click', function () {
     p02Number.innerHTML = player02.number;
     p02Name.innerHTML = player02.name;
     p02Hand.innerHTML = player02.getCard();

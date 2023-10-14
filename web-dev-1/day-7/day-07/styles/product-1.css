@@ -66,7 +66,7 @@ ol {
 /* Links
 --------------------------------------------- */
 a,
-a:visited { 
+a:visited {
 	color: #f62424;
 }
 
@@ -114,7 +114,10 @@ a.site-name {
 }
 
 .site-navigation {
-	
+	position: fixed;
+	right: 0rem;
+	bottom: 0;
+	width: 100%;
 }
 
 .site-navigation ul {
@@ -139,17 +142,20 @@ a.site-name {
 @media (min-width: 50em) {
 
 	.site-header {
-		
+		position: sticky;
+		top: 0;
+		z-index: 100;
 	}
 
 	.site-navigation {
 		padding: 0 1rem;
 		flex: 1 1 auto;
-
+		position: static;
 	}
 
 	.site-navigation ul {
-		
+		display: flex;
+		justify-content: flex-end;
 	}
 
 	.site-navigation a {
@@ -157,6 +163,7 @@ a.site-name {
 		line-height: 4.5rem;
 		padding: 0 1rem;
 	}
+
 
 }
 
@@ -177,15 +184,24 @@ a.site-name {
 @media (min-width: 50em) {
 
 	.site-main {
-		
+		display: flex;
+		flex-direction: row-reverse;
+
 	}
 
 	.col-right {
-
+		position: sticky;
+		top: 6.8rem;
+		margin: 0;
+		padding: 0;
+		right: 0;
+		z-index: 100;
+		width: 20%;
+		align-self: flex-start;
 	}
-	
-	.col-left {
 
+	.col-left {
+		width: 80%;
 	}
 
 }
@@ -224,7 +240,19 @@ a.cart-link {
 @media (min-width: 31.25em) {
 
 	.float-left {
-		
+		float: left;
+	}
+
+	.float-left::after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+
+	h2 {
+		content: "";
+		clear: both;
+		display: block;
 	}
 
 }
@@ -234,23 +262,30 @@ a.cart-link {
 	.collage {
 		width: 100%;
 		height: 38rem;
-		
+		position: relative;
 	}
 
 	.lemon-photo-1 {
-		
+		position: relative;
 	}
 
 	.lemon-photo-2 {
-		
+		position: relative;
+		top: -20rem;
+		right: -5rem;
 	}
 
 	.lemon-photo-3 {
-		
+		position: relative;
+		top: -40rem;
+		right: -10rem;
+		z-index: -100;
 	}
 
 	.lemon-photo-4 {
-		
+		position: relative;
+		top: -68rem;
+		right: -18rem;
 	}
 
 }

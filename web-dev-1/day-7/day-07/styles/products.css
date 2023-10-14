@@ -57,7 +57,7 @@ aside {
 /* Links
 --------------------------------------------- */
 a,
-a:visited { 
+a:visited {
 	color: #008000;
 	text-decoration: none;
 }
@@ -105,7 +105,8 @@ a.site-name {
 	text-align: center;
 	display: none;
 	position: absolute;
-	top: 4.5rem;  /* Matches the height of the .site-header */
+	top: 4.5rem;
+	/* Matches the height of the .site-header */
 	left: 0;
 	right: 0;
 	z-index: 2;
@@ -157,7 +158,8 @@ a.site-name {
 	}
 
 	.site-navigation a {
-		line-height: 4.5rem; /* Matches the height of the .site-header */
+		line-height: 4.5rem;
+		/* Matches the height of the .site-header */
 		padding: 0 1rem;
 	}
 
@@ -196,7 +198,7 @@ a.site-name {
 	.page-header h1 {
 		font-size: 5rem;
 	}
-	
+
 }
 
 /* Section: About */
