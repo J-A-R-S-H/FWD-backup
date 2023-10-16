@@ -1,0 +1,272 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic (CALLED IN NORMALIZE.CSS)
+	- Normalize
+	- Box sizing
+	- Media width
+# Base
+	- Typography
+	- Elements
+	- Links
+# Layout
+# Components
+	- Header
+	- Main
+	- Footer
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
+body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #282828;
+	background-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Georgia, Times, "Times New Roman", serif;
+	margin: .5em 0;
+}
+
+h1 {
+	font-size: 2.5rem;
+	margin: 0 0 .5em;
+}
+
+h2 {
+	font-size: 1.75rem;
+}
+
+p {
+	margin: 0 0 1.5em;
+}
+
+
+/* Elements
+--------------------------------------------- */
+ul,
+ol {
+	margin: 1em 0;
+	padding: 0 0 0 2.5em;
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Links
+--------------------------------------------- */
+a,
+a:visited { 
+	color: #f62424;
+}
+
+a:hover,
+a:focus {
+	color: #f62424;
+}
+
+a:focus {
+	outline: 1px dotted #f62424;
+}
+
+a:active {
+	color: #ffffff;
+	background-color: #f62424;
+}
+
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@media screen and (min-width: 68em) {
+
+	.site-wrapper {
+		
+	}
+
+	.site-header {
+		
+	}
+
+	.site-main {
+		
+	}
+
+	.site-sidebar {
+		
+	}
+
+	.site-footer {
+		
+	}
+
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/* Header
+--------------------------------------------- */
+.site-header {
+	background-color: #fffacd;
+}
+
+a.site-name {
+	font-family: Georgia, Times, "Times New Roman", serif;
+	font-size: 1.75rem;
+	color: #282828;
+	text-decoration: none;
+	display: inline-block;
+	padding: 1rem;
+}
+
+.site-navigation {
+	position: relative;
+}
+
+.site-navigation ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	background-color: #fffacd;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+
+.site-navigation.toggled ul {
+	display: block;
+}
+
+.site-navigation a {
+	display: block;
+	padding: 1rem;
+	font-family: Georgia, Times, "Times New Roman", serif;
+	font-size: 1.25rem;
+	text-decoration: none;
+	color: #282828;
+}
+
+.menu-toggle {
+	display: block;
+	background-color: transparent;
+	border: 0;
+	padding: 1rem;
+	position: absolute;
+	top: -4.5rem;
+	right: 1rem;
+	z-index: 2;
+}
+
+.menu-toggle:focus {
+	border: 0;
+	outline: 1px dotted;
+}
+
+@media screen and (min-width: 68em) {
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.site-header {
+		
+	}
+
+	.site-name {
+		
+	}
+
+	.site-navigation {
+		padding-right: 1rem;
+	}
+
+	.site-navigation ul,
+	.site-navigation.toggled ul {
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+	}
+
+	.site-navigation a {
+		line-height: 4.5rem;
+		padding: 0 1rem;
+	}
+
+}
+
+
+/* Main
+--------------------------------------------- */
+.site-main {
+	padding: 0 5rem;
+}
+
+@media (min-width: 68em) {
+
+	.photo-gallery {
+
+	}
+
+	.photo-gallery img {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.large-image {
+
+	}
+
+	.large-image img {
+
+	}
+
+	.info-box {
+		background-color: #444444;
+		color: #ffffff;
+		padding: 1rem 2rem;
+	}
+
+}
+
+
+/* Footer
+--------------------------------------------- */
+.site-footer {
+	border-top: 1px solid #888888;
+	text-align: center;
+	padding: 2rem;
+	margin-bottom: 3.5rem;
+}
+
+.site-footer p {
+	margin: 0;
+}
+
+@media (min-width: 68em) {
+	.site-footer {
+		margin-bottom: 0;
+	}
+}
