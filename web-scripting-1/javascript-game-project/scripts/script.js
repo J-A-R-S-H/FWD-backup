@@ -131,24 +131,28 @@ class Player {
 }
 
 function renderGameboard(board, boardid) {
-    const container = document.querySelector("#player1-board");
-    container.innerHTML = ''; // Clear the container.
+    const container = document.querySelectorAll(".grid");
 
-    for (let y = 0; y < 10; y++) {
-        for (let x = 0; x < 10; x++) {
-            const cell = document.createElement('div');
-            cell.classList.add('cell');
+    for (let i = 0; i < container.length; i++) {
+        const el = container[i];
+        el.innerHTML = ''; // Clear the container.
 
-            // if (board.board[y][x] instanceof Ship) {
+        for (let y = 0; y < 10; y++) {
+            for (let x = 0; x < 10; x++) {
+                const cell = document.createElement('div');
+                cell.classList.add('cell');
+                cell.dataset.x = x;
+                cell.dataset.y = y;
+                cell.addEventListener('click', () => handleCellClick(x, y, board));
+                el.appendChild(cell);
 
-            //     cell.classList.add('ship');
-            // } else if (board.missedAttacks.some(coords => coords.x === x && coords.y === y)) {
-            //     cell.classList.add('miss');
-            // }
-            cell.dataset.x = x;
-            cell.dataset.y = y;
-            cell.addEventListener('click', () => handleCellClick(x, y, board));
-            container.appendChild(cell);
+                // if (board.board[y][x] instanceof Ship) {
+
+                //     cell.classList.add('ship');
+                // } else if (board.missedAttacks.some(coords => coords.x === x && coords.y === y)) {
+                //     cell.classList.add('miss');
+                // }
+            }
         }
     }
 }
@@ -220,8 +224,8 @@ function handleAttack(x, y) {
 
 // Function to initialize the game.
 function initializeGame() {
-    renderGameboard(player1Board, 'player1-board');
-    renderGameboard(computerBoard, 'computer-board');
+    renderGameboard(player1Board, "player1-board");
+    renderGameboard(computerBoard, "computer-board");
 }
 
 const startGameBtn = document.querySelector("#start-game")

@@ -63,7 +63,7 @@ class Cat {
     }
 }
 
-const theCat = new Cat(); s
+const theCat = new Cat();
 
 
 btnFoodPlus.addEventListener("click", () => {
