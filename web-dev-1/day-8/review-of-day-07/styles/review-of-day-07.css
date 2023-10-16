@@ -61,7 +61,7 @@ aside {
 /* Links
 --------------------------------------------- */
 a,
-a:visited { 
+a:visited {
 	color: #0000ff;
 	text-decoration: none;
 }
@@ -94,6 +94,11 @@ a:focus {
 	justify-content: space-between;
 	background-color: #00000050;
 	/* TASK: Attach me to the top of the viewport */
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 100;
 
 }
 
@@ -112,7 +117,8 @@ a.site-name {
 	text-align: center;
 	display: none;
 	position: absolute;
-	top: 4.5rem;  /* Matches the height of the .site-header */
+	top: 4.5rem;
+	/* Matches the height of the .site-header */
 	left: 0;
 	right: 0;
 	z-index: 2;
@@ -165,7 +171,8 @@ a.site-name {
 	}
 
 	.site-navigation a {
-		line-height: 4.5rem; /* Matches the height of the .site-header */
+		line-height: 4.5rem;
+		/* Matches the height of the .site-header */
 		padding: 0 1rem;
 		color: #fff;
 	}
@@ -197,7 +204,10 @@ a.site-name {
 
 .page-header div {
 	/* TASK: Position me over the sky in the image */
-
+	position: absolute;
+	top: 9rem;
+	left: 0;
+	right: 0;
 }
 
 .page-header img {
@@ -213,7 +223,11 @@ a.site-name {
 	margin: 0 auto;
 	text-align: center;
 	/* TASK: Position me over the rocks in the bottom of the image */
-
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
 }
 
 .page-header .arrow svg {
@@ -240,16 +254,14 @@ Switch this section to use Flexbox instead.
 
 	/* START OLD SCHOOL LAYOUT */
 	.section article {
-		width: 30%;
-		float: left;
-		margin: 0 1.6%; 
+		display: flex;
+		justify-content: space-between;
 	}
 
 	.section::after {
-		content: '';
-		display: block;
-		clear: both;
+		flex: 0 0 30%;
 	}
+
 	/* END OLD SCHOOL LAYOUT */
 
 }

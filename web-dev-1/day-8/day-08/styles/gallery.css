@@ -72,7 +72,7 @@ figure {
 /* Links
 --------------------------------------------- */
 a,
-a:visited { 
+a:visited {
 	color: #f62424;
 }
 
@@ -97,23 +97,28 @@ a:active {
 @media screen and (min-width: 68em) {
 
 	.site-wrapper {
-		
+		display: grid;
+		grid-template-columns: 1fr minmax(auto, 53rem) minxmax(auto, 22rem) 1fr;
+		grid-template-areas:
+			"header header header header"
+			". main sidebar ."
+			"footer footer footer footer";
 	}
 
 	.site-header {
-		
+		grid-area: header;
 	}
 
 	.site-main {
-		
+		grid-area: main;
 	}
 
 	.site-sidebar {
-		
+		grid-area: siderbar;
 	}
 
 	.site-footer {
-		
+		grid-area: footer;
 	}
 
 }
@@ -190,13 +195,9 @@ a.site-name {
 		display: none;
 	}
 
-	.site-header {
-		
-	}
+	.site-header {}
 
-	.site-name {
-		
-	}
+	.site-name {}
 
 	.site-navigation {
 		padding-right: 1rem;
@@ -226,7 +227,8 @@ a.site-name {
 @media (min-width: 68em) {
 
 	.photo-gallery {
-
+		display: grid;
+		grid-template-columns: 18.75rem 18.75rem 18.75rem;
 	}
 
 	.photo-gallery img {
@@ -235,13 +237,9 @@ a.site-name {
 		height: 100%;
 	}
 
-	.large-image {
+	.large-image {}
 
-	}
-
-	.large-image img {
-
-	}
+	.large-image img {}
 
 	.info-box {
 		background-color: #444444;
