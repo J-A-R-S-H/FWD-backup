@@ -130,19 +130,21 @@ class Player {
     }
 }
 
-function renderGameboard(board, containerId) {
-    const container = document.getElementById(containerId);
+function renderGameboard(board, boardid) {
+    const container = document.querySelector("#player1-board");
     container.innerHTML = ''; // Clear the container.
 
     for (let y = 0; y < 10; y++) {
         for (let x = 0; x < 10; x++) {
             const cell = document.createElement('div');
             cell.classList.add('cell');
-            if (board.board[y][x] instanceof Ship) {
-                cell.classList.add('ship'); // Style the cell as a ship.
-            } else if (board.missedAttacks.some(coords => coords.x === x && coords.y === y)) {
-                cell.classList.add('miss'); // Style the cell as a missed attack.
-            }
+
+            // if (board.board[y][x] instanceof Ship) {
+
+            //     cell.classList.add('ship');
+            // } else if (board.missedAttacks.some(coords => coords.x === x && coords.y === y)) {
+            //     cell.classList.add('miss');
+            // }
             cell.dataset.x = x;
             cell.dataset.y = y;
             cell.addEventListener('click', () => handleCellClick(x, y, board));
@@ -224,6 +226,8 @@ function initializeGame() {
 
 const startGameBtn = document.querySelector("#start-game")
 
+
 startGameBtn.addEventListener("click", () => {
-    initializeGame
+    initializeGame()
 })
+
