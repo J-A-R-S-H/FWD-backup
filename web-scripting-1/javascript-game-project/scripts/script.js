@@ -233,5 +233,6 @@ const startGameBtn = document.querySelector("#start-game")
 
 startGameBtn.addEventListener("click", () => {
     initializeGame()
+    placeShip()
 })
 
