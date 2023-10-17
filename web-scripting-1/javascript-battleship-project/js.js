@@ -83,7 +83,9 @@ function addShipPiece(ship) {
             valid = shipBlocks[0].index < 90 + (width * index + 1))
     }
 
-    if (valid) {
+    const notTaken = shipBlocks.every(shipBlock => !shipBlock.classList.contains("taken"))
+
+    if (valid && notTaken) {
 
 
         shipBlocks.forEach(el => {
@@ -91,6 +93,9 @@ function addShipPiece(ship) {
 
             el.classList.add(ship.name, "taken")
         })
+    }
+    else {
+        addShipPiece(ship)
     }
 
 
