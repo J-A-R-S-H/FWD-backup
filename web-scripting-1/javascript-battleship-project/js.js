@@ -57,35 +57,53 @@ function addShipPiece(ship) {
     let isHorizontal = randomBoolean
     let randomStartIndex = Math.floor(Math.random() * width * width)
 
-    // let validStart = isHorizontal ? randomStartIndex <= width * width - ship.length
+    let validStart = isHorizontal ? randomStartIndex <= width * width - ship.length ? randomStartIndex :
+        width * width - ship.length :
+        //handle Vertical
+        randomStartIndex <= width * width - width * ship.length ? randomStartIndex :
+            randomStartIndex - ship.length * width + width
+
     let shipBlocks = []
     for (let i = 0; i < ship.length; i++) {
         if (isHorizontal) {
-            shipBlocks.push(allGridCellsComp[Number(randomStartIndex) + i])
+            shipBlocks.push(allGridCellsComp[Number(validStart) + i])
         }
         else {
-            shipBlocks.push(allGridCellsComp[Number(randomStartIndex) + i * width])
+            shipBlocks.push(allGridCellsComp[Number(validStart) + i * width])
         }
     }
 
-    shipBlocks.forEach(el => {
-        console.log(el)
+    let valid
+    if (isHorizontal) {
+        valid = shipBlocks.every((_shipBlock, index) =>
+            shipBlocks[0].id % width !== width - (shipBlocks.length - (index + 1)))
+    }
+    else {
+        shipBlocks.every((_shipBlock, index) =>
+            valid = shipBlocks[0].index < 90 + (width * index + 1))
+    }
 
-        el.classList.add(ship.name, "taken")
-    })
+    if (valid) {
 
+
+        shipBlocks.forEach(el => {
+            console.log(el)
+
+            el.classList.add(ship.name, "taken")
+        })
+    }
 
 
 
 
 }
 
-// const testBtn = document.querySelector("#test-btn")
-// testBtn.addEventListener("click", () => {
+const testBtn = document.querySelector("#test-btn")
+testBtn.addEventListener("click", () => {
 
 
-//     ships.forEach(ship => addShipPiece(ship))
+    ships.forEach(ship => addShipPiece(ship))
 
-// })
+})
 
 
