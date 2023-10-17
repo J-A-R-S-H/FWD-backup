@@ -17,12 +17,20 @@ rotateBtn.addEventListener("click", rotateShips)
 
 const width = 10
 
-function generateBoard(color) {
+function generateBoard(color, side) {
     const generatedgameBoardContainer = document.createElement("div")
     generatedgameBoardContainer.classList.add("game-board")
     generatedgameBoardContainer.style.backgroundColor = color
+    generatedgameBoardContainer.id = side
+
+    for (let i = 0; i < width * width; i++) {
+        const gridCell = document.createElement("div")
+        gridCell.classList.add("grid-cell")
+        gridCell.id = i
+        generatedgameBoardContainer.append(gridCell)
+    }
 
     gameBoardContainer.append(generatedgameBoardContainer)
 }
-generateBoard("yellow")
-generateBoard("pink")
+generateBoard("yellow", "player1")
+generateBoard("pink", "computer")

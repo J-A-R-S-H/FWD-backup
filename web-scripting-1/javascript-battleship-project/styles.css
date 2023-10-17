@@ -1,11 +1,17 @@
 .game-board {
     width: 200px;
     height: 200px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
 }
 
-.block {
+.grid-cell {
     width: 20px;
     height: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    box-sizing: border-box;
 }
 
 /* //what the hell does block do */
