@@ -1,0 +1,80 @@
+.game-board {
+    width: 200px;
+    height: 200px;
+}
+
+.block {
+    width: 20px;
+    height: 20px;
+}
+
+/* //what the hell does block do */
+
+.gameboard-container {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ship-container {
+    width: 500ox;
+    height: 60px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    margin: 30px;
+}
+
+.destroyer-dragstate {
+    width: 20px;
+    height: 10px;
+    margin: 3px;
+}
+
+
+.submarine-dragstate {
+    width: 30px;
+    height: 10px;
+    margin: 3px;
+}
+
+
+.heavy-cruiser-dragstate {
+    width: 40px;
+    height: 10px;
+    margin: 3px;
+}
+
+.battleship-dragstate {
+    width: 50px;
+    height: 10px;
+    margin: 3px;
+}
+
+.aircraft-carrier-dragstate {
+    width: 60px;
+    height: 10px;
+    margin: 3px;
+}
+
+.destroyer {
+    background-color: brown;
+}
+
+.submarine {
+    background-color: green;
+}
+
+
+.heavy-cruiser {
+    background-color: salmon;
+}
+
+
+.battleship {
+    background-color: orange;
+}
+
+.aircraft-carrier {
+    background-color: teal;
+}

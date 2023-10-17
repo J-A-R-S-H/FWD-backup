@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="game-info">
+
+            <p>Turn: <span id="turn-display"></span></p>
+            <p>Hit or Miss: <span class="check"></span></p>
+        </div>
+    </header>
+
+    <main>
+        <div class="gameboard-container"></div>
+
+
+        <div class="ship-container">
+            <div class="submarine submarine-dragstate" draggable="true"></div>
+            <div class="destroyer destroyer-dragstate" draggable="true"></div>
+            <div class="heavy-cruiser heavy-cruiser-dragstate" draggable="true"></div>
+            <div class="battleship battleship-dragstate" draggable="true"></div>
+            <div class="aircraft-carrier aircraft-carrier-dragstate" draggable="true"></div>
+        </div>
+
+
+        <button id="rotate-btn">Rotate</button>
+        <button id="Start-btn">Start</button>
+    </main>
+
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
