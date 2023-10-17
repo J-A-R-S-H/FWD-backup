@@ -45,8 +45,38 @@ class Ship {
 
 const submarine = new Ship("submarine", 2)
 const destroyer = new Ship("destroyer", 3)
-const heavyCruiser = new Ship("heavy-cruiser", 4)
+const heavyCruiser = new Ship("heavyCruiser", 4)
 const battleship = new Ship("battleship", 5)
 const aircraftCarrier = new Ship("aircraftCarrier", 6)
 
-const ships = [destroyer, submarine, cruiser, battleship, carrier]
+const ships = [destroyer, submarine, heavyCruiser, battleship, aircraftCarrier]
+
+function addShipPiece(ship) {
+    const allGridCellsComp = document.querySelectorAll("#computer div")
+    let randomBoolean = Math.random() < 0.5
+    let isHorizontal = randomBoolean
+    let randomStartIndex = Math.floor(Math.random() * width * width)
+
+    let shipBlocks = []
+    for (let i = 0; i < ship.length; i++) {
+        if (isHorizontal) {
+            shipBlocks.push(allGridCellsComp[Number(randomStartIndex + i)])
+        }
+        else {
+            shipBlocks.push(allGridCellsComp[randomStartIndex] + i * width)
+        }
+    }
+
+    console.log(shipBlocks)
+    shipBlocks.forEach(el => {
+        console.log(el)
+
+        el.classList.add(ship.name, "taken")
+    })
+
+    console.log(randomStartIndex)
+
+}
+
+
+addShipPiece(destroyer)

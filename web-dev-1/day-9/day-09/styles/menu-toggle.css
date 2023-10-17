@@ -1,0 +1,64 @@
+#main-nav-list {
+    background-color: #ddd;
+    
+    /* Option #1 */
+    
+
+    /* Option #2 */
+    
+
+    /* Option #3 */
+    
+}
+
+#main-nav-list.toggled {
+    /* Option #1 - Toggled */
+    
+
+    /* Option #2 - Toggled */
+    
+
+    /* Option #3 - Toggled */
+    
+}
+
+
+/* Thumb Navigation */
+.thumb-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.thumb-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #ddd;
+}
+
+.thumb-nav a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+}
+
+.thumb-nav #thumb-nav-primary {
+    display: flex;
+}
+
+.thumb-nav #thumb-nav-primary li {
+    width: 25%;
+}
+
+.thumb-nav #thumb-nav-secondary {
+    position: absolute;
+    bottom: 3rem;
+    right: 0;
+    display: none;
+}
+
+.thumb-nav #thumb-nav-secondary.toggled {
+    display: block;
+}

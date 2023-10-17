@@ -105,6 +105,10 @@ td {
     text-align: center;
 }
 
+svg {
+    height: 2rem;
+    width: 100%;
+}
 
 /* Links
 --------------------------------------------- */

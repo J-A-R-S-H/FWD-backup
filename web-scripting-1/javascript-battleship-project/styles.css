@@ -14,7 +14,6 @@
     box-sizing: border-box;
 }
 
-/* //what the hell does block do */
 
 .gameboard-container {
     width: 500px;
@@ -23,7 +22,7 @@
 }
 
 .ship-container {
-    width: 500ox;
+    width: 500px;
     height: 60px;
     background-color: aqua;
     display: flex;
