@@ -45,9 +45,9 @@ class Ship {
 
 const submarine = new Ship("submarine", 2)
 const destroyer = new Ship("destroyer", 3)
-const heavyCruiser = new Ship("heavyCruiser", 4)
+const heavyCruiser = new Ship("heavy-cruiser", 4)
 const battleship = new Ship("battleship", 5)
-const aircraftCarrier = new Ship("aircraftCarrier", 6)
+const aircraftCarrier = new Ship("aircraft-carrier", 6)
 
 const ships = [destroyer, submarine, heavyCruiser, battleship, aircraftCarrier]
 
@@ -57,26 +57,35 @@ function addShipPiece(ship) {
     let isHorizontal = randomBoolean
     let randomStartIndex = Math.floor(Math.random() * width * width)
 
+    // let validStart = isHorizontal ? randomStartIndex <= width * width - ship.length
     let shipBlocks = []
     for (let i = 0; i < ship.length; i++) {
         if (isHorizontal) {
-            shipBlocks.push(allGridCellsComp[Number(randomStartIndex + i)])
+            shipBlocks.push(allGridCellsComp[Number(randomStartIndex) + i])
         }
         else {
-            shipBlocks.push(allGridCellsComp[randomStartIndex] + i * width)
+            shipBlocks.push(allGridCellsComp[Number(randomStartIndex) + i * width])
         }
     }
 
-    console.log(shipBlocks)
     shipBlocks.forEach(el => {
         console.log(el)
 
         el.classList.add(ship.name, "taken")
     })
 
-    console.log(randomStartIndex)
+
+
+
 
 }
 
+// const testBtn = document.querySelector("#test-btn")
+// testBtn.addEventListener("click", () => {
 
-addShipPiece(destroyer)
+
+//     ships.forEach(ship => addShipPiece(ship))
+
+// })
+
+
