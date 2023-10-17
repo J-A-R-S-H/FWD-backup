@@ -34,3 +34,19 @@ function generateBoard(color, side) {
 }
 generateBoard("yellow", "player1")
 generateBoard("pink", "computer")
+
+//Creating Ships
+class Ship {
+    constructor(name, length) {
+        this.name = name
+        this.length = length
+    }
+}
+
+const submarine = new Ship("submarine", 2)
+const destroyer = new Ship("destroyer", 3)
+const heavyCruiser = new Ship("heavy-cruiser", 4)
+const battleship = new Ship("battleship", 5)
+const aircraftCarrier = new Ship("aircraftCarrier", 6)
+
+const ships = [destroyer, submarine, cruiser, battleship, carrier]
