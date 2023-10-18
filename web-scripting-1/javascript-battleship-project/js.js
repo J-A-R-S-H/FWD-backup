@@ -1,5 +1,5 @@
 const rotateBtn = document.querySelector("#rotate-btn")
-const shipContainer = document.querySelector(".ship-container")
+const shipContainer = document.querySelector(".shipContainer")
 const gameBoardContainer = document.querySelector(".gameboard-container")
 
 let rotationShip = 0
@@ -49,19 +49,24 @@ const heavyCruiser = new Ship("heavy-cruiser", 4)
 const battleship = new Ship("battleship", 5)
 const aircraftCarrier = new Ship("aircraft-carrier", 6)
 
-const ships = [destroyer, submarine, heavyCruiser, battleship, aircraftCarrier]
 
-function addShipPiece(ship) {
-    const allGridCellsComp = document.querySelectorAll("#computer div")
+
+const ships = [destroyer, submarine, heavyCruiser, battleship, aircraftCarrier]
+let notDropped
+
+function addShipPiece(user, ship, startid) {
+    const allGridCellsComp = document.querySelectorAll(`#${user} div`)
     let randomBoolean = Math.random() < 0.5
-    let isHorizontal = randomBoolean
+    let isHorizontal = user === "player" ? rotationShip === 0 : randomBoolean
     let randomStartIndex = Math.floor(Math.random() * width * width)
 
-    let validStart = isHorizontal ? randomStartIndex <= width * width - ship.length ? randomStartIndex :
+    let startIndex = startid ? startid : randomStartIndex;
+
+    let validStart = isHorizontal ? startIndex <= width * width - ship.length ? startIndex :
         width * width - ship.length :
         //handle Vertical
-        randomStartIndex <= width * width - width * ship.length ? randomStartIndex :
-            randomStartIndex - ship.length * width + width
+        startIndex <= width * width - width * ship.length ? startIndex :
+            startIndex - ship.length * width + width
 
     let shipBlocks = []
     for (let i = 0; i < ship.length; i++) {
@@ -95,11 +100,12 @@ function addShipPiece(ship) {
         })
     }
     else {
-        addShipPiece(ship)
+        if (user === "computer") addShipPiece(user, ship)
+
+        if (user === "player") notDropped = true
+
+
     }
-
-
-
 
 }
 
@@ -107,8 +113,40 @@ const testBtn = document.querySelector("#test-btn")
 testBtn.addEventListener("click", () => {
 
 
-    ships.forEach(ship => addShipPiece(ship))
+    ships.forEach(ship => addShipPiece("computer", ship))
 
 })
 
 
+//drag player ships
+
+let draggedShip
+const optionShips = Array.from(shipContainer.children)
+optionShips.forEach(optionShip => optionShip.addEventListener("dragstart", dragStartShips))
+
+
+const allPlayerBlocks = document.querySelectorAll("#player div")
+allPlayerBlocks.forEach(playerBlock => {
+    playerBlock.addEventListener("dragover", dragOver)
+    playerBlock.addEventListener("drop", dropPlaceShip)
+})
+
+function dragStartShips(e) {
+    notDropped = false
+    draggedShip = e.target
+}
+
+function dragOver(e) {
+    notDropped = false
+    e.preventDefault()
+
+}
+
+function dropPlaceShip(e) {
+    const startid = e.target.id
+    const ship = ships[draggedShip.id]
+    addShipPiece("player", ship, startid)
+    if (!notDropped) {
+        draggedShip.remove()
+    }
+}
