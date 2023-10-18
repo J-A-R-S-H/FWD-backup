@@ -73,6 +73,7 @@ ul {
     justify-content: space-between;
     margin: 0;
     padding: 1.4rem;
+    padding-top: 0.3rem;
 }
 
 li {
@@ -106,8 +107,9 @@ td {
 }
 
 svg {
-    height: 2rem;
+    height: 2.4rem;
     width: 100%;
+    margin-top: 1rem;
 }
 
 /* Links
