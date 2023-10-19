@@ -285,6 +285,7 @@ function checkScore(user, userHits, userSunkShips) {
 
             if (user === "computer") {
                 computerHits = playerHits = userHits.filter(storedShipName => storedShipName !== shipName)
+                computerHits = userHits.filter(storedShipName => storedShipName !== shipName)
             }
             userSunkShips.push(shipName)
         }
