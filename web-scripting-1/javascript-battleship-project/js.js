@@ -7,7 +7,7 @@ let rotationShip = 0
 function rotateShips() {
     const optionShips = Array.from(shipContainer.children)
 
-    rotationShip = rotationShip === 0 ? 90 : 0 //too cool
+    rotationShip = rotationShip === 0 ? 90 : 0
     optionShips.forEach(optionShip => optionShip.style.transform = `rotate(${rotationShip}deg)`)
 
 }
@@ -32,7 +32,7 @@ function generateBoard(color, side) {
 
     gameBoardContainer.append(generatedgameBoardContainer)
 }
-generateBoard("yellow", "player1")
+generateBoard("yellow", "player")
 generateBoard("pink", "computer")
 
 //Creating Ships
@@ -85,7 +85,7 @@ function addShipPiece(user, ship, startid) {
     }
     else {
         shipBlocks.every((_shipBlock, index) =>
-            valid = shipBlocks[0].index < 90 + (width * index + 1))
+            valid = shipBlocks[0].id < 90 + (width * index + 1))
     }
 
     const notTaken = shipBlocks.every(shipBlock => !shipBlock.classList.contains("taken"))
@@ -101,11 +101,9 @@ function addShipPiece(user, ship, startid) {
     }
     else {
         if (user === "computer") addShipPiece(user, ship)
-
         if (user === "player") notDropped = true
-
-
     }
+
 
 }
 
@@ -114,22 +112,21 @@ testBtn.addEventListener("click", () => {
 
 
     ships.forEach(ship => addShipPiece("computer", ship))
-
 })
 
 
 //drag player ships
 
+const allPlayerBlocks = document.querySelectorAll("#player div")
 let draggedShip
 const optionShips = Array.from(shipContainer.children)
-optionShips.forEach(optionShip => optionShip.addEventListener("dragstart", dragStartShips))
+optionShips.forEach(optionShip => optionShip.addEventListener("dragstart", dragStartShips));
 
-
-const allPlayerBlocks = document.querySelectorAll("#player div")
 allPlayerBlocks.forEach(playerBlock => {
-    playerBlock.addEventListener("dragover", dragOver)
-    playerBlock.addEventListener("drop", dropPlaceShip)
-})
+    playerBlock.addEventListener("dragover", dragOver);
+    playerBlock.addEventListener("drop", dropPlaceShip);
+});
+
 
 function dragStartShips(e) {
     notDropped = false
@@ -137,7 +134,6 @@ function dragStartShips(e) {
 }
 
 function dragOver(e) {
-    notDropped = false
     e.preventDefault()
 
 }
@@ -149,4 +145,10 @@ function dropPlaceShip(e) {
     if (!notDropped) {
         draggedShip.remove()
     }
+}
+
+// Add Highlight
+
+function higlightArea(startIndex, ship) {
+
 }
