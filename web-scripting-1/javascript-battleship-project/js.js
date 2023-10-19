@@ -182,12 +182,20 @@ let playerTurn
 //Start Game
 
 function startGame() {
-    if (shipContainer.children.length != 0) {
-        checkDisplay.textContent = "Place Ships"
-    }
-    else {
-        const allComputerBlocks = document.querySelectorAll("#computer div")
-        allComputerBlocks.forEach(block => block.addEventListener("click", handleClick))
+    if (playerTurn === undefined) {
+
+        if (shipContainer.children.length != 0) {
+            checkDisplay.textContent = "Place Ships"
+        }
+        else {
+            const allComputerBlocks = document.querySelectorAll("#computer div")
+            allComputerBlocks.forEach(block => block.addEventListener("click", handleClick))
+
+            playerTurn = true
+            turnDisplay.textContent = "hmmmm I think it is your turn frfr"
+            checkDisplay.textContent = "The game started gogoggoogo"
+        }
+
     }
 }
 
