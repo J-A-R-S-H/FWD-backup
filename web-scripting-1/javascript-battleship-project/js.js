@@ -1,6 +1,9 @@
 const rotateBtn = document.querySelector("#rotate-btn")
 const shipContainer = document.querySelector(".shipContainer")
 const gameBoardContainer = document.querySelector(".gameboard-container")
+const startBtn = document.querySelector("#start-btn")
+const checkDisplay = document.querySelector("#check")
+const turnDisplay = document.querySelector("#turn-display")
 
 let rotationShip = 0
 
@@ -170,5 +173,45 @@ function higlightArea(startIndex, ship) {
             shipBlock.classList.add("hover")
             setTimeout(() => shipBlock.classList.remove("hover"), 500)
         })
+    }
+}
+
+let gameOver = false
+let playerTurn
+
+//Start Game
+
+function startGame() {
+    if (shipContainer.children.length != 0) {
+        checkDisplay.textContent = "Place Ships"
+    }
+    else {
+        const allComputerBlocks = document.querySelectorAll("#computer div")
+        allComputerBlocks.forEach(block => block.addEventListener("click", handleClick))
+    }
+}
+
+startBtn.addEventListener("click", startGame)
+
+let playerHits = []
+let computerHits = []
+
+function handleClick(e) {
+    if (!gameOver) {
+        if (e.target.classList.contains("taken")) {
+            e.target.classList.add("boom")
+            checkDisplay = "I think you hit something whoa..."
+            let classes = Array.from(e.target.classList)
+            classes = classes.filter(className => className !== "grid-cell")
+            classes = classes.filter(className => className !== "boom")
+            classes = classes.filter(className => className !== "taken")
+        }
+        if (!e.target.classList.contain("taken")) {
+            checkDisplay.textContent = "I think you missed... lol"
+        }
+        playerTurn = false
+        const allComputerBlocks = document.querySelectorAll("#computer div")
+        allComputerBlocks.forEach(block => block.replaceWith(block.cloneNode(true)))//how to remove event listeners 
+        setTimeout(computerMove, 3000)
     }
 }
