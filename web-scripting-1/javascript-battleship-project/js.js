@@ -195,19 +195,25 @@ startBtn.addEventListener("click", startGame)
 
 let playerHits = []
 let computerHits = []
+const playerSunkShips = []
+const computerSunkShips = []
 
 function handleClick(e) {
     if (!gameOver) {
         if (e.target.classList.contains("taken")) {
             e.target.classList.add("boom")
-            checkDisplay = "I think you hit something whoa..."
+            checkDisplay.textContent = "I think you hit something whoa..."
             let classes = Array.from(e.target.classList)
             classes = classes.filter(className => className !== "grid-cell")
             classes = classes.filter(className => className !== "boom")
             classes = classes.filter(className => className !== "taken")
+            playerHits.push(...classes)
+            checkScore("player", playerHits, playerSunkShips)
+
         }
-        if (!e.target.classList.contain("taken")) {
+        if (!e.target.classList.contains("taken")) {
             checkDisplay.textContent = "I think you missed... lol"
+            e.target.classList.add("empty")
         }
         playerTurn = false
         const allComputerBlocks = document.querySelectorAll("#computer div")
@@ -215,3 +221,66 @@ function handleClick(e) {
         setTimeout(computerMove, 3000)
     }
 }
+
+
+function computerMove() {
+    if (!gameOver) {
+        checkDisplay.textContent = "The computer is thinking...?"
+        turnDisplay.textContent = "Computer's Turn"
+
+        console.log(allPlayerBlocks)
+        setTimeout(() => {
+            let randomMove = Math.floor(Math.random() * width * width)
+            if (allPlayerBlocks[randomMove].classList.contains("taken") &&
+                allPlayerBlocks[randomMove].classList.contains("boom")
+            ) {
+                computerMove()
+                return
+            }
+            else if (
+                allPlayerBlocks[randomMove].classList.contains("taken") &&
+                !allPlayerBlocks[randomMove].classList.contains("boom")
+            ) {
+                !allPlayerBlocks[randomMove].classList.add("boom")
+                checkDisplay.textContent = "The Computer hit you, damn thats crazy"
+                let classes = Array.from(allPlayerBlocks[randomMove].classList)
+                classes = classes.filter(className => className !== "grid-cell")
+                classes = classes.filter(className => className !== "boom")
+                classes = classes.filter(className => className !== "taken")
+                computerHits.push(...classes)
+                checkScore("computer", computerHits, computerSunkShips)
+            }
+            else {
+                checkDisplay.textContent = "nothing, well hit the water technically"
+                allPlayerBlocks[randomMove].classList.add("empty")
+            }
+        }, 3000)
+        setTimeout(() => {
+            playerTurn = true
+            turnDisplay.textContent = "player's turn"
+            checkDisplay.textContent = "hmmmmm I think it's your turn"
+            const allComputerBlocks = document.querySelectorAll("#computer div")
+            allComputerBlocks.forEach(block => block.addEventListener("click", handleClick))
+        }, 6000)
+    }
+}
+
+function checkScore(user, userHits, userSunkShips) {
+    function checkShipName(shipName, shipLength) {
+        if (
+            userHits.filter(storedShipName => storedShipName === shipName).length === shipLength
+        ) {
+            checkDisplay.textContent = `you sunk the ${user}'s ship ${shipName}`
+        }
+    }
+
+    checkShipName("submarine", 2)
+    checkShipName("destroyer", 3)
+    checkShipName("heavyCruiser", 4)
+    checkShipName("battleship", 5)
+    checkShipName("aircraftCarrier", 6)
+
+    console.log("playerHits", playerHits)
+    console.log("playerSunkShips", playerSunkShips)
+
+} 
