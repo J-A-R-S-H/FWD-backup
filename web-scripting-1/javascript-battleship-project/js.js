@@ -54,14 +54,7 @@ const aircraftCarrier = new Ship("aircraft-carrier", 6)
 const ships = [destroyer, submarine, heavyCruiser, battleship, aircraftCarrier]
 let notDropped
 
-function addShipPiece(user, ship, startid) {
-    const allGridCellsComp = document.querySelectorAll(`#${user} div`)
-    let randomBoolean = Math.random() < 0.5
-    let isHorizontal = user === "player" ? rotationShip === 0 : randomBoolean
-    let randomStartIndex = Math.floor(Math.random() * width * width)
-
-    let startIndex = startid ? startid : randomStartIndex;
-
+function getValidity(allGridCellsComp, isHorizontal, startIndex, ship) {
     let validStart = isHorizontal ? startIndex <= width * width - ship.length ? startIndex :
         width * width - ship.length :
         //handle Vertical
@@ -90,6 +83,20 @@ function addShipPiece(user, ship, startid) {
 
     const notTaken = shipBlocks.every(shipBlock => !shipBlock.classList.contains("taken"))
 
+    return { shipBlocks, valid, notTaken }
+}
+
+
+function addShipPiece(user, ship, startid) {
+    const allGridCellsComp = document.querySelectorAll(`#${user} div`)
+    let randomBoolean = Math.random() < 0.5
+    let isHorizontal = user === "player" ? rotationShip === 0 : randomBoolean
+    let randomStartIndex = Math.floor(Math.random() * width * width)
+
+    let startIndex = startid ? startid : randomStartIndex;
+
+    const { shipBlocks, valid, notTaken } = getValidity(allGridCellsComp, isHorizontal, startIndex, ship)
+
     if (valid && notTaken) {
 
 
@@ -100,7 +107,7 @@ function addShipPiece(user, ship, startid) {
         })
     }
     else {
-        if (user === "computer") addShipPiece(user, ship)
+        if (user === "computer") addShipPiece(user, ship, startid)
         if (user === "player") notDropped = true
     }
 
@@ -135,7 +142,8 @@ function dragStartShips(e) {
 
 function dragOver(e) {
     e.preventDefault()
-
+    const ship = ships[draggedShip.id]
+    higlightArea(e.target.id, ship)
 }
 
 function dropPlaceShip(e) {
@@ -149,6 +157,18 @@ function dropPlaceShip(e) {
 
 // Add Highlight
 
-function higlightArea(startIndex, ship) {
 
+function higlightArea(startIndex, ship) {
+    const allGridCellsComp = document.querySelectorAll(`#player div`)
+
+    let isHorizontal = rotationShip === 0
+
+    const { shipBlocks, valid, notTaken } = getValidity(allGridCellsComp, isHorizontal, startIndex, ship)
+
+    if (valid && notTaken) {
+        shipBlocks.forEach(shipBlock => {
+            shipBlock.classList.add("hover")
+            setTimeout(() => shipBlock.classList.remove("hover"), 500)
+        })
+    }
 }
