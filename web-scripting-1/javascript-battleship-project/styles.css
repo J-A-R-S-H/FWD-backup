@@ -88,10 +88,20 @@
     background-color: grey;
 }
 
-.boom {
+
+
+#computer .submarine,
+#computer .aircraft-carrier,
+#computer .destroyer,
+#computer .heavy-cruiser,
+#computer .battleship {
+    background-color: pink;
+}
+
+#computer .boom {
     background-color: red;
 }
 
-.empty {
+#computer .empty {
     background-color: aliceblue;
 }
