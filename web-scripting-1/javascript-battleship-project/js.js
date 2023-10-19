@@ -218,7 +218,7 @@ function handleClick(e) {
         playerTurn = false
         const allComputerBlocks = document.querySelectorAll("#computer div")
         allComputerBlocks.forEach(block => block.replaceWith(block.cloneNode(true)))//how to remove event listeners 
-        setTimeout(computerMove, 3000)
+        setTimeout(computerMove, 1000)
     }
 }
 
@@ -254,14 +254,14 @@ function computerMove() {
                 checkDisplay.textContent = "nothing, well hit the water technically"
                 allPlayerBlocks[randomMove].classList.add("empty")
             }
-        }, 3000)
+        }, 1000)
         setTimeout(() => {
             playerTurn = true
             turnDisplay.textContent = "player's turn"
             checkDisplay.textContent = "hmmmmm I think it's your turn"
             const allComputerBlocks = document.querySelectorAll("#computer div")
             allComputerBlocks.forEach(block => block.addEventListener("click", handleClick))
-        }, 6000)
+        }, 1000)
     }
 }
 
@@ -271,16 +271,34 @@ function checkScore(user, userHits, userSunkShips) {
             userHits.filter(storedShipName => storedShipName === shipName).length === shipLength
         ) {
             checkDisplay.textContent = `you sunk the ${user}'s ship ${shipName}`
+            if (user === "player") {
+                playerHits = userHits.filter(storedShipName => storedShipName !== shipName)
+            }
+
+            if (user === "computer") {
+                computerHits = playerHits = userHits.filter(storedShipName => storedShipName !== shipName)
+            }
+            userSunkShips.push(shipName)
         }
     }
 
     checkShipName("submarine", 2)
     checkShipName("destroyer", 3)
-    checkShipName("heavyCruiser", 4)
+    checkShipName("heavy-cruiser", 4)
     checkShipName("battleship", 5)
-    checkShipName("aircraftCarrier", 6)
+    checkShipName("aircraft-carrier", 6)
 
     console.log("playerHits", playerHits)
     console.log("playerSunkShips", playerSunkShips)
+
+    if (playerSunkShips.length === 5) {
+        checkDisplay.textContent = "Congrats you won."
+        gameOver = true
+    }
+
+    if (computerSunkShips.length === 5) {
+        checkDisplay.textContent = "Damn we take those."
+        gameOver = true
+    }
 
 } 
