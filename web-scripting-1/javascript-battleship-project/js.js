@@ -82,6 +82,7 @@ function getValidity(allGridCellsComp, isHorizontal, startIndex, ship) {
     else {
         shipBlocks.every((_shipBlock, index) =>
             valid = shipBlocks[0].id < 90 + (width * index + 1))
+        console.log(valid)
     }
 
     const notTaken = shipBlocks.every(shipBlock => !shipBlock.classList.contains("taken"))
