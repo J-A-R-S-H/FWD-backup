@@ -1,0 +1,242 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic (CALLED IN ANOTHER FILE)
+	- Normalize
+	- Box sizing
+	- Media width
+# Base
+	- Typography
+	- Elements
+	- Links
+# Layouts
+# Components
+	- Header
+	- Main
+	- Footer
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
+body {
+	font-family: sans-serif;
+	font-size: 1.125rem;
+	font-weight: 400;
+	line-height: 1.6;
+	color: rgb(74, 74, 74);
+	background-color: rgb(255, 255, 255);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: serif;
+	margin: .5em 0;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+p {
+	margin: 1.5em 0;
+}
+
+
+/* Elements
+--------------------------------------------- */
+main {
+	max-width: 120rem;
+	margin: 0 auto;
+}
+
+figure {
+	margin: 1rem auto;
+	width: 50%;
+	max-width: 40rem;
+}
+
+figcaption {
+	text-align: center;
+	font-size: 1rem;
+	font-style: italic;
+}
+
+ul {
+	padding: 0 0 0 2rem;
+	margin: 0 0 0 1.5rem;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 2rem auto;
+	background-color: rgb(238, 238, 238);
+}
+
+caption {
+	font-size: 1.25rem;
+}
+
+td,
+th {
+	border: 1px solid rgb(136, 136, 136);
+	padding: .5rem;
+}
+
+/* Links
+--------------------------------------------- */
+a,
+a:visited { 
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: rgba(0, 0, 0, .5);
+}
+
+a:focus {
+	outline: 1px dotted;
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/* Header
+--------------------------------------------- */
+.site-header {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 1rem;
+}
+
+.site-header ul {
+	list-style: none;
+	margin: 1.5em 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+}
+
+.site-header ul a {
+	padding: 1.5em;
+}
+
+.home .site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.home .site-header a,
+.home .site-header p {
+	color: rgb(255, 255, 255);
+}
+
+/* Main
+--------------------------------------------- */
+.page-banner {
+	position: relative;
+}
+
+.page-banner h1 {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	transform: translateY(-50%);
+	margin: 0;
+	padding: 1rem;
+	font-size: 3rem;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.page-banner img {
+	display: block;
+	width: 100%;
+	height: 37.5rem;
+	object-fit: cover;
+}
+
+.home .page-banner img {
+    height: calc(100vh - 5.25rem);
+}
+
+.culture section {
+	max-width: 50rem;
+	margin: 0 auto;
+}
+
+.nature h2 {
+	font-size: 2rem;
+	text-decoration: underline
+}
+
+main > :not(header) {
+	padding: 0 1rem;
+}
+
+.button-links {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.button-links li {
+	border: 1px solid rgb(136, 136, 136);
+	margin: 1rem;
+	background-color: rgb(238, 238, 238);
+}
+
+.button-links a {
+	display: block;
+	padding: 2rem;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+figure.gallery {
+    max-width: 100%;
+    width: 100%;
+}
+
+figure.gallery img {
+    width: 50%;
+}
+
+
+/* Footer
+--------------------------------------------- */
+.site-footer {
+	background-color: rgb(238, 238, 238);
+	text-align: center;
+	padding: 1.5rem;
+}

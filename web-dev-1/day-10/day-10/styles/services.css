@@ -1,0 +1,275 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic (CALLED IN NORMALIZE.CSS)
+	- Normalize
+	- Box sizing
+	- Media width
+	- Screen Reader Text
+# Base
+	- Typography
+	- Elements
+	- Links
+# Components
+	- Header
+	- Main
+# Dark Mode
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
+body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #282828;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Georgia, Times, "Times New Roman", serif;
+	margin: .5em 0;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 1.75rem;
+}
+
+p {
+	margin: 0 0 1.5em;
+}
+
+/* Elements
+--------------------------------------------- */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+header,
+footer {
+	background-color: #eeeeee;
+	text-align: center;
+	padding: 1rem;
+}
+
+main {
+	max-width: 62.5rem;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+footer p {
+	margin: 0;
+}
+
+/* Links
+--------------------------------------------- */
+a,
+a:visited { 
+	color: #347034;
+}
+
+a:hover,
+a:focus {
+	color: #234723;
+}
+
+a:focus {
+	outline: 1px dotted #234723;
+}
+
+a:active {
+	color: #ffffff;
+	background-color: #234723;
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/* Header
+--------------------------------------------- */
+header {
+	text-align: center;
+}
+
+nav ul {
+	padding: 0;
+}
+
+nav li {
+	display: inline-block;
+	margin: 0 1rem;
+}
+
+nav a {
+	text-decoration: none;
+}
+
+/* Main
+--------------------------------------------- */
+
+/* Services Styles */
+.services article {
+	background-color: #caffca;
+	padding: 1rem 2rem;
+	margin-bottom: 2rem;
+}
+
+.services article h2 {
+	font-size: 1.5rem;
+	border-bottom: 2px solid currentColor;
+}
+
+.services a.box-link {
+	display: block;
+	width: 16rem;
+	margin: 2rem auto;
+	padding: 1rem;
+	background-color: #347034;
+	color: #ffffff;
+	text-align: center;
+	font-size: 1.125rem;
+	text-decoration: none;
+}
+
+.services a.box-link:hover,
+.services a.box-link:focus,
+.services a.box-link:active {
+	background-color: #234723;
+}
+
+@media (min-width: 50em) {
+
+	.cards {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: stretch;
+	}
+
+	.cards article {
+		flex: 0 1 30%;
+	}
+
+	.cards .service-1 {
+		flex: 0 1 50%;
+		order: 1;
+	}
+
+}
+
+/* Testimonials Styles */
+.testimonials img {
+	display: block;
+	margin: 1rem auto;
+	border-radius: 50%;
+}
+
+.testimonials article {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.testimonials blockquote p {
+	display: inline-block;
+	margin: 0;
+}
+
+@media (min-width: 37.5em) {
+
+	.testimonials {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+
+	.testimonials > *:not(article) {
+		width: 100%;
+	}
+
+	.testimonials article {
+		max-width: 20rem;
+	}
+
+}
+
+/* Social Media Styles */
+.social-media nav svg {
+	width: 3rem;
+	height: 3rem;
+}
+
+.social-media svg {
+	vertical-align: middle;
+}
+
+.social-media path {
+	fill: currentColor;
+}
+
+/* Grid Practice Styles */
+.grid-practice {
+	display: grid;
+	gap: .5rem;
+	/* grid-template-columns: repeat(3, 4.75rem); */
+	grid-template-rows: repeat(3, 4.75rem);
+	/* grid-auto-rows: 4.75rem; */
+	grid-auto-flow: column;
+	grid-auto-columns: 4.75rem;
+	justify-content: center; 
+}
+
+/* .move-me {
+	grid-row: 6 / 7;
+	grid-column: 2 / 3;
+} */
+
+.grid-box {
+	background-color: #444;
+	color: #fff;
+	padding: 1.25rem;
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.grid-box:nth-child(even) {
+	background-color: #ccc;
+	color: #000;
+}
+
+/*--------------------------------------------------------------
+# Dark Mode
+--------------------------------------------------------------*/
+@media (prefers-color-scheme: dark) {
+
+	body {
+		color: #fff;
+		background-color: #000;
+	}
+
+	header,
+	footer {
+		background-color: #bbb;
+		color: #000;
+	}
+
+	.services article {
+		background-color: #347034;
+	}
+
+}

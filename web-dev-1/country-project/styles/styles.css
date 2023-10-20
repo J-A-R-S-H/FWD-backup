@@ -58,9 +58,13 @@ h2 {
     justify-content: center;
     margin-left: 1rem;
     margin-right: 1rem;
+    font-size: clamp(1.5rem, 1.5vw, 3rem);
 }
 
 
+.center-text h1 {
+    font-family: 'Kanit', sans-serif;
+}
 
 
 /* Elements
@@ -196,6 +200,7 @@ video {
 article p {
     margin-left: 1rem;
     margin-right: 1rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 .sweden-info-history {

@@ -104,8 +104,6 @@ function addShipPiece(user, ship, startid) {
 
 
         shipBlocks.forEach(el => {
-            console.log(el)
-
             el.classList.add(ship.name, "taken")
         })
     }
@@ -236,7 +234,6 @@ function computerMove() {
         checkDisplay.textContent = "The computer is thinking...?"
         turnDisplay.textContent = "Computer's Turn"
 
-        console.log(allPlayerBlocks)
         setTimeout(() => {
             let randomMove = Math.floor(Math.random() * width * width)
             if (allPlayerBlocks[randomMove].classList.contains("taken") &&
