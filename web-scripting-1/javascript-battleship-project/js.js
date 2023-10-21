@@ -18,13 +18,15 @@ function rotateShips() {
 rotateBtn.addEventListener("click", rotateShips)
 
 
-const width = 10
+const width = 11
 
-function generateBoard(color, side) {
+function generateBoard(color, side, classesContainer) {
     const generatedgameBoardContainer = document.createElement("div")
     generatedgameBoardContainer.classList.add("game-board")
     generatedgameBoardContainer.style.backgroundColor = color
     generatedgameBoardContainer.id = side
+    generatedgameBoardContainer.classList.add(classesContainer)
+
 
     for (let i = 0; i < width * width; i++) {
         const gridCell = document.createElement("div")
@@ -35,8 +37,8 @@ function generateBoard(color, side) {
 
     gameBoardContainer.append(generatedgameBoardContainer)
 }
-generateBoard("yellow", "player")
-generateBoard("pink", "computer")
+generateBoard("#00AAFF", "player", "grid-player")
+generateBoard("#00AAFF", "computer", "grid-computer")
 
 //Creating Ships
 class Ship {
@@ -63,7 +65,7 @@ function getValidity(allGridCellsComp, isHorizontal, startIndex, ship) {
         //handle Vertical
         startIndex <= width * width - width * ship.length ? startIndex :
             startIndex - ship.length * width + width
-
+    console.log(ship.length)
     let shipBlocks = []
     for (let i = 0; i < ship.length; i++) {
         if (isHorizontal) {
@@ -102,7 +104,20 @@ function addShipPiece(user, ship, startid) {
     const { shipBlocks, valid, notTaken } = getValidity(allGridCellsComp, isHorizontal, startIndex, ship)
 
     if (valid && notTaken) {
+        shipBlocks.forEach((el, index) => {
+            el.classList.add(ship.name, "taken");
+            if (index === 0) {
+                el.classList.add("start");
+            } else if (index === ship.length - 1) {
+                el.classList.add("end");
+            }
+        });
 
+        if (isHorizontal) {
+            shipBlocks.forEach(el => el.classList.add("horizontal"));
+        } else {
+            shipBlocks.forEach(el => el.classList.add("vertical"));
+        }
 
         shipBlocks.forEach(el => {
             el.classList.add(ship.name, "taken")
