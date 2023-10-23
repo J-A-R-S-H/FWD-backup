@@ -15,6 +15,7 @@ body {
     border-width: 0.5px;
     border-color: #395e66;
     box-sizing: border-box;
+    position: relative;
 }
 
 
@@ -105,8 +106,7 @@ body {
     background-color: red;
 }
 
-.empty::before {
-    content: "";
+.empty {
     position: absolute;
     animation: hit .4s ease-out forwards;
     border: .4vmin solid white;
@@ -130,9 +130,14 @@ body {
         transform: scale(0);
     }
 
-    100% {
+    50% {
         opacity: 0;
         transform: scale(2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
