@@ -31,7 +31,8 @@ function generateBoard(color, side, classesContainer) {
     for (let i = 0; i < width * width; i++) {
         const gridCell = document.createElement("div")
         gridCell.classList.add("grid-cell")
-        gridCell.id = i
+        //gridCell.id = i
+        gridCell.setAttribute(`data-${side}ID`, i);
         generatedgameBoardContainer.append(gridCell)
     }
 
@@ -223,7 +224,6 @@ function higlightArea(startIndex, ship) {
 
 let gameOver = false
 let playerTurn
-
 //Start Game
 
 function startGame() {
@@ -253,7 +253,12 @@ const computerSunkShips = []
 
 function handleClick(e) {
     if (!gameOver) {
-        if (e.target.classList.contains("taken")) {
+
+        console.log(e.target.dataset.id);
+        const activeSquare = document.querySelector(`[data-computerid="${e.target.dataset.computerid}"]`);
+        console.log(activeSquare);
+
+        if (activeSquare.classList.contains("taken")) {
             e.target.classList.add("boom")
             checkDisplay.textContent = "I think you hit something whoa..."
             let classes = Array.from(e.target.classList)
@@ -264,8 +269,9 @@ function handleClick(e) {
             checkScore("player", playerHits, playerSunkShips)
 
         }
-        if (!e.target.classList.contains("taken")) {
+        else if (!activeSquare.classList.contains("taken")) {
             checkDisplay.textContent = "I think you missed..."
+            console.log(this)
             e.target.classList.add("empty")
         }
         playerTurn = false
