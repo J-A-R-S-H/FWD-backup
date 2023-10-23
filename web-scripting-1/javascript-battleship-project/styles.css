@@ -80,20 +80,80 @@ body {
     background-color: pink;
 } */
 
-#computer .boom {
-    background-color: red;
-}
 
-#computer .empty {
-    background-color: aliceblue;
-}
-
-.boom {
-    background-color: red;
-}
-
+.boom,
 .empty {
-    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boom::after,
+.empty::after {
+    content: "";
+    position: absolute;
+    border-radius: 100%;
+    width: 2vmin;
+    height: 2vmin;
+}
+
+.empty::after {
+    background-color: whitesmoke;
+}
+
+.boom::after {
+    background-color: red;
+}
+
+.empty::before {
+    content: "";
+    position: absolute;
+    animation: hit .4s ease-out forwards;
+    border: .4vmin solid white;
+    border-radius: 100%;
+    width: 2vmin;
+    height: 2vmin;
+}
+
+
+#player .boom {
+    animation: boom .2s ease-out forwards;
+}
+
+#computer .boom {
+    animation: boomComp .2s ease-out forwards;
+}
+
+@keyframes hit {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+@keyframes boom {
+    0% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: hsl(0, 0%, 80%)
+    }
+}
+
+@keyframes boomComp {
+    0% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: #00AAFF
+    }
 }
 
 
@@ -124,6 +184,7 @@ a {
 .taken,
 .ship {
     background-color: hsl(0, 0%, 80%);
+    position: relative;
 }
 
 .ship {
@@ -132,4 +193,84 @@ a {
     border-radius: 2.3vmin;
 }
 
-.taken.vertical {}
+.taken.start.vertical,
+.taken.start.vertical::before {
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+}
+
+
+.taken.end.vertical,
+.taken.end.vertical::before {
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.taken.start.horizontal,
+.taken.start.horizontal::before {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+
+.taken.end.horizontal,
+.taken.end.horizontal::before {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+
+
+#player .taken.vertical::before,
+#player .taken.horizontal::before {
+    content: "";
+    position: absolute;
+    border: .3vmin solid white;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+}
+
+#player .taken.horizontal::before {
+    animation: ripplesY 3s linear infinite;
+    border-left: none;
+    border-right: none;
+}
+
+#player .taken.vertical::before {
+    animation: ripplesX 3s linear infinite;
+    border-top: none;
+    border-bottom: none;
+}
+
+@keyframes ripplesX {
+    0% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scaleX(1.7);
+    }
+}
+
+@keyframes ripplesY {
+    0% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scaleY(1.7);
+    }
+}
+
+
+.grid-computer>.taken,
+.grid-computer>.taken::before {
+    background-color: #00AAFF;
+    border-radius: 0 !important;
+}

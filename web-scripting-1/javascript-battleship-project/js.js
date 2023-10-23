@@ -132,6 +132,7 @@ function addShipPiece(user, ship, startid) {
 }
 
 const testBtn = document.querySelector("#test-btn")
+const randomizeBtn = document.querySelector("#randomize-btn")
 testBtn.addEventListener("click", () => {
 
 
@@ -139,6 +140,36 @@ testBtn.addEventListener("click", () => {
 })
 
 
+function randomizePlayerShips() {
+    const allPlayerBlocks = document.querySelectorAll("#player div");
+
+    allPlayerBlocks.forEach((block) => {
+        block.classList.remove("taken", "start", "end", "horizontal", "vertical");
+    });
+
+    shuffleArray(ships);
+
+    ships.forEach((ship) => {
+        addRandomShip("player", ship);
+    });
+
+    notDropped = false;
+}
+
+// Function to shuffle an array (Fisher-Yates shuffle algorithm)
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function addRandomShip(user, ship) {
+    addShipPiece(user, ship);
+    console.log(shipContainer.children.length)
+}
+
+randomizeBtn.addEventListener("click", randomizePlayerShips);
 //drag player ships
 
 const allPlayerBlocks = document.querySelectorAll("#player div")
@@ -198,7 +229,7 @@ let playerTurn
 function startGame() {
     if (playerTurn === undefined) {
 
-        if (shipContainer.children.length != 0) {
+        if (shipContainer.children.length <= 0) {
             checkDisplay.textContent = "Place Ships"
         }
         else {
@@ -234,7 +265,7 @@ function handleClick(e) {
 
         }
         if (!e.target.classList.contains("taken")) {
-            checkDisplay.textContent = "I think you missed... lol"
+            checkDisplay.textContent = "I think you missed..."
             e.target.classList.add("empty")
         }
         playerTurn = false
