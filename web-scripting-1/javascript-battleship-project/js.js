@@ -19,7 +19,6 @@ rotateBtn.addEventListener("click", rotateShips)
 
 
 const width = 11
-
 function generateBoard(color, side, classesContainer) {
     const generatedgameBoardContainer = document.createElement("div")
     generatedgameBoardContainer.classList.add("game-board")
@@ -31,8 +30,7 @@ function generateBoard(color, side, classesContainer) {
     for (let i = 0; i < width * width; i++) {
         const gridCell = document.createElement("div")
         gridCell.classList.add("grid-cell")
-        //gridCell.id = i
-        gridCell.setAttribute(`data-${side}ID`, i);
+        gridCell.id = i
         generatedgameBoardContainer.append(gridCell)
     }
 
@@ -224,6 +222,7 @@ function higlightArea(startIndex, ship) {
 
 let gameOver = false
 let playerTurn
+
 //Start Game
 
 function startGame() {
@@ -253,12 +252,7 @@ const computerSunkShips = []
 
 function handleClick(e) {
     if (!gameOver) {
-
-        console.log(e.target.dataset.id);
-        const activeSquare = document.querySelector(`[data-computerid="${e.target.dataset.computerid}"]`);
-        console.log(activeSquare);
-
-        if (activeSquare.classList.contains("taken")) {
+        if (e.target.classList.contains("taken")) {
             e.target.classList.add("boom")
             checkDisplay.textContent = "I think you hit something whoa..."
             let classes = Array.from(e.target.classList)
@@ -269,14 +263,15 @@ function handleClick(e) {
             checkScore("player", playerHits, playerSunkShips)
 
         }
-        else if (!activeSquare.classList.contains("taken")) {
+        if (!e.target.classList.contains("taken")) {
             checkDisplay.textContent = "I think you missed..."
-            console.log(this)
             e.target.classList.add("empty")
         }
         playerTurn = false
-        const allComputerBlocks = document.querySelectorAll("#computer div")
-        allComputerBlocks.forEach(block => block.replaceWith(block.cloneNode(true)))//how to remove event listeners 
+        // const allComputerBlocks = document.querySelectorAll("#computer div")
+        // allComputerBlocks.forEach(block => block.replaceWith(block.cloneNode(true)))
+        //how do I remove event listeners
+
         setTimeout(computerMove, 1000)
     }
 }
