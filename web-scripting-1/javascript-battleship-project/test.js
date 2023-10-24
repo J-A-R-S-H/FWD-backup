@@ -1,11 +1,11 @@
-const gridSizeSelector = document.querySelectorAll("button");
+const gridSizeSelector = document.querySelectorAll("img");
 const gameBoardContainer = document.querySelector(".gameboard-container")
 
 gridSizeSelector.forEach((el) => {
 
     el.addEventListener("click", () => {
         console.log("does this even work")
-        const selectedSize = el.value;
+        const selectedSize = el.getAttribute("data-value");
         console.log(selectedSize)
         generateBoard("#00AAFF", "player", "grid-player", selectedSize)
         generateBoard("#00AAFF", "computer", "grid-computer", selectedSize)
