@@ -1,3 +1,6 @@
+"use strict"
+
+
 const rotateBtn = document.querySelector("#rotate-btn")
 const shipContainer = document.querySelector(".shipContainer")
 const gameBoardContainer = document.querySelector(".gameboard-container")
@@ -58,7 +61,7 @@ const aircraftCarrier = new Ship("aircraft-carrier", 6)
 const ships = [destroyer, submarine, heavyCruiser, battleship, aircraftCarrier]
 let notDropped
 
-function getValidity(allGridCellsComp, isHorizontal, startIndex, ship) {
+function getValidity(allGridCellsComp, isHorizontal, startIndex, ship, selectedGrizSize) {
     let validStart = isHorizontal ? startIndex <= width * width - ship.length ? startIndex :
         width * width - ship.length :
         //handle Vertical
@@ -251,6 +254,15 @@ const playerSunkShips = []
 const computerSunkShips = []
 
 function handleClick(e) {
+
+    if (!playerTurn) {
+        return;
+    }
+
+    if (e.target.classList.contains('empty') || e.target.classList.contains("boom")) {
+        return;
+    }
+
     if (!gameOver) {
         if (e.target.classList.contains("taken")) {
             e.target.classList.add("boom")
