@@ -8,7 +8,7 @@ spinner.src = 'images/spinner.gif';
 spinner.alt = 'Loading';
 const endPoint = 'data/json/people-short-list.json';
 
-btn.addEventListener('click', function(){
+btn.addEventListener('click', function () {
 
     // Remove any existing HTML on the output div
     out.innerHTML = '';
@@ -17,13 +17,13 @@ btn.addEventListener('click', function(){
 
 
     fetch(endPoint)
-        .then(function(response){
-            if(response.ok){
+        .then(function (response) {
+            if (response.ok) {
                 return response.json();
             }
             throw new Error('Network response was not ok');
         })
-        .then(function(data){
+        .then(function (data) {
             // Extract all the peoples names
             const names = data.map(person => person.name);
             const namesAsHTMLList = listMaker(names, 'ol');
@@ -31,7 +31,7 @@ btn.addEventListener('click', function(){
             out.innerHTML = '';
             out.appendChild(namesAsHTMLList);
         })
-        .catch(function(error){
+        .catch(function (error) {
             out.innerHTML = `<p>${error}. Please try again.</p>`;
         });
 
@@ -39,7 +39,7 @@ btn.addEventListener('click', function(){
 
 // Create List
 // - Creates an HTML List from an array
-function listMaker(arr, listType = 'ul'){
+function listMaker(arr, listType = 'ul') {
     const list = document.createElement(listType);
     arr.forEach(item => {
         const li = document.createElement('li');
@@ -49,5 +49,5 @@ function listMaker(arr, listType = 'ul'){
     });
 
     return list;
-    
+
 }
