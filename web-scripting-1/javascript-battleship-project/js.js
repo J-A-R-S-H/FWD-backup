@@ -61,7 +61,7 @@ const aircraftCarrier = new Ship("aircraft-carrier", 6)
 const ships = [destroyer, submarine, heavyCruiser, battleship, aircraftCarrier]
 let notDropped
 
-function getValidity(allGridCellsComp, isHorizontal, startIndex, ship, selectedGrizSize) {
+function getValidity(allGridCellsComp, isHorizontal, startIndex, ship, selectedGridSize) {
     let validStart = isHorizontal ? startIndex <= width * width - ship.length ? startIndex :
         width * width - ship.length :
         //handle Vertical
@@ -94,6 +94,7 @@ function getValidity(allGridCellsComp, isHorizontal, startIndex, ship, selectedG
     return { shipBlocks, valid, notTaken }
 }
 
+let numberOfShipsAdded = 0;
 
 function addShipPiece(user, ship, startid) {
     const allGridCellsComp = document.querySelectorAll(`#${user} div`)
@@ -103,7 +104,10 @@ function addShipPiece(user, ship, startid) {
 
     let startIndex = startid ? startid : randomStartIndex;
 
-    const { shipBlocks, valid, notTaken } = getValidity(allGridCellsComp, isHorizontal, startIndex, ship)
+    let shipObj = getValidity(allGridCellsComp, isHorizontal, startIndex, ship);
+
+
+    const { shipBlocks, valid, notTaken } = shipObj;
 
     if (valid && notTaken) {
         shipBlocks.forEach((el, index) => {
@@ -124,6 +128,7 @@ function addShipPiece(user, ship, startid) {
         shipBlocks.forEach(el => {
             el.classList.add(ship.name, "taken")
         })
+
     }
     else {
         if (user === "computer") addShipPiece(user, ship, startid)
@@ -151,7 +156,8 @@ function randomizePlayerShips() {
 
     shuffleArray(ships);
 
-    ships.forEach((ship) => {
+    ships.forEach((ship, i) => {
+        //console.log(i)
         addRandomShip("player", ship);
     });
 
@@ -168,7 +174,7 @@ function shuffleArray(array) {
 
 function addRandomShip(user, ship) {
     addShipPiece(user, ship);
-    console.log(shipContainer.children.length)
+    //console.log(shipContainer.children.length)
 }
 
 randomizeBtn.addEventListener("click", randomizePlayerShips);

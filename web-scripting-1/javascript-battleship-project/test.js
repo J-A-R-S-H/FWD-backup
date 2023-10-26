@@ -1,6 +1,6 @@
 "use strict"
 
-const gridSizeSelector = document.querySelectorAll("img");
+const gridSizeSelector = document.querySelectorAll("button");
 const gameBoardContainer = document.querySelector(".gameboard-container")
 const singlePlayerSelect = document.querySelector(".single-player")
 const splashContainer = document.querySelector(".splash-container")
@@ -18,12 +18,11 @@ gridSizeSelector.forEach((el) => {
 
     el.addEventListener("click", () => {
         console.log("does this even work")
-        selectedSize = el.getAttribute("data-value");
-        console.log(selectedSize)
-        generateBoard("#00AAFF", "player", "grid-player", selectedSize)
-        generateBoard("#00AAFF", "computer", "grid-computer", selectedSize)
-
-        getGridSize(selectedSize)
+        selectedSize = parseInt(el.dataset.value);
+        //console.log(selectedSize)
+        generateBoard("#00AAFF", "player", "grid-player")
+        gridSelectionPage.style.display = "none"
+        //getGridSize(selectedSize)
     });
 })
 
@@ -34,14 +33,15 @@ function getGridSize() {
 }
 
 
-function generateBoard(color, side, classesContainer, gridSelected) {
+function generateBoard(color, side, classesContainer) {
     const generatedgameBoardContainer = document.createElement("div")
     generatedgameBoardContainer.classList.add("game-board")
+    generatedgameBoardContainer.style.gridTemplateColumns = `repeat(${selectedSize}, 1fr)`
     generatedgameBoardContainer.style.backgroundColor = color
     generatedgameBoardContainer.id = side
     generatedgameBoardContainer.classList.add(classesContainer)
 
-    for (let i = 0; i < gridSelected * gridSelected; i++) {
+    for (let i = 0; i < selectedSize * selectedSize; i++) {
         const gridCell = document.createElement("div")
         gridCell.classList.add("grid-cell")
         gridCell.id = i
@@ -49,4 +49,7 @@ function generateBoard(color, side, classesContainer, gridSelected) {
     }
 
     gameBoardContainer.append(generatedgameBoardContainer)
+}
+
+function asdfa() {
 }
