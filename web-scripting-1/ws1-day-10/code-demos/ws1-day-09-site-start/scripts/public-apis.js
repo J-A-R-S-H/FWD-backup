@@ -4,16 +4,16 @@
 const $btn = $('#btn-01');
 const $out = $('#data-output-dog-api');
 const className = 'dog';
-const $spinner = $('<div>').addClass(className).append( $('<img>').attr({ src: 'images/spinner.gif', alt: 'Loading'}).addClass('spinner') );
+const $spinner = $('<div>').addClass(className).append($('<img>').attr({ src: 'images/spinner.gif', alt: 'Loading' }).addClass('spinner'));
 const endPoint = 'https://dog.ceo/api/breed/chihuahua/images/random/12';
 
-$btn.click(function(){
+$btn.click(function () {
 
     // Remove any existing HTML on the output div
     $out.empty();
     $out.append($spinner);
 
-    
+
 });
 
 // Create Images
