@@ -5,11 +5,14 @@ const gameBoardContainer = document.querySelector(".gameboard-container")
 const singlePlayerSelect = document.querySelector(".single-player")
 const splashContainer = document.querySelector(".splash-container")
 const gridSelectionPage = document.querySelector(".grid-selection-page")
+const gridText = document.querySelector("#grid-text")
 
 singlePlayerSelect.addEventListener("click", () => {
 
     splashContainer.remove()
     gridSelectionPage.style.display = "grid"
+    gridText.style.display = "flex"
+
 
 })
 
