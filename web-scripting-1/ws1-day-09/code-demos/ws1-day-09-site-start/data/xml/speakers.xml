@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<speakers>
+	<speaker_info id="jeffrey_toobin">
+		<speech_title>The Supreme Nine: Black Robed Secrets</speech_title>
+		<date>January 15, 2014</date>
+		<datetime>2014-01-15</datetime>
+		<speaker>Jeffrey Toobin</speaker>
+		<image>images/toobin.jpg</image>
+		<summary>Author of the critically acclaimed best seller, The Nine: Inside the Secret World of the Supreme Court, Jeffrey Toobin brings the inside story of one of America's most mysterious and powerful institutions to the Saroyan stage. At the podium, Toobin is an unbiased, deeply analytic expert on American law, politics and procedure and he provides a unique look into the inner workings of the Supreme Court and its influence.</summary>
+	</speaker_info>
+	<speaker_info id="andrew_ross_sorkin">
+		<speech_title>The Politics of Too Big To Fail</speech_title>
+		<date>February 15, 2014</date>
+		<datetime>2014-02-15</datetime>
+		<speaker>Andrew Ross Sorkin</speaker>
+		<image>images/sorkin.jpg</image>
+		<summary>New York Times columnist and author, Andrew Ross Sorkin, has been described as “the most famous financial journalist of his generation.” A leading voice on Wall Street and corporate America, his New York Times bestseller, Too Big to Fail: The Inside Story of How Wall Street and Washington Fought to Save the Financial System—and Themselves, was the first true, behind-the-scenes, moment-by-moment account of how that financial crisis developed into a global tsunami.</summary>
+	</speaker_info>
+	<speaker_info id="amy_chua">
+		<speech_title>Babylon to Beijing</speech_title>
+		<date>March 15, 2014</date>
+		<datetime>2014-03-15</datetime>
+		<speaker>Amy Chua</speaker>
+		<image>images/chua.jpg</image>
+		<summary>Amy Chua joined the Yale faculty in 2001 after teaching at Duke Law School. Prior to starting her teaching career, she was a corporate law associate at Cleary, Gottlieb, Steen and Hamilton. Her expertise is in international business transactions, law and development, ethnic conflict, and globalization and the law.</summary>
+	</speaker_info>
+	
+</speakers>

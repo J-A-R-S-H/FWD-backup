@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON - Introduction</title>
+    <link rel="stylesheet" href="styles/styles-json-fetch-async-apis.css">
+</head>
+<body>
+<div class="wrapper">
+        <header>
+            <h1 class="long-main-heading">JSON - Introduction</h1>
+        </header>
+        <main>
+            <article>
+                <h1>About JSON</h1>
+                <p>JSON stands for JavaScript Object Notation. It is based on JavaScript's object syntax with a few additional syntax rules. It is a common data format used to transmit data between computer. It is an open, plain text and human readable format.</p>
+                <p>JSON is a popular format used in JavaScript web applications.</p>
+                <p>The major syntax differences between JavaScript's regular object syntax and JSON are JSON's keys must be wrapped in double quotes and comments are not allowed.</p>
+                <p>JSON data can be and often is wrapped in an array "[]".</p>
+                <p>JSON values can be strings, numbers, booleans and null. Numbers, Booleans and null should not be wrapped in double quotes. String values should always be wrapped in double quotes.</p>
+                <h2>Sample JSON Data</h2>
+                <p>The following sample JSON text from <a href="https://en.wikipedia.org/wiki/JSON">https://en.wikipedia.org/wiki/JSON</a></p>
+<pre class="code-block lang-json"><code>
+    {
+        "firstName": "John",
+        "lastName": "Smith",
+        "age": 27,
+        "address": {
+            "streetAddress": "21 2nd Street",
+            "city": "New York",
+            "state": "NY",
+            "postalCode": "10021-3100"
+        },
+        "phoneNumbers": [
+            {
+            "type": "home",
+            "number": "212 555-1234"
+            },
+            {
+            "type": "office",
+            "number": "646 555-4567"
+            },
+            {
+            "type": "mobile",
+            "number": "123 456-7890"
+            }
+        ],
+        "children": [],
+        "spouse": null
+        }
+    }
+</code>
+</pre>
+                <h2>Parsing JSON Data</h2>
+                <p>Since JSON is very similar to a JavaScript object you can parse JSON data very easily with JavaScript using JavaScript's dot syntax (object.key).</p>
+            </article>
+        </main>
+        <footer>
+            <p class="mb20">&copy; 2019 Michael Whyte</p>
+        </footer>
+    </div>
+</body>
+</html>

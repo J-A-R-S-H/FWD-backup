@@ -1,0 +1,47 @@
+[
+    {
+        "age": 33,
+        "name": "Katheryn Hendrix",
+        "gender": "female",
+        "company": "Sultrax",
+        "email": "katherynhendrix@sultrax.com",
+        "phone": "+1 (869) 452-2910",
+        "address": "916 Dennett Place, Lithium, Vermont, 437"
+    },
+    {
+        "age": 30,
+        "name": "Schroeder Le",
+        "gender": "male",
+        "company": "Assistia",
+        "email": "schroederle@assistia.com",
+        "phone": "+1 (965) 423-3268",
+        "address": "574 Saratoga Avenue, Omar, Connecticut, 9424"
+    },
+    {
+        "age": 35,
+        "name": "Kathie Carpenter",
+        "gender": "female",
+        "company": "Joviold",
+        "email": "kathiecarpenter@joviold.com",
+        "phone": "+1 (889) 517-2241",
+        "address": "841 Ainslie Street, Harborton, Montana, 1316"
+    },
+    {
+        "age": 40,
+        "name": "Glenda Hines",
+        "gender": "female",
+        "company": "Rockabye",
+        "email": "glendahines@rockabye.com",
+        "phone": "+1 (977) 451-2447",
+        "address": "873 National Drive, Snyderville, South Carolina, 1256"
+    },
+    {    
+        "age": 35,
+        "name": "Evangeline Travis",
+        "gender": "female",
+        "company": "Mondicil",
+        "email": "evangelinetravis@mondicil.com",
+        "phone": "+1 (993) 546-2451",
+        "address": "338 Agate Court, Eastvale, Florida, 6145"
+    }
+]

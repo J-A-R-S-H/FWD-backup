@@ -286,7 +286,7 @@ a {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     width: 45%;
-    animation: resize 200ms 1;
+    animation: resize 300 ms 1;
 }
 
 @keyframes resize {

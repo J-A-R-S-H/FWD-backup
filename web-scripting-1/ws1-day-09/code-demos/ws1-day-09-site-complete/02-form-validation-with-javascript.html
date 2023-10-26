@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Validation with JavaScript</title>
+    <link rel="stylesheet" href="styles/bootstrap-custom-build.css">
+    <link rel="stylesheet" href="styles/styles-form-validation.css">
+</head>
+<body>
+<div class="wrapper">
+<header>
+    <h1 class="long-main-heading">Form Validation with JavaScript</h1>
+</header>
+<main>
+    <article>
+        <h1>Validating a Form with JavaScript</h1>
+        <p>For more customized validation we can use JavaScript to validate our forms.</p>
+        <p>HTML5 or JavaScript form validation should never be your sole form of validation as it can easily be modified or disabled by a user. Always use server-side validation in addition to client-side validation. Server-side validation will be covered in the PHP course.</p>
+        <p>Below is an example of a basic form using JavaScript form validation.</p>
+        <div class="form-demo-box">
+            <form class="form-basic" action="09-thank-you.html" novalidate>
+                <h2>Basic Form</h2>
+                <div class="errors"></div>
+                <div class="form-row form-row-user-info">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" name="name" placeholder="Enter email">
+                    </div>
+                </div>
+                <div class="form-row form-row-passwords">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="password-confirm">Password Confirm</label>
+                        <input type="password" class="form-control" id="password-confirm" name="password-confirm" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-row form-row-positions">
+                    <p>Please select at least one position.</p>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Student" id="pos-student" name="position[]">
+                            <label class="form-check-label" for="pos-student">Student</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Instructor" id="pos-instructor" name="position[]">
+                            <label class="form-check-label" for="pos-instructor">Instructor</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Instructor" id="pos-administrator" name="position[]">
+                            <label class="form-check-label" for="pos-administrator">Administrator</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row form-row-comments">
+                    <div class="form-group form-group-textarea">
+                        <label for="example-textarea">Comments</label>
+                        <textarea class="form-control" id="example-textarea" rows="3" name="comments"></textarea>
+                    </div>
+                </div>
+                <div class="form-row form-row-submit">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </article>
+</main>
+<footer>
+    <p class="mb20">&copy; 2019 Michael Whyte</p>
+</footer>
+</div>
+<script src="scripts/jquery-3.4.1.min.js"></script>
+<script src="scripts/form-validation.js"></script>
+</body>
+</html>

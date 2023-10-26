@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Async / Await</title>
+    <link rel="stylesheet" href="styles/styles-json-fetch-async-apis.css">
+</head>
+<body>
+<div class="wrapper">
+        <header>
+            <h1 class="long-main-heading">Async / Await</h1>
+        </header>
+        <main>
+            <article>
+                <h1>About Async / Await</h1>
+                <p>An async function is a function declared with the async keyword, and the await keyword is permitted within it. The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.</p>
+                <p><b>Source: </b><cite><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">MDN: async function</a></cite></p>
+                <h2>Make an Asynchronous Request with Async / Await and Fetch</h2>
+                <p><strong>Note:</strong> Normally we would use a web server to make a request for data. Since we do not have a web server script setup designed to return JSON data we will simply make a request to the location of our local JSON data stored inside our local data folder. In the next lesson and upcoming exercise we will look at making requests to a public API located on a public web server.</p>
+                <div class="demo-box demo-box-fetch">
+                    <p>Get JSON data using. Parse it and output it as an unordered list when the button is clicked.</p>
+                    <button id="btn-01">Click Me</button>
+                    <div class="data-output" id="data-output"></div>
+                </div>
+            </article>
+        </main>
+        <footer>
+            <p class="mb20">&copy; 2022 Michael Whyte</p>
+        </footer>
+    </div>
+<script src="scripts/async-await.js"></script>
+</body>
+</html>

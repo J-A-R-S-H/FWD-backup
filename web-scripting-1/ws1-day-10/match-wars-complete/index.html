@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Match Wars</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div class="start-game-pop-up" id="start-game-pop-up">
+    <div class="start-game-pop-up-content" id="start-game-pop-up-content">
+        <div class="pop-up-text">
+            <h2>Match Wars</h2>
+            <button class="btn btn-start-game" id="btn-start-game">
+                <span class="btn-text">Start Game</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="game-screen" id="game-screen">
+    <div class="title-bar">
+        <h2>Match Wars</h2>
+        <div class="game-stats">
+            <div class="turns">
+                <span>
+                    Turns: 
+                </span>
+                <span id="turn-output"
+                      class="turn-output">
+                      00
+                </span>
+            </div><!-- end turns -->
+            <div class="matches">
+                <span>
+                    Matches: 
+                </span>
+                <span id="match-output"
+                      class="match-output">
+                    00
+                </span>
+            </div><!-- end matches -->
+        </div><!-- end game stats -->
+    </div><!-- end title bar -->
+    <div class="game-board">
+        <div class="card card-01">
+            <div class="door">
+                <div class="door-left">
+                    <img src="images/door-left.jpg" 
+                         alt="Left door">
+                </div><!-- end door-left -->
+                <div class="door-right">
+                    <img src="images/door-right.jpg" 
+                         alt="Right door">
+                </div><!-- door-right -->
+            </div><!-- end door -->
+            <div class="shadow"></div>
+            <div class="card-image">
+                <img src="images/c-3po.jpg" alt="C-3PO">
+            </div><!-- end card-image -->
+        </div><!--end card -->
+        <div class="card card-02">
+            <div class="door">
+                <div class="door-left">
+                    <img src="images/door-left.jpg" 
+                            alt="Left door">
+                </div><!-- end door-left -->
+                <div class="door-right">
+                    <img src="images/door-right.jpg" 
+                            alt="Right door">
+                </div><!-- door-right -->
+            </div><!-- end door -->
+            <div class="shadow"></div>
+            <div class="card-image">
+                <img src="images/boba-fett.jpg" alt="Boba Fett">
+            </div><!-- end card-image -->
+        </div><!--end card -->
+        <div class="card card-03">
+            <div class="door">
+                <div class="door-left">
+                    <img src="images/door-left.jpg" 
+                            alt="Left door">
+                </div><!-- end door-left -->
+                <div class="door-right">
+                    <img src="images/door-right.jpg" 
+                            alt="Right door">
+                </div><!-- door-right -->
+            </div><!-- end door -->
+            <div class="shadow"></div>
+            <div class="card-image">
+                <img src="images/c-3po.jpg" alt="C-3PO">
+            </div><!-- end card-image -->
+        </div><!--end card -->
+        <div class="card card-04">
+            <div class="door">
+                <div class="door-left">
+                    <img src="images/door-left.jpg" 
+                            alt="Left door">
+                </div><!-- end door-left -->
+                <div class="door-right">
+                    <img src="images/door-right.jpg" 
+                            alt="Right door">
+                </div><!-- door-right -->
+            </div><!-- end door -->
+            <div class="shadow"></div>
+            <div class="card-image">
+                <img src="images/darth-maul.jpg" alt="Darth Maul">
+            </div><!-- end card-image -->
+        </div><!--end card -->
+        <div class="card card-05">
+            <div class="door">
+                <div class="door-left">
+                    <img src="images/door-left.jpg" 
+                            alt="Left door">
+                </div><!-- end door-left -->
+                <div class="door-right">
+                    <img src="images/door-right.jpg" 
+                            alt="Right door">
+                </div><!-- door-right -->
+            </div><!-- end door -->
+            <div class="shadow"></div>
+            <div class="card-image">
+                <img src="images/boba-fett.jpg" alt="Boba Fett">
+            </div><!-- end card-image -->
+        </div><!--end card -->
+        <div class="card card-06">
+            <div class="door">
+                <div class="door-left">
+                    <img src="images/door-left.jpg" 
+                            alt="Left door">
+                </div><!-- end door-left -->
+                <div class="door-right">
+                    <img src="images/door-right.jpg" 
+                            alt="Right door">
+                </div><!-- door-right -->
+            </div><!-- end door -->
+            <div class="shadow"></div>
+            <div class="card-image">
+                <img src="images/darth-maul.jpg" alt="Darth Maul">
+            </div><!-- end card-image -->
+        </div><!--end card -->
+        <div class="card card-07">
+            <div class="door">
+                <div class="door-left">
+                    <img src="images/door-left.jpg" 
+                            alt="Left door">
+                </div><!-- end door-left -->
+                <div class="door-right">
+                    <img src="images/door-right.jpg" 
+                            alt="Right door">
+                </div><!-- door-right -->
+            </div><!-- end door -->
+            <div class="shadow"></div>
+            <div class="card-image">
+                <img src="images/darth-vader.jpg" alt="Darth Vader">
+            </div><!-- end card-image -->
+        </div><!--end card -->
+        <div class="card card-08">
+            <div class="door">
+                <div class="door-left">
+                    <img src="images/door-left.jpg" 
+                            alt="Left door">
+                </div><!-- end door-left -->
+                <div class="door-right">
+                    <img src="images/door-right.jpg" 
+                            alt="Right door">
+                </div><!-- door-right -->
+            </div><!-- end door -->
+            <div class="shadow"></div>
+            <div class="card-image">
+                <img src="images/princess-leia.jpg" alt="Princess Leia">
+            </div><!-- end card-image -->
+        </div><!--end card -->
+        <div class="card card-09">
+            <div class="door">
+                <div class="door-left">
+                    <img src="images/door-left.jpg" 
+                            alt="Left door">
+                </div><!-- end door-left -->
+                <div class="door-right">
+                    <img src="images/door-right.jpg" 
+                            alt="Right door">
+                </div><!-- door-right -->
+            </div><!-- end door -->
+            <div class="shadow"></div>
+            <div class="card-image">
+                <img src="images/lando-calrissian.jpg" alt="Lando Calrissian">
+            </div><!-- end card-image -->
+        </div><!--end card -->
+        <div class="card card-10">
+            <div class="door">
+                <div class="door-left">
+                    <img src="images/door-left.jpg" 
+                            alt="Left door">
+                </div><!-- end door-left -->
+                <div class="door-right">
+                    <img src="images/door-right.jpg" 
+                            alt="Right door">
+                </div><!-- door-right -->
+            </div><!-- end door -->
+            <div class="shadow"></div>
+            <div class="card-image">
+                <img src="images/princess-leia.jpg" alt="Princess Leia">
+            </div><!-- end card-image -->
+        </div><!--end card -->
+        <div class="card card-11">
+            <div class="door">
+                <div class="door-left">
+                    <img src="images/door-left.jpg" 
+                            alt="Left door">
+                </div><!-- end door-left -->
+                <div class="door-right">
+                    <img src="images/door-right.jpg" 
+                            alt="Right door">
+                </div><!-- door-right -->
+            </div><!-- end door -->
+            <div class="shadow"></div>
+            <div class="card-image">
+                <img src="images/lando-calrissian.jpg" alt="Lando Calrissian">
+            </div><!-- end card-image -->
+        </div><!--end card -->
+        <div class="card card-12">
+            <div class="door">
+                <div class="door-left">
+                    <img src="images/door-left.jpg" 
+                            alt="Left door">
+                </div><!-- end door-left -->
+                <div class="door-right">
+                    <img src="images/door-right.jpg" 
+                            alt="Right door">
+                </div><!-- door-right -->
+            </div><!-- end door -->
+            <div class="shadow"></div>
+            <div class="card-image">
+                <img src="images/darth-vader.jpg" alt="Darth Vader">
+            </div><!-- end card-image -->
+        </div><!--end card -->
+    </div><!-- end game-board -->
+    <div class="end-game-btn-container">
+        <button class="btn btn-end-game"
+                id="btn-end-game">
+            End Game
+        </button>
+    </div><!-- end end-game-btn-container -->
+</div><!-- end game-screen -->
+<!-- End Game Pop Up Box -->
+<div class="end-game-pop-up end-game-pop-up-win" id="end-game-pop-up-win">
+    <div class="end-game-pop-up-content end-game-pop-up-content-win">
+        <div class="pop-up-text">
+            <p>Congrats!!!</p>
+            <p>You are now one with the force!</p>
+        </div>
+        <div class="pop-up-image">
+            <img src="images/yoda-transparent-medium.png" alt="Yoda">
+        </div>
+        <div class="play-again">
+            <p>Play Again?</p>
+            <button class="btn btn-play-again btn-play-again-yes" id="btn-play-again-yes">
+                    <span class="btn-text">Yes</span>
+            </button>
+            <button class="btn btn-play-again btn-play-again-no" id="btn-play-again-no">
+                    <span class="btn-text">No</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Game Music -->
+<audio id="music-end-game-win">
+    <source src="media/music/match-wars-game-end-win.mp3">
+</audio>
+<!-- Game SFX -->
+<!-- Door -->
+<audio id="sfx-door-open-close-01">
+    <source src="media/sfx/door/door.mp3">
+</audio>
+<audio id="sfx-door-open-close-02">
+        <source src="media/sfx/door/door.mp3">
+</audio>
+<script src="scripts/jquery-3.6.3.min.js"></script>
+<script src="scripts/cards.js"></script>  
+<script src="scripts/game.js"></script>
+</body>
+</html>

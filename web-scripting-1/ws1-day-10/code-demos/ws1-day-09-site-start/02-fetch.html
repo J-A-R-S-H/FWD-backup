@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fetch</title>
+    <link rel="stylesheet" href="styles/styles-json-fetch-async-apis.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1 class="long-main-heading">Fetch</h1>
+        </header>
+        <main>
+            <article>
+                <h1>About Fetch</h1>
+                <p>Many modern web applications require making requests for data asynchronously while the user is
+                    interacting with the web page and then updating web page dynamically with the newly acquired data.
+                    This was commonly referred to as AJAX (Asynchronous JavaScript and XML) in the past. The
+                    <code>fetch()</code> method makes getting data asynchronously easier than the older
+                    <code>XMLHTTPRequest()</code> method.
+                </p>
+                <h2>Make an Asynchronous Request with Fetch()</h2>
+                <p><strong>Note:</strong> Normally we would use a web server to make a request for data. Since we do not
+                    have a web server script setup designed to return JSON data we will simply make a request to the
+                    location of our local JSON data stored inside our local data folder. In the next lesson and upcoming
+                    exercise we will look at making requests to a public API located on a public web server.</p>
+                <div class="demo-box demo-box-fetch">
+                    <p>Get JSON data using <code>fetch()</code>, parse it and output it as an unordered list when the
+                        button is clicked.</p>
+                    <button id="btn-01">Click Me</button>
+                    <div class="data-output" id="data-output"></div>
+                </div>
+            </article>
+        </main>
+        <footer>
+            <p class="mb20">&copy; 2019 Michael Whyte</p>
+        </footer>
+    </div>
+    <script src="scripts/fetch.js"></script>
+</body>
+
+</html>

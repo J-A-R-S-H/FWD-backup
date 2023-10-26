@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Input Character Counter</title>
+    <link rel="stylesheet" href="styles/bootstrap-custom-build.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div class="wrapper">
+<header>
+    <h1 class="medium-main-heading">Input Character Counter</h1>
+</header>
+<main>
+    <article>
+        <h1>Counting Characters in an Input Dynamically</h1>
+        <p>The character counter will update as the user enters text into the textarea field. The script will prevent the user from entering more than 50 characters.</p>
+        <div class="form-demo-box form-demo-box-character-counter">
+            <form class="form-basic" action="05-thank-you.html" novalidate>
+                <h2>Basic Form</h2>
+                <div class="form-row form-row-comments">
+                    <div class="form-group form-group-textarea">
+                        <label for="comments">Comments</label>
+                        <textarea class="form-control" id="comments" rows="3" name="comments"></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <p><b>Character Count: </b><span class="character-count">50</span></p>
+                </div>
+                <div class="form-row form-row-submit">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </article>
+</main>
+<footer>
+    <p class="mb20">&copy; 2019 Michael Whyte</p>
+</footer>
+</div>
+<script src="scripts/jquery-3.4.1.min.js"></script>
+<script src="scripts/form-input-character-counter.js"></script>
+</body>
+</html>
