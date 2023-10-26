@@ -1,6 +1,6 @@
 "use strict"
 
-const gridSizeSelector = document.querySelectorAll("button");
+const gridSizeSelector = document.querySelectorAll("img");
 const gameBoardContainer = document.querySelector(".gameboard-container")
 const singlePlayerSelect = document.querySelector(".single-player")
 const splashContainer = document.querySelector(".splash-container")
@@ -8,7 +8,7 @@ const gridSelectionPage = document.querySelector(".grid-selection-page")
 
 singlePlayerSelect.addEventListener("click", () => {
 
-    splashContainer.style.display = "none"
+    splashContainer.remove()
     gridSelectionPage.style.display = "grid"
 
 })
