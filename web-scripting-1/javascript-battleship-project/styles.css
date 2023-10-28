@@ -282,11 +282,15 @@ a {
 }
 
 .grid-selection-page {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     width: 45%;
-    animation: resize 300 ms 1;
+    animation: resize 300ms 1;
+}
+
+
+.grid-selection-page {
+    display: none;
 }
 
 @keyframes resize {
@@ -307,9 +311,6 @@ img {
     height: 100%;
 }
 
-.grid-selection-page {
-    display: none;
-}
 
 .center-page {
     display: flex;
