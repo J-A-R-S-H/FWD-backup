@@ -21,10 +21,15 @@ gridSizeSelector.forEach((el) => {
 
     el.addEventListener("click", () => {
         console.log("does this even work")
+        gridSelectionPage.classList.toggle("reverse-scale")
         selectedSize = parseInt(el.dataset.value);
+
+        gridSelectionPage.addEventListener("animationend", () => {
+
+            generateBoard("#00AAFF", "player", "grid-player")
+            gridSelectionPage.style.display = "none"
+        })
         //console.log(selectedSize)
-        generateBoard("#00AAFF", "player", "grid-player")
-        gridSelectionPage.style.display = "none"
         //getGridSize(selectedSize)
     });
 })
