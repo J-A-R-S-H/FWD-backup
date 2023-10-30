@@ -227,6 +227,9 @@ function higlightArea(startIndex, ship) {
             setTimeout(() => shipBlock.classList.remove("hover"), 500)
         })
     }
+    else {
+        shipBlocks.style.cursor = "pointer"
+    }
 }
 
 let gameOver = false

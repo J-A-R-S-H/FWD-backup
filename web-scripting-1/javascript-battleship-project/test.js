@@ -26,8 +26,10 @@ gridSizeSelector.forEach((el) => {
 
         gridSelectionPage.addEventListener("animationend", () => {
 
+            gridText.textContent = "Place your ships"
             generateBoard("#00AAFF", "player", "grid-player")
             gridSelectionPage.style.display = "none"
+
             startShipPlacement(); // Start ship placement immediately
 
         })
@@ -57,7 +59,6 @@ function generateBoard(color, side, classesContainer) {
         gridCell.id = i
         generatedgameBoardContainer.append(gridCell)
     }
-
     gameBoardContainer.append(generatedgameBoardContainer)
 }
 
