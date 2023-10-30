@@ -288,10 +288,40 @@ function handleClick(e) {
     }
 }
 
+let hitBlockIndex;
+
 function computerMove() {
     if (!gameOver) {
         checkDisplay.textContent = "The computer is thinking...?"
         turnDisplay.textContent = "Computer's Turn"
+
+
+
+        let lastMoveHit
+        let storeLastComputerMoveHit
+
+
+        let maxDirections = 4
+        let randomDirection = Math.floor(Math.random() * 3)
+        if (lastMoveHit === true) {
+            console.log("test")
+            switch (randomDirection) {
+                case 0:
+                    hitBlockIndex = continueNewMove(hitBlockIndex, "up")
+                    break
+                case 1:
+                    hitBlockIndex = continueNewMove(hitBlockIndex, "right")
+                    break
+                case 2:
+                    hitBlockIndex = continueNewMove(hitBlockIndex, "down")
+                    break
+                case 3:
+                    hitBlockIndex = continueNewMove(hitBlockIndex, "left")
+                    break
+            }
+
+        }
+
 
         setTimeout(() => {
             let randomMove = Math.floor(Math.random() * width * width)
@@ -305,7 +335,9 @@ function computerMove() {
                 allPlayerBlocks[randomMove].classList.contains("taken") &&
                 !allPlayerBlocks[randomMove].classList.contains("boom")
             ) {
-                !allPlayerBlocks[randomMove].classList.add("boom")
+                allPlayerBlocks[randomMove].classList.add("boom")
+                hitBlockIndex = randomMove;
+                console.log(randomMove)
                 checkDisplay.textContent = "The Computer hit you, damn thats crazy"
                 let classes = Array.from(allPlayerBlocks[randomMove].classList)
                 classes = classes.filter(className => className !== "grid-cell")
@@ -313,6 +345,7 @@ function computerMove() {
                 classes = classes.filter(className => className !== "taken")
                 computerHits.push(...classes)
                 checkScore("computer", computerHits, computerSunkShips)
+                lastMoveHit = true
             }
             else {
                 checkDisplay.textContent = "nothing, well hit the water technically"
@@ -328,6 +361,23 @@ function computerMove() {
         }, 500)
     }
 }
+
+function continueNewMove(currentMove, direction) {
+    switch (direction) {
+        case 'up':
+            return currentMove - width;
+        case 'right':
+            return currentMove + 1;
+        case 'down':
+            return currentMove + width;
+        case 'left':
+            return currentMove - 1;
+    }
+}
+
+
+
+
 
 function checkScore(user, userHits, userSunkShips) {
     function checkShipName(shipName, shipLength) {
