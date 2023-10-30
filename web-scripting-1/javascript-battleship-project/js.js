@@ -33,7 +33,7 @@ function generateBoard(color, side, classesContainer) {
     for (let i = 0; i < width * width; i++) {
         const gridCell = document.createElement("div")
         gridCell.classList.add("grid-cell")
-        gridCell.id = i
+        gridCell.dataset.squares = i;
         generatedgameBoardContainer.append(gridCell)
     }
 
@@ -67,7 +67,6 @@ function getValidity(allGridCellsComp, isHorizontal, startIndex, ship, selectedG
         //handle Vertical
         startIndex <= width * width - width * ship.length ? startIndex :
             startIndex - ship.length * width + width
-    console.log(ship.length)
     let shipBlocks = []
     for (let i = 0; i < ship.length; i++) {
         if (isHorizontal) {
@@ -81,12 +80,11 @@ function getValidity(allGridCellsComp, isHorizontal, startIndex, ship, selectedG
     let valid
     if (isHorizontal) {
         valid = shipBlocks.every((_shipBlock, index) =>
-            shipBlocks[0].id % width !== width - (shipBlocks.length - (index + 1)))
+            shipBlocks[0].dataset.squares % width !== width - (shipBlocks.length - (index + 1)))
     }
     else {
         shipBlocks.every((_shipBlock, index) =>
-            valid = shipBlocks[0].id < 90 + (width * index + 1))
-        console.log(valid)
+            valid = shipBlocks[0].dataset.squares < 90 + (width * index + 1))
     }
 
     const notTaken = shipBlocks.every(shipBlock => !shipBlock.classList.contains("taken"))
@@ -157,7 +155,6 @@ function randomizePlayerShips() {
     shuffleArray(ships);
 
     ships.forEach((ship, i) => {
-        //console.log(i)
         addRandomShip("player", ship);
     });
 
@@ -174,7 +171,6 @@ function shuffleArray(array) {
 
 function addRandomShip(user, ship) {
     addShipPiece(user, ship);
-    //console.log(shipContainer.children.length)
 }
 
 randomizeBtn.addEventListener("click", randomizePlayerShips);
@@ -199,11 +195,11 @@ function dragStartShips(e) {
 function dragOver(e) {
     e.preventDefault()
     const ship = ships[draggedShip.id]
-    higlightArea(e.target.id, ship)
+    higlightArea(e.target.dataset.squares, ship)
 }
 
 function dropPlaceShip(e) {
-    const startid = e.target.id
+    const startid = e.target.dataset.squares
     const ship = ships[draggedShip.id]
     addShipPiece("player", ship, startid)
     if (!notDropped) {
@@ -226,9 +222,6 @@ function higlightArea(startIndex, ship) {
             shipBlock.classList.add("hover")
             setTimeout(() => shipBlock.classList.remove("hover"), 500)
         })
-    }
-    else {
-        shipBlocks.style.cursor = "pointer"
     }
 }
 
@@ -289,14 +282,11 @@ function handleClick(e) {
             e.target.classList.add("empty")
         }
         playerTurn = false
-        // const allComputerBlocks = document.querySelectorAll("#computer div")
-        // allComputerBlocks.forEach(block => block.replaceWith(block.cloneNode(true)))
-        //how do I remove event listeners
 
-        setTimeout(computerMove, 1000)
+
+        setTimeout(computerMove, 500)
     }
 }
-
 
 function computerMove() {
     if (!gameOver) {
@@ -328,14 +318,14 @@ function computerMove() {
                 checkDisplay.textContent = "nothing, well hit the water technically"
                 allPlayerBlocks[randomMove].classList.add("empty")
             }
-        }, 1000)
+        }, 500)
         setTimeout(() => {
             playerTurn = true
             turnDisplay.textContent = "player's turn"
             checkDisplay.textContent = "hmmmmm I think it's your turn"
             const allComputerBlocks = document.querySelectorAll("#computer div")
             allComputerBlocks.forEach(block => block.addEventListener("click", handleClick))
-        }, 1000)
+        }, 500)
     }
 }
 
