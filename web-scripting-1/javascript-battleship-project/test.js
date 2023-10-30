@@ -28,6 +28,8 @@ gridSizeSelector.forEach((el) => {
 
             generateBoard("#00AAFF", "player", "grid-player")
             gridSelectionPage.style.display = "none"
+            startShipPlacement(); // Start ship placement immediately
+
         })
         //console.log(selectedSize)
         //getGridSize(selectedSize)
@@ -60,4 +62,33 @@ function generateBoard(color, side, classesContainer) {
 }
 
 function asdfa() {
+}
+
+
+
+function startShipPlacement() {
+    // Add event listeners to grid cells for ship placement and hover effects
+    const gridCells = document.querySelectorAll(".grid-cell");
+    gridCells.forEach((cell) => {
+        cell.addEventListener("click", handleShipPlacement);
+        cell.addEventListener("mouseover", handleCellHover);
+        cell.addEventListener("mouseout", handleCellHover);
+    });
+}
+
+// Function to handle ship placement
+function handleShipPlacement(event) {
+    // Add your ship placement logic here
+    // You can change the background color or add a ship image to the selected cell
+}
+
+// Function to handle hover effects
+function handleCellHover(event) {
+    if (event.type === "mouseover") {
+        // Apply hover effect, e.g., change the cell's background color
+        event.target.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+    } else if (event.type === "mouseout") {
+        // Remove hover effect
+        event.target.style.backgroundColor = "";
+    }
 }
