@@ -289,77 +289,103 @@ function handleClick(e) {
 }
 
 let hitBlockIndex;
+let lastMoveHit;
+let direction = 0;
+//let storeLastComputerMoveHit
 
-function computerMove() {
-    if (!gameOver) {
-        checkDisplay.textContent = "The computer is thinking...?"
-        turnDisplay.textContent = "Computer's Turn"
+function computerMove(hitDirection = undefined) {
+
+    if (gameOver) {
+        return;
+    }
+
+    checkDisplay.textContent = "The computer is thinking...?"
+    turnDisplay.textContent = "Computer's Turn"
 
 
-
-        let lastMoveHit
-        let storeLastComputerMoveHit
-
-
-        let maxDirections = 4
-        let randomDirection = Math.floor(Math.random() * 3)
-        if (lastMoveHit === true) {
-            console.log("test")
-            switch (randomDirection) {
-                case 0:
-                    hitBlockIndex = continueNewMove(hitBlockIndex, "up")
-                    break
-                case 1:
-                    hitBlockIndex = continueNewMove(hitBlockIndex, "right")
-                    break
-                case 2:
-                    hitBlockIndex = continueNewMove(hitBlockIndex, "down")
-                    break
-                case 3:
-                    hitBlockIndex = continueNewMove(hitBlockIndex, "left")
-                    break
-            }
-
+    if (lastMoveHit === true) {
+        //let maxDirections = 4
+        let randomDirection;
+        if (hitDirection === undefined) {
+            randomDirection = Math.floor(Math.random() * 3);
+        } else {
+            randomDirection = hitDirection;
         }
 
+        console.log("test")
+        switch (randomDirection) {
+            case 0:
+                hitBlockIndex = continueNewMove(hitBlockIndex, "up");
+                direction = 0;
+                break
+            case 1:
+                hitBlockIndex = continueNewMove(hitBlockIndex, "right")
+                direction = 0;
+                break
+            case 2:
+                hitBlockIndex = continueNewMove(hitBlockIndex, "down")
+                direction = 0;
+                break
+            case 3:
+                hitBlockIndex = continueNewMove(hitBlockIndex, "left")
+                direction = 0;
+                break
+        }
 
-        setTimeout(() => {
-            let randomMove = Math.floor(Math.random() * width * width)
-            if (allPlayerBlocks[randomMove].classList.contains("taken") &&
-                allPlayerBlocks[randomMove].classList.contains("boom")
-            ) {
-                computerMove()
-                return
-            }
-            else if (
-                allPlayerBlocks[randomMove].classList.contains("taken") &&
-                !allPlayerBlocks[randomMove].classList.contains("boom")
-            ) {
-                allPlayerBlocks[randomMove].classList.add("boom")
-                hitBlockIndex = randomMove;
-                console.log(randomMove)
-                checkDisplay.textContent = "The Computer hit you, damn thats crazy"
-                let classes = Array.from(allPlayerBlocks[randomMove].classList)
-                classes = classes.filter(className => className !== "grid-cell")
-                classes = classes.filter(className => className !== "boom")
-                classes = classes.filter(className => className !== "taken")
-                computerHits.push(...classes)
-                checkScore("computer", computerHits, computerSunkShips)
-                lastMoveHit = true
-            }
-            else {
-                checkDisplay.textContent = "nothing, well hit the water technically"
-                allPlayerBlocks[randomMove].classList.add("empty")
-            }
-        }, 500)
-        setTimeout(() => {
-            playerTurn = true
-            turnDisplay.textContent = "player's turn"
-            checkDisplay.textContent = "hmmmmm I think it's your turn"
-            const allComputerBlocks = document.querySelectorAll("#computer div")
-            allComputerBlocks.forEach(block => block.addEventListener("click", handleClick))
-        }, 500)
     }
+
+
+    setTimeout(() => {
+        let randomMove;
+        if (lastMoveHit === true) {
+            randomMove = hitBlockIndex
+        } else {
+            randomMove = Math.floor(Math.random() * width * width)
+        }
+        if (allPlayerBlocks[randomMove].classList.contains("taken") &&
+            allPlayerBlocks[randomMove].classList.contains("boom")
+        ) {
+            computerMove()
+            return
+        }
+        else if (
+            allPlayerBlocks[randomMove].classList.contains("taken") &&
+            !allPlayerBlocks[randomMove].classList.contains("boom")
+        ) {
+            allPlayerBlocks[randomMove].classList.add("boom")
+            hitBlockIndex = randomMove;
+            console.log(randomMove)
+            checkDisplay.textContent = "The Computer hit you, damn thats crazy"
+            let classes = Array.from(allPlayerBlocks[randomMove].classList)
+            classes = classes.filter(className => className !== "grid-cell")
+            classes = classes.filter(className => className !== "boom")
+            classes = classes.filter(className => className !== "taken")
+            computerHits.push(...classes)
+            checkScore("computer", computerHits, computerSunkShips)
+            if (lastMoveHit === false) {
+                lastMoveHit = true;
+                computerMove();
+            } else {
+                lastMoveHit = true;
+                computerMove(direction);
+            }
+
+            //computerMove();
+        }
+        else {
+            checkDisplay.textContent = "nothing, well hit the water technically"
+            allPlayerBlocks[randomMove].classList.add("empty")
+            lastMoveHit = false;
+        }
+    }, 500)
+    setTimeout(() => {
+        playerTurn = true
+        turnDisplay.textContent = "player's turn"
+        checkDisplay.textContent = "hmmmmm I think it's your turn"
+        const allComputerBlocks = document.querySelectorAll("#computer div")
+        allComputerBlocks.forEach(block => block.addEventListener("click", handleClick))
+    }, 500)
+
 }
 
 function continueNewMove(currentMove, direction) {
