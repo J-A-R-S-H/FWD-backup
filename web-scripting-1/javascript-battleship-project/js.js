@@ -308,27 +308,32 @@ function computerMove(hitDirection = undefined) {
         let randomDirection;
         if (hitDirection === undefined) {
             randomDirection = Math.floor(Math.random() * 3);
+            console.log(hitDirection + "Hit Direction Undefined")
         } else {
             randomDirection = hitDirection;
+            console.log(hitDirection + "Hit Direction is not Undefined")
         }
 
-        console.log("test")
         switch (randomDirection) {
             case 0:
                 hitBlockIndex = continueNewMove(hitBlockIndex, "up");
                 direction = 0;
+                console.log("up Direction")
                 break
             case 1:
                 hitBlockIndex = continueNewMove(hitBlockIndex, "right")
-                direction = 0;
+                direction = 1;
+                console.log("right Direction")
                 break
             case 2:
                 hitBlockIndex = continueNewMove(hitBlockIndex, "down")
-                direction = 0;
+                direction = 2;
+                console.log("down Direction")
                 break
             case 3:
                 hitBlockIndex = continueNewMove(hitBlockIndex, "left")
-                direction = 0;
+                direction = 3;
+                console.log("left Direction")
                 break
         }
 
@@ -364,9 +369,11 @@ function computerMove(hitDirection = undefined) {
             checkScore("computer", computerHits, computerSunkShips)
             if (lastMoveHit === false) {
                 lastMoveHit = true;
+                console.log("no direction inputed")
                 computerMove();
             } else {
                 lastMoveHit = true;
+                console.log("direction inputed")
                 computerMove(direction);
             }
 
@@ -389,18 +396,16 @@ function computerMove(hitDirection = undefined) {
 }
 
 function continueNewMove(currentMove, direction) {
-    switch (direction) {
-        case 'up':
-            return currentMove - width;
-        case 'right':
-            return currentMove + 1;
-        case 'down':
-            return currentMove + width;
-        case 'left':
-            return currentMove - 1;
+    if (direction === 'up') {
+        return currentMove - width;
+    } else if (direction === 'right') {
+        return currentMove + 1;
+    } else if (direction === 'down') {
+        return currentMove + width;
+    } else if (direction === 'left') {
+        return currentMove - 1;
     }
 }
-
 
 
 
