@@ -275,7 +275,7 @@ function handleClick(e) {
             classes = classes.filter(className => className !== "taken")
             playerHits.push(...classes)
             checkScore("player", playerHits, playerSunkShips)
-
+            return;
         }
         if (!e.target.classList.contains("taken")) {
             checkDisplay.textContent = "I think you missed..."
@@ -291,7 +291,6 @@ function handleClick(e) {
 let hitBlockIndex;
 let lastMoveHit;
 let direction = 0;
-//let storeLastComputerMoveHit
 
 function computerMove(hitDirection = undefined) {
 
@@ -343,12 +342,15 @@ function computerMove(hitDirection = undefined) {
     setTimeout(() => {
         let randomMove;
         if (lastMoveHit === true) {
+            //randomMove becomes the hitBlockIndex from the direction switch case
             randomMove = hitBlockIndex
         } else {
+            //If lastMoveHit did not equal true, goes back to being random
             randomMove = Math.floor(Math.random() * width * width)
         }
         if (allPlayerBlocks[randomMove].classList.contains("taken") &&
-            allPlayerBlocks[randomMove].classList.contains("boom")
+            allPlayerBlocks[randomMove].classList.contains("boom") ||
+            allPlayerBlocks[randomMove].classList.contains("empty")
         ) {
             computerMove()
             return
@@ -381,6 +383,8 @@ function computerMove(hitDirection = undefined) {
         }
         else {
             checkDisplay.textContent = "nothing, well hit the water technically"
+            console.log(randomMove)
+            console.log(direction)
             allPlayerBlocks[randomMove].classList.add("empty")
             lastMoveHit = false;
         }
@@ -396,14 +400,20 @@ function computerMove(hitDirection = undefined) {
 }
 
 function continueNewMove(currentMove, direction) {
-    if (direction === 'up') {
+    const row = Math.floor(currentMove / width);
+    const col = currentMove % width;
+
+    if (direction === 'up' && row > 0) {
         return currentMove - width;
-    } else if (direction === 'right') {
+    } else if (direction === 'right' && col < width - 1) {
         return currentMove + 1;
-    } else if (direction === 'down') {
+    } else if (direction === 'down' && row < width - 1) {
         return currentMove + width;
-    } else if (direction === 'left') {
+    } else if (direction === 'left' && col > 0) {
         return currentMove - 1;
+    } else {
+        // Invalid move, return the current position
+        return currentMove;
     }
 }
 
