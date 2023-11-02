@@ -43,6 +43,9 @@ gridSizeSelector.forEach((el) => {
             const optionShips = Array.from(shipContainer.children)
             optionShips.forEach(optionShip => optionShip.addEventListener("dragstart", dragStartShips));
 
+
+
+
             allPlayerBlocks.forEach(playerBlock => {
                 playerBlock.addEventListener("dragover", dragOver);
                 playerBlock.addEventListener("drop", dropPlaceShip);
@@ -67,6 +70,7 @@ gridSizeSelector.forEach((el) => {
                 if (!notDropped) {
                     draggedShip.remove()
                 }
+                startGame()
             }
 
             // Add Highlight
@@ -230,13 +234,6 @@ function addShipPiece(user, ship, startid) {
 
 }
 
-const testBtn = document.querySelector("#test-btn")
-testBtn.addEventListener("click", () => {
-
-
-    ships.forEach(ship => addShipPiece("computer", ship))
-})
-
 //drag player ships
 
 
@@ -245,7 +242,7 @@ testBtn.addEventListener("click", () => {
 function startGame() {
     if (playerTurn === undefined) {
 
-        if (shipContainer.children.length === 0) {
+        if (shipContainer.children.length >= 1) {
             checkDisplay.textContent = "Place Ships"
         }
         else {
@@ -254,11 +251,15 @@ function startGame() {
 
             playerTurn = true
             turnDisplay.textContent = "hmmmm I think it is your turn frfr"
+            gridText.style.visibility = "hidden"
             checkDisplay.textContent = "The game started gogoggoogo"
+            ships.forEach(ship => addShipPiece("computer", ship))
+
         }
 
     }
 }
+
 
 
 let playerHits = []
