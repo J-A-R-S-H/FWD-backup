@@ -19,7 +19,7 @@
         <main>
             <section>
                 <h1>Basic Form</h1>
-                <form action="/" method="get">
+                <form action="processor.html" method="post">
 
                     <h2>Create Account</h2>
 
@@ -45,40 +45,76 @@
 
 
 
+                    </fieldset>
+
+                    <fieldset>
+
+                        <Legend>Account Info:</Legend>
+
+                        <h2>Account Types</h2>
+
+                        <div class="form-group">
+                            <input type="radio" name="account-type" id="cheque" value="chequing">
+                            <label for="cheque">Chequing</label>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="radio" name="account-type" id="save" value="savings">
+                            <label for="save">Savings</label>
+
+                        </div>
+
+                        <h2> Account features</h2>
+
+                        <div class="form-group">
+                            <input type="checkbox" name="account-features[]" id="bp">
+                            <label for="bp">Balance Protection</label>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="checkbox" name="account-features[]" id="aa">
+                            <label for="aa">Account Alerts</label>
+                        </div>
+
+                    </fieldset>
+
+                    <input type="color" name="c" id="c">
+                    <label for="c">Color</label>
+
+                    <h2>Select a Branch</h2>
+
+                    <div class="form-group">
+
+                        <label for="branch">Branch</label>
+                        <select name="branch" id="br">
+
+                            <option value="kits">Kitsilano</option>
+                            <option value="mr">Maple Ridge</option>
+                            <option value="wh">Whistler</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <h2>Feedback</h2>
+
+                    <div class="form-group">
+                        <label for="cm">Comments</label>
+                        <textarea name="Comments" id="cm" cols="30" rows="10"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Create Account">
+                    </div>
+
                 </form>
-                </fieldset>
-
-                <fieldset>
-
-                    <Legend>Account Info:</Legend>
-
-                    <h2>Account Types</h2>
-
-                    <div class="form-group">
-                        <input type="radio" name="account-type" id="cheque" value="chequing">
-                        <label for="cheque">Chequing</label>
-
-                    </div>
-
-
-                    <div class="form-group">
-                        <input type="radio" name="account-type" id="save" value="savings">
-                        <label for="save">Savings</label>
-
-                    </div>
-
-                    <h2> Account features</h2>
-
-                    <div class="form-group">
-                        <input type="checkbox" name="account-features[]" id="bp">
-                        <label for="bp">Balance Protection</label>
-                    </div>
-
-
-                </fieldset>
-
 
             </section>
+
         </main>
         <footer>
             <p>&copy; 2019 Michael Whyte</p>
