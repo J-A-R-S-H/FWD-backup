@@ -254,7 +254,7 @@ function startGame() {
             gridText.style.visibility = "hidden"
             checkDisplay.textContent = "The game started gogoggoogo"
             ships.forEach(ship => addShipPiece("computer", ship))
-            asdfs
+
         }
 
     }
