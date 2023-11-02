@@ -37,7 +37,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 30px;
+    width: 33vw;
+    margin: 0 auto;
 }
 
 .destroyer-dragstate {
@@ -340,4 +341,16 @@ img {
         transform: scale(0);
         ;
     }
+}
+
+#main-game-board {
+    display: none;
+}
+
+.single-player {
+    margin-top: 0.5rem;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background-color: #00AAFF;
 }

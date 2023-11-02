@@ -6,7 +6,7 @@ const singlePlayerSelect = document.querySelector(".single-player")
 const splashContainer = document.querySelector(".splash-container")
 const gridSelectionPage = document.querySelector(".grid-selection-page")
 const gridText = document.querySelector("#grid-text")
-
+const mainGameBoard = document.querySelector("#main-game-board")
 
 
 singlePlayerSelect.addEventListener("click", () => {
@@ -35,6 +35,7 @@ gridSizeSelector.forEach((el) => {
             generateBoard("#00AAFF", "computer", "grid-computer")
 
             gridSelectionPage.style.display = "none"
+            mainGameBoard.style.display = "block"
 
             const allPlayerBlocks = document.querySelectorAll("#player div")
             let draggedShip
