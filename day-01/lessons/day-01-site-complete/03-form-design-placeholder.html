@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Placeholder Styling</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Roboto:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="styles/form-design-placeholder.css">
+</head>
+<body>
+<div class="wrapper">
+<header>
+    <h1>Placeholder Styling</h1>
+</header>
+<main>
+    <section>
+        <h1>Basic Form</h1>
+        <form action="/" class="basic-form" method="post">
+        
+           <h2>Book an Appointment</h2>
+           
+           <fieldset>
+               <legend>Your Info</legend>
+               <div class="form-group patient-info-group">
+                    <div class="form-row first-name">
+                        <label for="fn">First name</label>
+                        <input type="text" id="fn" name="fn" placeholder="First name...">
+                    </div><!-- end form-row -->
+                    <div class="form-row last-name">
+                        <label for="ln">Last name</label>
+                        <input type="text" id="ln" name="ln" placeholder="Last name...">
+                    </div><!-- end form-row -->
+                    <div class="form-row email">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email...">
+                    </div><!-- end form-row -->
+               </div><!-- form-group -->
+           </fieldset>
+           <div class="form-group submit-group">
+               <div class="form-row submit">
+                   <input type="submit" value="Submit">
+               </div>
+           </div>
+        </form>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2019 Michael Whyte</p>
+</footer>
+</div><!-- end wrapper -->     
+</body>
+</html>

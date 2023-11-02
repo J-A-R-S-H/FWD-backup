@@ -1,0 +1,286 @@
+@charset "utf-8";
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #a7a7a7;
+}
+
+h1, h2, h3, h4, h5, h6, nav a {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+    margin-top: 0;
+}
+
+p, li {
+    line-height: 1.4;
+}
+
+.wrapper {
+    max-width: 800px;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+header,
+footer {
+    background-color: #043f8b;
+    color: white;
+    padding: 20px 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px 20px 40px;
+}
+
+section h1 {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Google Fonts for form 
+
+Labels: font-family: 'Roboto', sans-serif;
+
+Inputs: font-family: 'Open Sans', sans-serif;
+
+*/
+
+/* Form Styles */
+.basic-form {
+    max-width: 640px;
+    margin: 0 auto;
+    border: 2px solid #5e5e5e;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.basic-form h2, 
+.basic-form h3, 
+.basic-form p,
+.basic-form legend, 
+.basic-form label,
+.basic-form input[type="submit"] {
+    font-family: 'Roboto', sans-serif;
+}
+
+.basic-form h3 {
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+}
+
+.basic-form input:not([type="submit"]), 
+.basic-form option {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.basic-form fieldset {
+    padding: 0;
+    border: 0;
+}
+
+.basic-form legend {
+    padding: 0;
+    margin-bottom: 0.9em;
+    font-weight: bold;
+    font-size: 1.2em;
+    border-left: 3px solid #448d44;
+    padding-left: 5px;
+}
+
+.basic-form label {
+    font-size: 1.05em;
+    margin-bottom: 0.3em;
+}
+
+.basic-form select {
+    font-size: 1.05em;
+    margin-left: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ccc;
+}
+
+/* Your Info Styles */
+.patient-info-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.first-name,
+.last-name {
+    width: 48%;
+}
+
+.first-name,
+.last-name {
+    width: 100%;
+}
+
+.email {
+    width: 100%;
+}
+
+.submit-group input {
+    color: #fff;
+    background-color: #5cb85c;
+    border: 2px solid #4cae4c;
+    padding: 8px 16px;
+    font-size: 1.1em;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+.patient-info-group .form-row:not(:last-child) {
+    margin-bottom: 1.2em;
+}
+
+.patient-info-group label,
+.patient-info-group input {
+    display: block;
+    width: 100%;
+}
+
+.patient-info-group input {
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 1.025em;
+}
+
+/* Styling the Placeholder */
+
+/* - Each browser uses a different pseudo class to 
+     select the placeholder text 
+   
+   - You can not combine placeholder pseudo 
+     selectors into one selector. They must
+     be separate  
+     
+*/
+
+/* Works in Chrome and Firefox */
+.patient-info-group input::placeholder {
+    color: black;
+    /* Firefox fades the text using opacity
+       - If you want a consitent look between
+         browsers, set the opacity to 1  
+    */
+    opacity: 1;
+}
+
+/* Edge */
+.patient-info-group input::-ms-input-placeholder { 
+    color: black;
+}
+
+/* IE 10+ */
+.patient-info-group input:-ms-input-placeholder { 
+    color: black;
+}
+
+/* Visually Hide Your Labels 
+
+   Use with caution. See this article
+   for details:
+
+   https://www.nngroup.com/articles/form-design-placeholders/ 
+
+   Note: The following "sr-only" class
+   from Bootstrap:
+
+   https://getbootstrap.com/
+
+*/
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+}
+
+/* The following styles modified from alert styles 
+   in the Bootstrap framework
+   
+   https://getbootstrap.com/docs/4.0/components/alerts/ 
+
+*/
+.warn-box {
+    color: #721c24;
+    background-color: #f8d7da;
+    position: relative;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    border: 1px solid #f5c6cb;
+    border-radius: .25rem;
+    max-width: 640px;
+}
+
+.warn-box p {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+}
+
+.warn-box p:last-child {
+    margin-bottom: 0;
+}
+
+.warn-box a {
+    color: #721c24;
+}
+
+.warn-box:last-of-type {
+    margin-bottom: 2em;
+}
+
+/* Form Desktop Styles */
+@media (min-width: 580px){
+
+    .first-name,
+    .last-name {
+        width: 48%;
+    }
+
+    .submit-group input {
+        width: auto;
+    }
+
+}
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Checkbox and Radio</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Roboto:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="styles/form-design-checkbox-and-radio.css">
+</head>
+<body>
+<div class="wrapper">
+<header>
+    <h1>Checkbox and Radio</h1>
+</header>
+<main>
+    <section>
+        <h1>Basic Form</h1>
+        <form action="/" class="basic-form" method="post">
+        
+           <h2>Book an Appointment</h2>
+           
+           <fieldset>
+               <legend>Appointment Details</legend>
+               <div class="form-group new-patient-group">
+                    <h3>New Patient</h3>
+                    <div class="form-row new-patient new-patient-yes">
+                        <input type="radio" id="yes" name="new-patient">
+                        <label for="yes">Yes</label> 
+                    </div><!-- end form-row -->
+                    <div class="form-row new-patient new-patient-no">
+                        <input type="radio" id="no" name="new-patient" checked>
+                        <label for="no">No</label> 
+                    </div><!-- end form-row -->
+               </div><!-- end form-group -->
+               <div class="form-group appointment-type-group">
+                   <h3>Choose an Appointment Type</h3>
+                   <p>Check All that Apply</p>
+                   <div class="form-row appointment-type flu">
+                       <input type="checkbox" id="flu" name="at">
+                       <label for="flu">Flu shot</label>
+                   </div>
+                   <div class="form-row appointment-type travel-shots">
+                        <input type="checkbox" id="travel-shots" name="at">
+                        <label for="travel-shots">Travel shots</label>
+                   </div>
+                   <div class="form-row appointment-type prescription-renewal">
+                        <input type="checkbox" id="prescription-renewal" name="at">
+                        <label for="prescription-renewal">Prescription renewal</label>
+                   </div>
+                   <div class="form-row appointment-type other">
+                        <input type="checkbox" id="other" name="at">
+                        <label for="other">Other</label>
+                   </div>
+               </div><!-- end form-group -->  
+           </fieldset>
+           <div class="form-group submit-group">
+               <div class="form-row submit">
+                   <input type="submit" value="Submit">
+               </div>
+           </div>
+        </form>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2019 Michael Whyte</p>
+</footer>
+</div><!-- end wrapper -->    
+</body>
+</html>

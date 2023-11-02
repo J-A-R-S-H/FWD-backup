@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Design Basics</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Roboto:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="styles/form-design-basics.css">
+</head>
+<body>
+<div class="wrapper">
+<header>
+    <h1>Form Design Basics</h1>
+</header>
+<main>
+    <section>
+        <h1>Basic Form</h1>
+        <form action="/" class="basic-form" method="post">
+        
+           <h2>Book an Appointment</h2>
+           
+           <fieldset>
+               <legend>Your Info</legend>
+               <div class="form-group patient-info-group">
+                    <div class="form-row first-name">
+                        <label for="fn">First name</label>
+                        <input type="text" id="fn" name="fn">
+                    </div><!-- end form-row -->
+                    <div class="form-row last-name">
+                        <label for="ln">Last name</label>
+                        <input type="text" id="ln" name="ln">
+                    </div><!-- end form-row -->
+                    <div class="form-row email">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </div><!-- end form-row -->
+               </div><!-- form-group -->
+           </fieldset>
+           <fieldset>
+               <legend>Appointment Details</legend>
+               <div class="form-group new-patient-group">
+                    <h3>New Patient</h3>
+                    <div class="form-row new-patient new-patient-yes">
+                        <input type="radio" id="yes" name="new-patient">
+                        <label for="yes">Yes</label> 
+                    </div><!-- end form-row -->
+                    <div class="form-row new-patient new-patient-no">
+                        <input type="radio" id="no" name="new-patient" checked>
+                        <label for="no">No</label> 
+                    </div><!-- end form-row -->
+               </div><!-- end form-group -->
+               <div class="form-group appointment-type-group">
+                   <h3>Choose an Appointment Type</h3>
+                   <p>Check All that Apply</p>
+                   <div class="form-row appointment-type flu">
+                       <input type="checkbox" id="flu" name="at[]">
+                       <label for="flu">Flu shot</label>
+                   </div>
+                   <div class="form-row appointment-type travel-shots">
+                        <input type="checkbox" id="travel-shots" name="at[]">
+                        <label for="travel-shots">Travel shots</label>
+                   </div>
+                   <div class="form-row appointment-type prescription-renewal">
+                        <input type="checkbox" id="prescription-renewal" name="at[]">
+                        <label for="prescription-renewal">Prescription renewal</label>
+                   </div>
+                   <div class="form-row appointment-type other">
+                        <input type="checkbox" id="other" name="at[]">
+                        <label for="other">Other</label>
+                   </div>
+               </div><!-- end form-group -->
+               <div class="form-group select-doctor-group">
+                    <div class="form-row select-doctor">
+                        <label for="doctor">Select Your Doctor: </label>
+                        <select name="doctor" id="doctor">
+                            <option value="Smith">Dr. Smith</option>
+                            <option value="Chou">Dr. Chou</option>
+                            <option value="Abbas">Dr. Abbas</option>
+                            <option value="Garcia">Dr. Garcia</option>
+                            <option value="Nair">Dr. Nair</option>
+                        </select>
+                    </div>
+               </div><!-- end form-group -->  
+           </fieldset>
+           <fieldset>
+               <legend>Appointment Date &amp; Time</legend>
+               <div class="form-group date-group">
+                   <h3>Choose a Date</h3>
+                   <div class="form-row month">
+                       <label for="month">Month: </label>
+                       <select name="month" id="month">
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                       </select>  
+                   </div><!-- end form-row -->
+                   <div class="form-row day">
+                       <label for="day">Day: </label>
+                       <select name="day" id="day">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                       </select>
+                   </div><!-- end form-row -->
+                   <div class="form-row year">
+                       <label for="year">Year: </label>
+                       <select name="year" id="year">
+                           <option value="2019">2019</option>
+                           <option value="2020">2020</option>
+                       </select>
+                   </div>
+               </div><!-- end form-group -->
+               <div class="form-group time-group">
+                    <h3>Select a Time</h3>
+                   <div class="form-row hour">
+                       <label for="hour">Hour: </label>
+                       <select name="hour" id="hour">
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9">9</option>
+                           <option value="10">10</option>
+                           <option value="11">11</option>
+                           <option value="12">12</option>
+                       </select>
+                   </div><!-- end form-row -->
+                   <div class="form-row minute">
+                       <label for="minute">Minute: </label>
+                       <select name="minute" id="minute">
+                           <option value="0">:00</option>
+                           <option value="15">:15</option>
+                           <option value="30">:30</option>
+                           <option value="45">:45</option>
+                       </select>
+                   </div><!-- end form-row -->
+                   <div class="form-row am-pm">
+                       <label for="am-pm">AM or PM: </label>
+                       <select name="am-pm" id="am-pm">
+                           <option value="AM">AM</option>
+                           <option value="PM">PM</option>
+                       </select>
+                   </div>
+               </div><!-- end form-group -->
+           </fieldset>
+           <div class="form-group submit-group">
+               <div class="form-row submit">
+                   <input type="submit" value="Submit">
+               </div>
+           </div>
+        </form>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2019 Michael Whyte</p>
+</footer>
+</div><!-- end wrapper -->    
+</body>
+</html>

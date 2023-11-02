@@ -8,6 +8,8 @@ const gridSelectionPage = document.querySelector(".grid-selection-page")
 const gridText = document.querySelector("#grid-text")
 const mainGameBoard = document.querySelector("#main-game-board")
 
+let gameOver = false
+let playerTurn
 
 singlePlayerSelect.addEventListener("click", () => {
 
@@ -22,7 +24,6 @@ singlePlayerSelect.addEventListener("click", () => {
 let selectedSize = 11
 
 gridSizeSelector.forEach((el) => {
-
     el.addEventListener("click", () => {
         console.log("does this even work")
         gridSelectionPage.classList.toggle("reverse-scale")
@@ -86,7 +87,6 @@ gridSizeSelector.forEach((el) => {
                 }
             }
 
-            startGame()
 
         })
         //console.log(selectedSize)
@@ -239,15 +239,13 @@ testBtn.addEventListener("click", () => {
 
 //drag player ships
 
-let gameOver = false
-let playerTurn
 
 //Start Game
 
 function startGame() {
     if (playerTurn === undefined) {
 
-        if (shipContainer.children.length === 5) {
+        if (shipContainer.children.length === 0) {
             checkDisplay.textContent = "Place Ships"
         }
         else {

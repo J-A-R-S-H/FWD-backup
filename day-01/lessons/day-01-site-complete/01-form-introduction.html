@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form - Introduction</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Roboto:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="styles/form-introduction.css">
+</head>
+<body>
+<div class="wrapper">
+<header>
+    <h1>Form - Introduction</h1>
+</header>
+<main>
+    <section>
+        <h1>Basic Form</h1>
+        <form action="/" method="post">
+            <h2>Create Account</h2>
+
+            <div class="form-group">
+                <label for="firstname">Firstname: </label>
+                <input type="text" id="firstname" name="firstname">
+            </div><!-- end form-group -->
+
+            <div class="form-group">
+                <label for="lastname">Lastname: </label>
+                <input type="text" id="lastname" name="lastname">
+            </div><!-- end form-group -->
+
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email">
+            </div><!-- end form-group -->
+
+            <h2>Select an Account Type</h2>
+
+            <div class="form-group">
+                <input type="radio" name="account-type" id="chequing" value="chequing">
+                <label for="chequing">Chequing </label>
+            </div><!-- end form-group -->
+            
+            <div class="form-group">
+                <input type="radio" name="account-type" id="savings" value="savings">
+                <label for="savings">Savings </label>
+            </div><!-- end form-group -->	
+
+            <h2>Select Account Features</h2>
+
+            <div class="form-group">
+                <input type="checkbox" name="account-features[]" id="balance-protection" value="balance protection">
+                <label for="balance-protection">Balance Protection </label>
+            </div><!-- end form-group -->
+            
+            <div class="form-group">
+                <input type="checkbox" name="account-features[]" id="account-alerts" value="account alerts">
+                <label for="account-alerts">Account Alerts </label>
+            </div><!-- end form-group -->
+            
+            <h2>Select a Branch</h2>
+
+            <div class="form-group">
+                <label for="branch">Branch: </label>
+                <select name="branch" id="branch">
+                    <option value="Kitsilano">Kitsilano</option>
+                    <option value="Westend">Westend</option>
+                    <option value="Olympic Village">Olympic Village</option>
+                </select>
+            </div><!-- end form-group -->
+
+            <h2>Feedback</h2>
+
+            <div class="form-group">
+                <label for="comments">Comments: </label>
+                <textarea name="comments" id="comments"></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div><!-- end form-group -->   
+        </form>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2019 Michael Whyte</p>
+</footer>
+</div><!-- end wrapper -->    
+</body>
+</html>

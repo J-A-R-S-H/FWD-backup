@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Placeholder as Label</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Roboto:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="styles/form-design-placeholder-as-label.css">
+</head>
+<body>
+<div class="wrapper">
+<header>
+    <h1>Placeholder as Label</h1>
+</header>
+<main>
+    <section>
+        <div class="warn-box">
+            <p><strong>Note: </strong>Hiding labels and using placeholders inside form input elements as labels should be used with caution. Read the Nielsen Norman Group article <a href="https://www.nngroup.com/articles/form-design-placeholders/">Placeholders in Form Fields Are Harmful</a> for reasons to perhaps not use this technique.</p>
+        </div>
+
+        <div class="warn-box">
+            <p><strong>Warning: </strong>Never omit <code>label</code> tags in your markup, even if you are using this placeholder as label technique. People using screen readers rely on labels to use forms properly. Placeholders are NOT a substitute for labels in your HTML. Use CSS to visually hide your labels (DO NOT use <code>display: none;</code>). Use a visually hidden style such as that used by Bootstrap's "sr-only" class. See <a href="https://stackoverflow.com/questions/14876754/bootstrap-equivalent-of-html5boilerplates-visuallyhidden" title="Bootstrap equivalent of HTML5Boilerplate's .visuallyhidden
+                ">this</a> stackoverflow question and answer for a good visually hidden CSS code snippet.</p> 
+            
+            <p><strong>DO NOT BE A LAZY DEVELOPER!!!</strong>. Always use label tags and tie them to their corresponding inputs with a <code>for</code> attribute on the label tag that matches the <code>id</code> attribute on the corresponding <code>input</code> element, even if your labels are not visible.</p>
+        </div>
+
+        <h1>Basic Form</h1>
+
+        <form action="/" class="basic-form" method="post">
+        
+           <h2>Book an Appointment</h2>
+           
+           <fieldset>
+               <legend>Your Info</legend>
+               <div class="form-group patient-info-group">
+                    <div class="form-row first-name">
+                        <label for="fn" class="sr-only">First name</label>
+                        <input type="text" id="fn" name="fn" placeholder="First name...">
+                    </div><!-- end form-row -->
+                    <div class="form-row last-name">
+                        <label for="ln" class="sr-only">Last name</label>
+                        <input type="text" id="ln" name="ln" placeholder="Last name...">
+                    </div><!-- end form-row -->
+                    <div class="form-row email">
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email...">
+                    </div><!-- end form-row -->
+               </div><!-- form-group -->
+           </fieldset>
+           <div class="form-group submit-group">
+               <div class="form-row submit">
+                   <input type="submit" value="Submit">
+               </div>
+           </div>
+        </form>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2019 Michael Whyte</p>
+</footer>
+</div><!-- end wrapper -->     
+</body>
+</html>
