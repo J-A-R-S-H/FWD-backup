@@ -34,17 +34,50 @@
 
 
                             <div class="form-group">
-                                <label for="lastname">First Name: </label>
+                                <label for="lastname">Last Name: </label>
                                 <input type="text" id="lastname" name="fn">
                             </div>
 
                             <div class="form-group">
-                                <label for="email-input">First Name: </label>
+                                <label for="email-input">Email: </label>
                                 <input type="email" id="email-input" name="em">
                             </div>
 
+
+
                 </form>
                 </fieldset>
+
+                <fieldset>
+
+                    <Legend>Account Info:</Legend>
+
+                    <h2>Account Types</h2>
+
+                    <div class="form-group">
+                        <input type="radio" name="account-type" id="cheque" value="chequing">
+                        <label for="cheque">Chequing</label>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="radio" name="account-type" id="save" value="savings">
+                        <label for="save">Savings</label>
+
+                    </div>
+
+                    <h2> Account features</h2>
+
+                    <div class="form-group">
+                        <input type="checkbox" name="account-features[]" id="bp">
+                        <label for="bp">Balance Protection</label>
+                    </div>
+
+
+                </fieldset>
+
+
             </section>
         </main>
         <footer>
