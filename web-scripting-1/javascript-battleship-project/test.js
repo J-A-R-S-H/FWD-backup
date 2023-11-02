@@ -86,6 +86,7 @@ gridSizeSelector.forEach((el) => {
                 }
             }
 
+            startGame()
 
         })
         //console.log(selectedSize)
@@ -230,43 +231,12 @@ function addShipPiece(user, ship, startid) {
 }
 
 const testBtn = document.querySelector("#test-btn")
-const randomizeBtn = document.querySelector("#randomize-btn")
 testBtn.addEventListener("click", () => {
 
 
     ships.forEach(ship => addShipPiece("computer", ship))
 })
 
-
-function randomizePlayerShips() {
-    const allPlayerBlocks = document.querySelectorAll("#player div");
-
-    allPlayerBlocks.forEach((block) => {
-        block.classList.remove("taken", "start", "end", "horizontal", "vertical");
-    });
-
-    shuffleArray(ships);
-
-    ships.forEach((ship, i) => {
-        addRandomShip("player", ship);
-    });
-
-    notDropped = false;
-}
-
-// Function to shuffle an array (Fisher-Yates shuffle algorithm)
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-function addRandomShip(user, ship) {
-    addShipPiece(user, ship);
-}
-
-randomizeBtn.addEventListener("click", randomizePlayerShips);
 //drag player ships
 
 let gameOver = false
@@ -277,7 +247,7 @@ let playerTurn
 function startGame() {
     if (playerTurn === undefined) {
 
-        if (shipContainer.children.length <= 0) {
+        if (shipContainer.children.length === 5) {
             checkDisplay.textContent = "Place Ships"
         }
         else {
@@ -292,7 +262,6 @@ function startGame() {
     }
 }
 
-startBtn.addEventListener("click", startGame)
 
 let playerHits = []
 let computerHits = []
@@ -436,6 +405,7 @@ function computerMove(hitDirection = undefined) {
             lastMoveHit = false;
         }
     }, 500)
+
     setTimeout(() => {
         playerTurn = true
         turnDisplay.textContent = "player's turn"
