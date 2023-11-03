@@ -16,8 +16,6 @@ singlePlayerSelect.addEventListener("click", () => {
     splashContainer.remove()
     gridSelectionPage.style.display = "grid"
     gridText.style.display = "flex"
-
-
 })
 
 
@@ -252,6 +250,8 @@ function startGame() {
             playerTurn = true
             turnDisplay.textContent = "hmmmm I think it is your turn frfr"
             gridText.style.visibility = "hidden"
+            shipContainer.style.display = "none"
+            rotateBtn.style.display = "none"
             checkDisplay.textContent = "The game started gogoggoogo"
             ships.forEach(ship => addShipPiece("computer", ship))
 
@@ -388,10 +388,12 @@ function computerMove(hitDirection = undefined) {
                 lastMoveHit = true;
                 console.log("no direction inputed")
                 computerMove();
+                return
             } else {
                 lastMoveHit = true;
                 console.log("direction inputed")
                 computerMove(direction);
+                return
             }
 
             //computerMove();
@@ -407,7 +409,7 @@ function computerMove(hitDirection = undefined) {
 
     setTimeout(() => {
         playerTurn = true
-        turnDisplay.textContent = "player's turn"
+        turnDisplay.textContent = "Player's turn"
         checkDisplay.textContent = "hmmmmm I think it's your turn"
         const allComputerBlocks = document.querySelectorAll("#computer div")
         allComputerBlocks.forEach(block => block.addEventListener("click", handleClick))

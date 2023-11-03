@@ -355,3 +355,21 @@ img {
     border-radius: 4px;
     background-color: #00AAFF;
 }
+
+button svg {
+    vertical-align: middle;
+}
+
+.center-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.game-info {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 30rem;
+    flex-direction: column;
+
+}
