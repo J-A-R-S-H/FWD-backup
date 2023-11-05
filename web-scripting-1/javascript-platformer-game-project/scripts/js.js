@@ -28,5 +28,25 @@ window.addEventListener("keydown", (event) => {
                 player.velocity.y = -20
             }
             break
+        case "a":
+            player.velocity.x = -4
+            break
+
+        case "d":
+            player.velocity.x = 4
+            break
+    }
+})
+
+window.addEventListener("keyup", (event) => {
+    switch (event.key) {
+
+        case "a":
+            player.velocity.x = 0
+            break
+
+        case "d":
+            player.velocity.x = 0
+            break
     }
 })
