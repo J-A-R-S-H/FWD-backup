@@ -6,16 +6,23 @@ canvas.width = 64 * 16 //1024
 canvas.height = 64 * 9 //576 
 
 class Sprite {
-    constructor(position) {
+    constructor({ position }) {
         this.position = position
         this.image = new Image()
-        this.image.src = "./imgs/backgroundLevel1.png"
+        this.image.src = "../imgs/backgroundLevel1.png"
     }
     draw() {
-        c.drawImage()
+        c.drawImage(this.image, this.position.x, this.position.y)
     }
 
 }
+
+const backgroundLevel1 = new Sprite({
+    position: {
+        x: 0,
+        y: 0,
+    }
+})
 
 const keys = {
     w: {
@@ -36,6 +43,8 @@ function animate() {
     window.requestAnimationFrame(animate)
     c.fillStyle = "white"
     c.fillRect(0, 0, canvas.width, canvas.height)
+
+    backgroundLevel1.draw()
 
     player.velocity.x = 0
     if (keys.d.pressed) {
