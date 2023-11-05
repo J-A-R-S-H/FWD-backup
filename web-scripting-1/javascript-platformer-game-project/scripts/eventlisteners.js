@@ -1,4 +1,3 @@
-
 window.addEventListener("keydown", (event) => {
     switch (event.key) {
         case "w":
