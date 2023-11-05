@@ -8,7 +8,6 @@ canvas.height = 64 * 9 //576
 
 
 
-const player = new Player()
 
 function animate() {
     window.requestAnimationFrame(animate)
