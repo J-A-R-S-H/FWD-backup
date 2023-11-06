@@ -1,6 +1,13 @@
 const canvas = document.querySelector("canvas")
 const c = canvas.getContext("2d")
 
+
+
+
+
+const parsedCollisions = collisionsLeve1.parse2D()
+const collisionBlocks = parsedCollisions.createObjectsFrom2D()
+
 //16:9 aspect ratio
 canvas.width = 64 * 16 //1024
 canvas.height = 64 * 9 //576 
@@ -37,7 +44,9 @@ function animate() {
     window.requestAnimationFrame(animate)
 
     backgroundLevel1.draw()
-
+    collisionBlocks.forEach((collisionBlock) => {
+        collisionBlock.draw()
+    })
     player.velocity.x = 0
     if (keys.d.pressed) {
         player.velocity.x = 4
