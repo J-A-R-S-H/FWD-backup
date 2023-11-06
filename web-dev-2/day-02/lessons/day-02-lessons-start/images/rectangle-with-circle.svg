@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302 307">
+    <defs>
+        <style>
+            .cls-1{fill:#18aa53;}
+            .cls-2{fill:#ff6440;}
+        </style>
+    </defs>
+    <title>rectangle-with-circle</title>
+    <g id="l-02">
+        <rect class="cls-1" width="183" height="307"/>
+    </g>
+    <g id="l-01">
+        <circle class="cls-2" cx="183.5" cy="188.5" r="118.5"/>
+    </g>
+</svg>

@@ -1,0 +1,151 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Box Sizing Reset code from: https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* general styles */
+
+body {
+	background-color: #999;
+    font-family: Arial, Helvetica, sans-serif;
+	margin: 0;	
+}
+
+h1, h2, h3, p {
+	margin-top: 0;
+}
+
+p {
+    line-height: 1.4;
+}
+
+/* end general styles */
+
+
+/* Wrapper Styles */
+
+.wrapper {
+	max-width: 800px; 
+	margin: 0 auto; /* 0 = top and bottom / auto = left and right */
+	background-color: white;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;	
+}
+
+/* End Wrapper Styles
+
+/* Header Styles */
+
+header {
+	padding: 15px;
+	background-color: #063;
+	color: white;
+}
+
+header h1 {
+	margin: 0;
+}
+
+header a {
+	color: white;
+	text-decoration: none;
+}
+
+/* End Header Styles */
+
+/* End Main Navigation Styles */
+
+/* Start Content Styles */
+main {
+	display: block;
+	padding: 15px;
+	flex: 1;	
+}
+
+.banner {
+	margin-bottom: 20px;
+}
+
+.banner img {
+	display: block;
+}
+
+main :last-child {
+	margin-bottom: 0;
+}
+
+section h2 {
+	margin-top: 0;
+}
+
+/* Picture Element Styles */
+.picture-element-example-02 img {
+    margin-bottom: 20px;
+}
+
+.picture-element-example-03 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    border-top: 1px dotted #ccc;
+}
+
+.picture-element-example-03 h2 {
+    margin-top: 0;
+}
+
+article img {
+    float: right;
+    width: 43%;
+    margin-left: 20px;
+}
+
+.example-03-image {
+    display: none;
+}
+
+@media (min-width: 601px) {
+	.example-03-image {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+/* End Content Styles */
+
+/* Footer Styles */
+
+footer {
+	padding: 15px;
+	background-color: #C09;
+	color: #FFF;
+}
+
+footer p {
+	margin: 0;	
+}
+
+/* End Footer Styles */
+@media (min-width: 620px){
+	main {
+		padding: 30px;
+	}
+}
+
+
+
+
+

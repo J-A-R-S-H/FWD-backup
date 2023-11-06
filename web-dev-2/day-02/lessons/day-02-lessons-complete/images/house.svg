@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 309 309" style="enable-background:new 0 0 309 309;" xml:space="preserve">
+<style type="text/css">
+	.Drop_x0020_Shadow{fill:none;}
+	.Round_x0020_Corners_x0020_2_x0020_pt{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+	.Live_x0020_Reflect_x0020_X{fill:none;}
+	.Bevel_x0020_Soft{fill:url(#SVGID_1_);}
+	.Dusk{fill:#FFFFFF;}
+	.Foliage_GS{fill:#FFDD00;}
+	.Pompadour_GS{fill-rule:evenodd;clip-rule:evenodd;fill:#44ADE2;}
+	.st0{fill:#A4BE60;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#DB872E;}
+	.st3{fill:#AA6C29;}
+	.st4{fill:#4E5052;}
+	.st5{fill:#80B4D8;}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-24.5" y1="-39" x2="-23.7929" y2="-38.2929">
+	<stop  offset="0" style="stop-color:#DEDFE3"/>
+	<stop  offset="0.1738" style="stop-color:#D8D9DD"/>
+	<stop  offset="0.352" style="stop-color:#C9CACD"/>
+	<stop  offset="0.5323" style="stop-color:#B4B5B8"/>
+	<stop  offset="0.7139" style="stop-color:#989A9C"/>
+	<stop  offset="0.8949" style="stop-color:#797C7E"/>
+	<stop  offset="1" style="stop-color:#656B6C"/>
+</linearGradient>
+<g id="BG_-_circle_50_">
+	<g>
+		<circle class="st0" cx="154.5" cy="154.5" r="154.5"/>
+	</g>
+</g>
+<g id="Walls">
+	<g>
+		<polygon class="st1" points="160.9,77.3 83.7,141.6 83.7,251.1 225.3,251.1 225.3,141.6 		"/>
+	</g>
+</g>
+<g id="Roof">
+	<g>
+		<polygon class="st2" points="160.9,64.4 51.5,160.9 77.3,160.9 160.9,90.1 231.8,160.9 257.5,160.9 		"/>
+	</g>
+</g>
+<g id="Chimney">
+	<g>
+		<polygon class="st3" points="225.1,76.6 199.7,76.6 199.6,103 225.3,128.8 		"/>
+	</g>
+</g>
+<g id="Door_1_">
+	<g>
+		<rect x="115.9" y="160.9" class="st4" width="45.1" height="90.1"/>
+	</g>
+</g>
+<g id="Windows">
+	<g>
+		<path class="st5" d="M122.3,193.1h32.2v-25.8h-32.2V193.1z M173.8,160.9v32.2H206v-32.2H173.8z"/>
+	</g>
+</g>
+</svg>

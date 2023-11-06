@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Responsive Images - Srcset and Sizes</title>
+<link rel="stylesheet" href="styles/styles-responsive-images-srcset-and-sizes.css">
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <h1>Responsive Images - Srcset &amp; Sizes</h1>
+  </header> 
+  <main>
+    <div class="banner">
+      <img src="images/city-large.jpg" 
+                 alt="Vancouver"
+                 srcset="images/city-retina.jpg 2400w,
+                         images/city-large.jpg 1200w,
+                         images/city-medium.jpg 800w,
+                         images/city-small.jpg 400w"
+                 sizes="(max-width: 620px) calc(100vw - 30px),
+                        (max-width: 800px) calc(100vw - 60px),
+                        740px">
+    </div>
+    <article>
+        <h2>Article 01</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos hic sed cum ex, possimus veritatis aperiam accusamus fugit neque quia quae nam repellendus aliquam voluptatem? Excepturi cum officiis doloremque praesentium!</p>
+        <p>Sed, tempora. Ab adipisci voluptatibus similique, dicta aut consectetur nam, ipsum consequuntur ex autem ut eveniet nulla temporibus accusantium eos ratione aspernatur officiis eligendi atque ad fugit nisi laborum sit?</p>
+        <p>Dolor consequatur amet tempora sapiente magni saepe culpa a temporibus suscipit neque porro ea, excepturi perspiciatis dicta rerum ratione dolorum, obcaecati non labore optio, possimus dignissimos quis! Necessitatibus, dicta officia!</p>
+    </article> 
+  </main>
+  <footer>
+    <p>&copy; 2020 Michael Whyte</p>  
+  </footer>
+</div><!-- end of wrapper -->
+</body>
+</html>

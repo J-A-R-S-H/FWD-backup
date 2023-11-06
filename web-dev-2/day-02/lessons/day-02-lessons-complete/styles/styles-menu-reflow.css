@@ -1,0 +1,141 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* Box Sizing Reset */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Images  - Max-Width Reset */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    background-color: #6C6C6C;
+    margin: 0;
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+}
+
+h1, h2, h3, h4, h5, nav a {
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+}
+
+.wrapper {
+    max-width: 700px;
+    padding: 0 20px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+header {
+    margin: 0 -20px;
+    background-color: #0B29CF;
+    color: white;
+    padding: 20px 20px 0;
+}
+
+header h1 {
+    margin: 0 0 20px;
+    line-height: 1;
+    font-size: 1.8em;
+}
+
+/* Responsive Menus */
+
+/* Menu - Reflow */
+nav {
+    background-color: white;
+    margin: 0 -20px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav li {
+    flex: 0 0 25%;
+}
+nav li:nth-child(4) a {
+    border-right: none;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    border-right: 2px solid #0B29CF;
+    border-bottom: 2px solid #0B29CF;
+    line-height: 42px;
+    display: block;
+    text-align: center;
+}
+
+nav li:last-child a {
+    border-right: none;
+}
+
+nav a:hover,
+nav a:active,
+nav a:focus {
+    background-color: #E3E3E3;
+}
+
+/* End Responsive Menus */
+
+
+main {
+    padding: 20px 0;
+}
+
+main article:first-child h2 {
+    margin-top: 0;
+}
+
+main p:last-child {
+    margin-bottom: 0;
+}
+
+/* Picture Element Styles */
+article img {
+    float: right;
+    width: 43%;
+    margin-left: 20px;
+}
+
+footer {
+    border-top: 1px dotted #ccc;
+    padding: 20px;
+    margin: 0 -20px;
+}
+
+footer p {
+    margin: 0;
+    line-height: 1;
+}
+
+@media (min-width: 560px){
+
+    nav ul {
+        flex-wrap: nowrap;
+    }
+
+    nav li {
+        flex: 1;
+    }
+
+    nav li:nth-child(4) a {
+        border-right: 2px solid #0B29CF;
+    }
+
+}
+
+
+
