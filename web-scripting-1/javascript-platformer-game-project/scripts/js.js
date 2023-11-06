@@ -81,11 +81,20 @@ function animate() {
     if (keys.d.pressed) {
         player.switchSprite("runRight")
         player.velocity.x = 4
+        player.lastDirection = "right"
     }
     else if (keys.a.pressed) {
+        player.switchSprite("runLeft")
         player.velocity.x = -4
+        player.lastDirection = "left"
     }
-
+    else {
+        if (player.lastDirection === "left") {
+            player.switchSprite("idleLeft")
+        } else {
+            player.switchSprite("idleRight")
+        }
+    }
     player.draw()
     player.update()
 }
