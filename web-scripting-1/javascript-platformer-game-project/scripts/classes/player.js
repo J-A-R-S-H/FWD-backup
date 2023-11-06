@@ -33,6 +33,17 @@ class Player extends Sprite {
 
         this.checkForHorizontalCollisions()
         this.applyGravity()
+
+        this.hitbox = {
+            position: {
+                x: this.position.x + 58,
+                y: this.position.y + 34
+            },
+            width: 50,
+            height: 53,
+        }
+
+        c.fillRect(this.hitbox.position.x, this.hitbox.position.y, this.hitbox.width, this.hitbox.height)
         this.checkForVerticalCollisions()
 
         //above bottom of canvas
@@ -73,10 +84,10 @@ class Player extends Sprite {
             const collisionBlock = this.collisionBlocks[i]
 
             //if a collision exists
-            if (this.position.x <= collisionBlock.position.x + collisionBlock.width &&
-                this.position.x + this.width >= collisionBlock.position.x &&
-                this.position.y + this.height >= collisionBlock.position.y &&
-                this.position.y <= collisionBlock.position.y + collisionBlock.height) {
+            if (this.hitbox.position.x <= collisionBlock.position.x + collisionBlock.width &&
+                this.hitbox.position.x + this.hitbox.width >= collisionBlock.position.x &&
+                this.hitbox.position.y + this.hitbox.height >= collisionBlock.position.y &&
+                this.hitbox.position.y <= collisionBlock.position.y + collisionBlock.height) {
                 //collision on left axis going to the left
                 if (this.velocity.y < 0) {
                     this.velocity.y = 0
