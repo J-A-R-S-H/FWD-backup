@@ -24,6 +24,7 @@ const backgroundLevel1 = new Sprite({
 
 const player = new Player({
     collisionBlocks,
+    imageSrc: "../imgs/king/idle.png"
 })
 
 

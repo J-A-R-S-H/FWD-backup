@@ -1,8 +1,9 @@
 
-class Player {
+class Player extends Sprite {
     constructor({
-        collisionBlocks = []
+        collisionBlocks = [], imageSrc
     }) {
+        super({ imageSrc })
         this.position = {
             x: 200,
             y: 200
@@ -26,10 +27,6 @@ class Player {
 
     }
 
-    draw() {
-        c.fillStyle = "red"
-        c.fillRect(this.position.x, this.position.y, this.width, this.height)
-    }
 
     update() {
         this.position.x += this.velocity.x
