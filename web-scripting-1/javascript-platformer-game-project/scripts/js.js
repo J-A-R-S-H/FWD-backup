@@ -19,7 +19,7 @@ const backgroundLevel1 = new Sprite({
         x: 0,
         y: 0,
     },
-    imageSrc: "../imgs/backgroundLevel1.png"
+    imageSrc: "imgs/backgroundLevel1.png"
 })
 
 const player = new Player({
