@@ -41,13 +41,13 @@ const player = new Player({
         },
         runRight: {
             frameRate: 8,
-            frameBuffer: 2,
+            frameBuffer: 4,
             loop: true,
             imageSrc: "../imgs/king/runRight.png"
         },
         runLeft: {
             frameRate: 8,
-            frameBuffer: 2,
+            frameBuffer: 4,
             loop: true,
             imageSrc: "../imgs/king/runLeft.png"
         },
