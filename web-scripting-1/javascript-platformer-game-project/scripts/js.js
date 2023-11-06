@@ -31,21 +31,25 @@ const player = new Player({
             frameRate: 11,
             frameBuffer: 2,
             loop: true,
+            imageSrc: "../imgs/king/idle.png"
         },
         idleLeft: {
             frameRate: 11,
             frameBuffer: 2,
             loop: true,
+            imageSrc: "../imgs/king/idleLeft.png"
         },
         runRight: {
             frameRate: 8,
             frameBuffer: 2,
             loop: true,
+            imageSrc: "../imgs/king/runRight.png"
         },
         runLeft: {
             frameRate: 8,
             frameBuffer: 2,
             loop: true,
+            imageSrc: "../imgs/king/runLeft.png"
         },
     },
 })
@@ -75,6 +79,7 @@ function animate() {
     })
     player.velocity.x = 0
     if (keys.d.pressed) {
+        player.switchSprite("runRight")
         player.velocity.x = 4
     }
     else if (keys.a.pressed) {

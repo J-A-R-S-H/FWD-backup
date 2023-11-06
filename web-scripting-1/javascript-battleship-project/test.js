@@ -476,4 +476,4 @@ function checkScore(user, userHits, userSunkShips) {
         gameOver = true
     }
 
-}   
+}

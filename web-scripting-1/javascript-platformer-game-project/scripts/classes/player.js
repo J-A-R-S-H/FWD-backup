@@ -48,6 +48,10 @@ class Player extends Sprite {
 
     }
 
+    switchSprite(name) {
+        this.image = this.animations[name].image
+    }
+
     updateHitbox() {
         this.hitbox = {
             position: {
