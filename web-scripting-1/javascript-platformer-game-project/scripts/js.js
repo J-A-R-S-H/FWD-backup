@@ -29,13 +29,13 @@ const player = new Player({
     animations: {
         idleRight: {
             frameRate: 11,
-            frameBuffer: 2,
+            frameBuffer: 3,
             loop: true,
             imageSrc: "../imgs/king/idle.png"
         },
         idleLeft: {
             frameRate: 11,
-            frameBuffer: 2,
+            frameBuffer: 3,
             loop: true,
             imageSrc: "../imgs/king/idleLeft.png"
         },
@@ -53,6 +53,19 @@ const player = new Player({
         },
     },
 })
+
+const doors = [
+    new Sprite({
+        position: {
+            x: 767,
+            y: 270,
+        },
+        imageSrc: "imgs/doorOpen.png",
+        frameRate: 5,
+        frameBuffer: 8,
+        loop: false,
+    })
+]
 
 
 const keys = {
@@ -77,6 +90,11 @@ function animate() {
     collisionBlocks.forEach((collisionBlock) => {
         collisionBlock.draw()
     })
+
+    doors.forEach((door) => {
+        door.draw()
+    })
+
     player.velocity.x = 0
     if (keys.d.pressed) {
         player.switchSprite("runRight")
