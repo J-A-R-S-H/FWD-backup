@@ -1,0 +1,51 @@
+// Gallery Styles
+@use "variables" as *;
+@use "mixins" as *;
+
+.image-gallery {
+
+    .image-container {
+        //width: $three-col;
+        display: block;
+        font-family: $heading-font;
+        margin-bottom: 30px;
+        @include plain-link;
+        @include aspect-ratio-box('square');
+
+        img {
+            @include img-cover;
+        }
+
+        .profile {
+           @include el-cover;
+           @include flex-center;
+           background-color: rgba($body-bg-color, 0.8);
+           transform: scale(0);
+           transition: 0.3s ease;
+
+           .name,
+           .title {
+               @include flatten;
+           }
+
+           .name {
+               margin-bottom: 10px;
+           }
+
+           @at-root .image-container:hover .profile, 
+                    .image-container:focus .profile {
+                        transform: scale(1);
+           } 
+        }
+
+    }
+
+    @include mq($phoneLandscape){
+        @include flex-layout-row;
+        .image-container {
+            width: $three-col;
+            @include aspect-ratio-box('video');
+        }  
+    }
+
+}

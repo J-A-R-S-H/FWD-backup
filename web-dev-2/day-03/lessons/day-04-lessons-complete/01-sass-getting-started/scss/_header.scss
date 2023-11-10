@@ -1,0 +1,19 @@
+// Header styles
+@use "variables" as *;
+@use "mixins" as *;
+
+header {
+    background-color: $brand-color;
+    padding: $padding/2 $padding;
+    @include flex-layout-row;
+    align-items: center;
+
+    h1 {
+        @include flatten;
+        color: $text-color-light;
+        font-size: 1.6em;
+        @include mq($phoneLandscape){
+            font-size: 2em;
+        }
+    }
+}

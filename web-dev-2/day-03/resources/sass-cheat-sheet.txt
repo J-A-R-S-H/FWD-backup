@@ -1,0 +1,27 @@
+SASS Cheat Sheet
+
+-----------------------------------------------------------------
+
+Watch Folder:
+
+- The below command will watch a folder called "scss" and write css to a folder called "styles"  
+
+$ sass --watch scss:styles
+
+-----------------------------------------------------------------
+
+Set output type to expanded:
+
+- Expanded outputs the CSS in a manner that is similiar to how stylesheets are written by hand...This comes down to personal or project preference.
+
+- Options
+---> nested (default)
+---> expanded
+---> compact (one line CSS)
+---> compressed (no white space)
+
+$sass --watch --style expanded scss:styles
+
+------------------------------------------------------------------
+
+		

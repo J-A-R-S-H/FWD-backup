@@ -1,0 +1,9 @@
+// Wrapper styles
+@use "variables" as *;
+@use "mixins" as *;
+
+.wrapper {
+    max-width: 860px;
+    @include margin-center;
+    background-color: $wrapper-bg-color;
+}
