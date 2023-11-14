@@ -1,0 +1,11 @@
+// Footer Styles
+@use "variables" as *;
+@use "mixins" as *;
+
+footer {
+    padding: $padding;
+    border-top: 1px dotted $body-bg-color;
+    p {
+        @include flatten;
+    }
+}

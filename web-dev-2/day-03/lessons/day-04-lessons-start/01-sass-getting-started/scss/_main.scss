@@ -1,0 +1,11 @@
+// Main Styles
+@use "variables" as *;
+
+main {
+    padding: $padding;    
+
+    section:not(:first-child) {
+        margin-top: $padding;
+    }
+    
+}

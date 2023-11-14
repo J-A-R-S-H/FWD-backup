@@ -1,0 +1,45 @@
+// Info Section styles
+@use "variables" as *;
+@use "mixins" as *;
+
+.info {
+    
+    @include first-last-el-no-margin;
+
+    .some-row {
+        @include flex-layout-row;
+        
+        .a-01,
+        .a-02 {
+            @extend %row-item;
+        }
+    
+    }
+
+}
+
+// More Stuff section
+// Just practice @extend
+.more-stuff {
+    
+    background-color: rgba(pink, 0.3);
+    padding: $padding;
+    @include first-last-el-no-margin;
+    
+    .different-row {
+        @include flex-layout-row;
+    }
+
+    .a-03,
+    .a-04,
+    .a-05,
+    .a-06 {
+        @extend %row-item;
+        margin-bottom: 8%;
+        background-color: lightyellow;
+        @include mq($phoneLandscape){
+            margin-bottom: 2%;
+        }
+    }
+
+}
